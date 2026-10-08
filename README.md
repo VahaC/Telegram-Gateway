@@ -1,15 +1,16 @@
-# Telegram News Delivery Gateway
+# TelegramGateway
 
-A single-user .NET 10 service that receives an already prepared technology digest and delivers
-it to one configured private Telegram chat. The gateway does not research or generate news.
+A single-user .NET 10 gateway that lets AI agents, applications, scripts and monitoring systems
+send notifications to one configured private Telegram chat through an HTTP API or MCP tools.
+It accepts prepared text and structured digests; content generation belongs to the caller.
 
 **Required before production:** your own bot token, private chat ID, strong API key, and an
-HTTPS reverse proxy. Real AI-to-Telegram delivery requires installation-specific verification.
+HTTPS reverse proxy. Verify message delivery when configuring an installation.
 
 ## Architecture
 
 ```text
-External assistant / scheduled workflow
+AI agent / application / script / monitoring system
   -> HTTPS + X-Api-Key
   -> Minimal HTTP API / optional MCP tools
   -> DeliveryService -> SQLite durable outbox (WAL)
@@ -19,10 +20,9 @@ External assistant / scheduled workflow
 Adapter isolates Telegram HTTP and formatting; Queue/Worker uses SQLite as the durable queue.
 The API and MCP reuse the same application services. Core has no package references.
 Dependencies are EF Core SQLite, Markdig, FluentValidation, ASP.NET Core OpenAPI, and the
-official MCP C# SDK. No SPA, Redis, or broker is required. Minimal API follows the explicit
-project brief, taking precedence over the house skill's controller default.
+official MCP C# SDK. No SPA, Redis, or broker is required.
 
-Assumption: one technology digest per calendar date, enforced by a unique date index.
+The digest interface allows one digest per calendar date, enforced by a unique date index.
 Use `/api/messages` for other notifications. One process per local data volume is supported;
 an exclusive file lock prevents a second worker from reconciling live attempts. Avoid NFS.
 
@@ -136,35 +136,19 @@ Malformed input → 400; wrong/missing key → identical 401; uncertain/conflict
 body above 128 KiB → 413; rate limit → 429. The 100000-character validation limit does not
 override the UTF-8 byte limit: Ukrainian text can reach the byte limit sooner.
 
-## AI integration and automatic delivery
+## Client integrations
 
-See [docs/integrations.md](docs/integrations.md) for exact enablement steps and boundaries.
+AI agents and other systems can use the authenticated HTTP endpoints directly. MCP clients
+can use `send_telegram_message`, `send_technology_digest`, and `get_digest_delivery_status`
+after enabling `/mcp` and supplying `X-Api-Key` on every request.
 
-1. **External scheduled workflow:** implemented in `scripts/deliver_digest.py`. Accepts already
-   generated JSON (`--input`) or calls a separate OpenAI Responses API researcher (`--generate`).
-   Caches content before submission, uses a stable daily key, and polls to Delivered. A systemd
-   service/timer example is included. API billing/key/model are separate from ChatGPT.
-2. **MCP client with custom headers:** three tools reuse DeliveryService; enable `/mcp` and
-   supply X-Api-Key. Tested with the official SDK client through the actual HTTP pipeline.
-3. **Custom ChatGPT app/plugin:** needs separate registration, permitted write tools and
-   supported authentication. This endpoint does not implement ChatGPT OAuth 2.1, protected
-   resource metadata, token audience validation or mTLS. Do not disable auth to make it connect.
-4. **Manual webhook fallback:** the authenticated examples above.
+The current authentication mechanism is a static API key. Clients that require OAuth need an
+additional compatible authorization implementation; OAuth discovery and token validation are
+not implemented. Check the client's transport and authentication requirements before connecting.
 
-No evidence here proves that ChatGPT scheduled tasks can call this API/app. An HTTP/MCP test
-does not establish automatic ChatGPT delivery, and this service cannot read ChatGPT chats.
-
-```bash
-python3 scripts/deliver_digest.py --input examples/sample-ukrainian-digest.json
-# Privately set OPENAI_API_KEY and an OPENAI_MODEL supporting web_search.
-python3 scripts/deliver_digest.py --generate --prompt examples/research-prompt.txt \
-  --state-dir /var/lib/telegram-digest
-```
-
-The timer's 09:00 Europe/Kyiv is an editable example, not an installed schedule. systemd handles
-wall-clock/DST scheduling; pick an hour outside DST transitions. Persistent catch-up runs
-produce the current local day's digest, not every missed day. Linux Python 3.10+ and tzdata
-are required only for the external workflow.
+The gateway queues and delivers submitted content. A calling system owns content preparation,
+event triggers and scheduling. See [docs/integrations.md](docs/integrations.md) for the HTTP
+and MCP contracts, optional client helper, and delivery verification.
 
 ## Security and operations
 
@@ -236,11 +220,9 @@ dotnet ef migrations add Name --project src/TelegramGateway.Api \
 | Outcome unknown / interrupted | Inspect chat before replay; see ADR 0001 |
 | Gateway 429 | Wait; configure the exact trusted proxy if distinct client IPs are needed |
 | Data permission error | Fix volume ownership for image user app; do not run the app as root |
-| Workflow fails | Inspect cached payload/status privately; verify API billing/model/tzdata |
-| ChatGPT cannot connect | Static API-key auth is not ChatGPT OAuth; see integration guide |
+| Client cannot connect | Verify HTTPS, the enabled interface and support for X-Api-Key; OAuth-only clients require additional authorization support |
 
-Measured results and remaining installation checks are in [docs/validation.md](docs/validation.md).
-No release version, commit, tag, registry push or actual schedule has been created.
+Test results and installation verification steps are in [docs/validation.md](docs/validation.md).
 
 ## License
 

@@ -43,8 +43,8 @@ The image is local; no registry image has been published.
 5. Attach the proxy/tunnel container to the same network.
 6. For updates, rebuild/load the image and recreate the service while retaining its volume.
 
-Portainer UI deployment has not been accessed or demonstrated here. Choose an owner/tag before
-using a registry publishing workflow; [PUBLISHING.md](PUBLISHING.md) covers local packaging.
+Choose a registry owner/tag before using a publishing workflow;
+[PUBLISHING.md](PUBLISHING.md) covers local packaging.
 
 ## 4. Nginx Proxy Manager
 
@@ -76,22 +76,24 @@ Recommend a Cloudflare Access application for this hostname, with a service-toke
 the workflow. Supply CF-Access-Client-Id and CF-Access-Client-Secret **in addition to** X-Api-Key.
 The workflow supports the corresponding `CF_ACCESS_CLIENT_ID` / `CF_ACCESS_CLIENT_SECRET` env
 variables. Configure an appropriate browser identity policy separately if needed. Do not
-disable Access to make an incompatible ChatGPT authentication flow connect.
+disable authentication to accommodate an incompatible client.
 
 Official [Tunnel](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/)
 and [Access service-token](https://developers.cloudflare.com/cloudflare-one/access-controls/service-credentials/service-tokens/)
-documentation. No account/network configuration has been changed.
+documentation.
 
-## 6. Verify real delivery and scheduling
+## 6. Verify delivery and client integration
 
 Submit the README setup message, poll Location until Delivered, and inspect the private chat.
 Submit the Ukrainian fixture, check headings/numbering/Unicode/source links, then repeat enough
 paragraphs to exercise splitting. Re-submit the identical key/payload and confirm no new chat
 messages. Restart the container and confirm IDs/status persist.
 
-Install the external workflow as described in [docs/integrations.md](docs/integrations.md).
-Confirm a scheduled run ends successfully and inspect the Telegram chat. A 202 response alone
-does not establish delivery. No real bot or scheduled task is configured in this repository.
+Configure the calling agent, application or script using
+[docs/integrations.md](docs/integrations.md). Verify that it can supply X-Api-Key, submit
+content and read delivery status. For MCP, enable ENABLE_MCP and check tool discovery through
+the secured endpoint. A 202 response or successful tool call alone does not establish delivery.
+If the caller sends recurring notifications, verify its scheduling separately.
 
 ## 7. Backup and uncertain outcomes
 

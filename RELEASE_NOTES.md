@@ -1,7 +1,8 @@
 # Development notes
 
-You can submit private notifications and structured digests through an authenticated API,
-track Telegram message IDs and retry confirmed partial failures without repeating known parts.
+AI agents, applications and scripts can submit notifications and structured digests through
+an authenticated HTTP API or optional MCP tools. Delivery metadata includes Telegram message
+IDs; retries of confirmed partial failures skip parts with recorded IDs.
 Uncertain external writes stop for chat review.
 
 Telegram sends now resolve to the configured HTTPS host correctly. Earlier builds could stop
@@ -11,6 +12,6 @@ using INSTALL.md; existing `requiresReview` deliveries remain blocked rather tha
 ## Turning it on
 
 Configure bot token, private chat ID, API key and HTTPS, then follow INSTALL.md. MCP is off by
-default; enable ENABLE_MCP only for a client supporting the required headers. External daily
-research needs a separate OpenAI API key/model and reviewed systemd installation. No schedule,
-release number, registry publication or production credentials are included.
+default; enable ENABLE_MCP for clients that can supply X-Api-Key. OAuth authorization is not
+implemented. The calling system prepares content and controls when notifications are submitted.
+See docs/integrations.md for client setup and delivery verification.

@@ -68,3 +68,7 @@ The adapter now prefixes the relative path with `./`; the resolved destination i
 actual outbound URI, and container smoke exercises the real handler on a network without egress.
 Unexpected worker failures log only their exception type. Existing uncertain rows are preserved;
 the URL correction does not authorize automatic replay of historical attempts.
+
+MCP clients follow the same rule: reuse the daily key and content on a retry, and confirm
+Delivered rather than accepting queue submission as completed delivery.
+Private client-file configuration changes how credentials are supplied, not delivery semantics.

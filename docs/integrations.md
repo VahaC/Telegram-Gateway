@@ -1,115 +1,78 @@
-# External AI integration
+# Client integrations
 
-Documentation reviewed on 2026-10-08. Installed account permissions, available models and
-client capabilities must still be checked at setup time. No real credentials were used.
+The gateway lets AI agents, applications, scripts and monitoring systems submit notifications
+for delivery to one configured private Telegram chat. Callers prepare the content and decide
+when to submit it. Telegram bot credentials remain in the gateway; callers receive the gateway
+URL and API key.
 
-## Implemented interfaces
+## HTTP API
 
-The HTTP API accepts authenticated messages/digests. The official
-[MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk) hosts optional Streamable HTTP
-at `/mcp`. Set ENABLE_MCP=true in Compose and recreate the container. Every request needs
-X-Api-Key; Host and Origin are allowlisted. Tools reuse DeliveryService:
+Use HTTPS and send exactly one `X-Api-Key` header. Submit notifications to `POST /api/messages`
+and dated digests to `POST /api/digests`. See [README.md](../README.md#http-api) for request
+examples and endpoint details.
 
-- send_telegram_message: text, idempotencyKey, optional format/silent notification.
-- send_technology_digest: title, yyyy-MM-dd date, content, idempotencyKey, optional language/format.
-- get_digest_delivery_status: date, metadata only.
+Submission returns `202 Accepted` with a delivery identifier and `Location` for status polling.
+Read that location until the delivery reaches a terminal state. Only `Delivered` confirms
+recorded Telegram message IDs. An uncertain result with `requiresReview: true` requires an
+operator to inspect the destination chat before attempting another submission.
 
-Tool acceptance is not delivery; check status until Delivered. An official SDK client exercises
-discovery and sending against the actual gateway HTTP pipeline in automated tests.
+Use a stable idempotency key for the same logical notification. When retrying, retain both the
+key and the original payload. A different payload under the same key is rejected. Digests are
+also unique by date; use the message endpoint for multiple notifications on the same day.
 
-## MCP clients and ChatGPT
+## MCP tools
 
-A client supporting private HTTP headers can connect to the secured endpoint. For example,
-[Codex MCP configuration](https://developers.openai.com/codex/mcp) supports HTTP transport and
-environment-sourced headers. Configure your own client; this repository does not modify it:
+The optional Streamable HTTP endpoint uses the official
+[MCP C# SDK](https://github.com/modelcontextprotocol/csharp-sdk).
+Set `ENABLE_MCP=true` in Compose and recreate the gateway container. Connect a client to
+`https://gateway.example.invalid/mcp`, replacing the hostname with the configured gateway.
+Every request requires `X-Api-Key`; Host and Origin checks remain enabled.
 
-```toml
-[mcp_servers.telegram_gateway]
-url = "https://gateway.example.invalid/mcp"
-env_http_headers = { "X-Api-Key" = "TELEGRAM_GATEWAY_KEY" }
+| Tool | Purpose | Inputs |
+|---|---|---|
+| `send_telegram_message` | Queue a notification | `text`, `idempotencyKey`; optional `format`, `disableNotification` |
+| `send_technology_digest` | Queue a prepared digest | `title`, `date` (`yyyy-MM-dd`), `content`, `idempotencyKey`; optional `language`, `format`, `disableNotification` |
+| `get_digest_delivery_status` | Read digest delivery metadata | `date` (`yyyy-MM-dd`) |
+
+The digest tool retains its existing name but accepts caller-prepared content. It does not
+research news. Submission and status tools use the same delivery service and persistent ledger
+as the HTTP API. Clients should poll status after submitting a digest.
+
+The current endpoint uses static API-key authentication. OAuth discovery, OAuth token validation
+and user login are not implemented. Verify that the chosen MCP client supports Streamable HTTP
+and custom authentication headers. Clients requiring OAuth need a compatible authorization
+implementation before they can connect. Do not disable authentication to bypass this requirement.
+
+## Optional Python client
+
+`scripts/deliver_digest.py` can submit prepared digest JSON and poll its delivery status:
+
+```bash
+python3 scripts/deliver_digest.py --config /path/to/private/gateway-client.env \
+  --input examples/sample-ukrainian-digest.json
 ```
 
-Set TELEGRAM_GATEWAY_KEY privately to the same API_KEY before starting the client. Additional
-network protection such as Cloudflare Access requires its service-token headers too. Client
-write approvals and account capabilities apply independently of this gateway's API key.
-
-Official OpenAI references:
-[custom MCP server registration](https://developers.openai.com/api/docs/guides/custom-mcp-server),
-[plugin authentication](https://developers.openai.com/plugins/build/auth), and
-[secure MCP tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels).
-
-The fetched custom-server guide lists OAuth/no-auth registration choices, not arbitrary
-X-Api-Key injection. The gateway implements static API-key auth, **not** a ChatGPT OAuth
-resource server. A production ChatGPT integration needs separately implemented compatible
-authorization, discovery metadata, audience/scope checks, account/workspace approval, and
-registration. It may additionally need the documented ChatGPT transport requirements.
-Do not choose No authentication for this private write-capable service to bypass those steps.
-
-There is no demonstrated support here for ChatGPT scheduled tasks invoking this custom app.
-An interactive registered app and an unattended scheduled task are separate capabilities.
-This service does not read ChatGPT chats, import your personalization, or infer account access.
-
-## External scheduled workflow
-
-This is the implemented unattended path independent of ChatGPT task support:
+The client requires Python 3.10+ and timezone data. The sample JSON is a formatting fixture.
+The private configuration file uses literal, unquoted entries:
 
 ```text
-systemd timer -> external researcher (OpenAI Responses API) -> private cached digest
-             -> authenticated gateway POST -> delivery status polling -> exit success/failure
+GATEWAY_URL=https://gateway.example.invalid
+API_KEY=YOUR_GATEWAY_API_KEY
 ```
 
-Alternatively, a different assistant/workflow writes digest JSON and invokes `--input`.
-No researcher runs inside the gateway. The Python workflow uses only standard-library modules,
-requires Python 3.10+ and Linux tzdata, and rejects remote plaintext HTTP and redirects.
+An optional Cloudflare Access layer requires both `CF_ACCESS_CLIENT_ID` and
+`CF_ACCESS_CLIENT_SECRET`. These supplement the gateway API key. Do not include the Telegram
+bot token. Protect the file with mode 0600 on Linux or a user-restricted ACL on Windows; never
+commit it. See [the configuration template](../examples/gateway-client.env.example).
 
-1. Place the repository at `/opt/telegram-gateway`; customize `examples/research-prompt.txt`.
-2. Choose an API model with web_search support from current official documentation. No default
-   model is invented. Provide a separately billed OpenAI API key.
-3. Create a system user `telegram-digest` with no login shell; grant it read access to the code.
-4. Create `/etc/telegram-digest.env`, owned by root with mode 0600:
+`--config` replaces the client's credential environment variables. The file is parsed as data,
+not evaluated as a shell script. The helper rejects remote plaintext HTTP and redirects and
+avoids printing credentials or remote response bodies.
 
-   ```text
-   GATEWAY_URL=https://YOUR_GATEWAY_HOST
-   API_KEY=YOUR_GATEWAY_KEY
-   OPENAI_API_KEY=YOUR_SEPARATE_OPENAI_KEY
-   OPENAI_MODEL=YOUR_SUPPORTED_MODEL
-   # Optional, both together when using Cloudflare Access:
-   CF_ACCESS_CLIENT_ID=YOUR_SERVICE_TOKEN_ID
-   CF_ACCESS_CLIENT_SECRET=YOUR_SERVICE_TOKEN_SECRET
-   ```
+## Delivery verification
 
-   Remove the two optional lines if Access is not used. Never commit the actual file.
-5. Copy the example service/timer into `/etc/systemd/system/`. Review the example time (09:00
-   Europe/Kyiv), paths and permissions first. No schedule is installed automatically.
-6. Run `systemctl daemon-reload`, then `systemctl start telegram-digest.service` to test.
-7. Inspect its exit status and actual Telegram message/links. Only then run
-   `systemctl enable --now telegram-digest.timer`.
-8. Check the next run with `systemctl list-timers telegram-digest.timer` and verify after it fires.
-
-The default research request uses Responses API with `store: false` and `web_search`, documented
-in [OpenAI web search](https://developers.openai.com/api/docs/guides/tools-web-search). It extracts
-completed text output, includes source URLs in the prompt, and does not claim the researcher
-cannot hallucinate. Review generated content during setup. The cache is written with private
-permissions before sending; a competing runner cannot replace the original date's payload.
-systemd prevents overlapping runs of the same unit. A manual overlap can still incur additional
-AI research cost before the exclusive cache write; the first cached result remains authoritative.
-
-If a gateway submission response is lost, rerun with the same cached JSON. Do not regenerate
-different content under an existing key/date. The script never prints raw remote bodies,
-credentials or private prompts. Safe error messages indicate configuration/network/delivery
-failure. Polling timeout is not proof of delivery failure; inspect persisted status.
-
-Daily files are retained in `/var/lib/telegram-digest` (0700 directory, 0600 files). Back them
-up privately and retain today's file for idempotent retries. A failed generation produces no
-submission. RequiresReview stops the workflow and needs chat inspection. An existing cache
-is reused even if the research prompt/model changes; choose changes for future dates.
-
-Persistent systemd catch-up runs research for the current Kyiv day after downtime. It does not
-backfill every missed day. The timer uses wall-clock timezone semantics and no fixed UTC offset.
-Do not pick a local time inside DST transitions without reviewing systemd calendar behavior.
-
-## Manual fallback
-
-Use the README curl examples or `--input` with a JSON created by the external assistant.
-Do not confuse manual webhook success, SDK mock tests, or API 202 with end-to-end scheduled
-ChatGPT delivery. That acceptance check remains installation-specific.
+Verify a notification from the actual calling system, read its final status and inspect the
+Telegram chat. Check formatting, links and all parts of a split message. Repeat an identical
+submission to verify duplicate prevention, then restart the gateway and confirm status persists.
+If the calling system uses event triggers or a schedule, verify those separately: a running
+gateway or successful manual submission does not establish that the caller will run again.

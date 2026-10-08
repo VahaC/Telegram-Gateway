@@ -1,18 +1,19 @@
 # Business requirements
 
-Development implementation, based on the supplied Telegram News Delivery Gateway brief.
+The gateway provides authenticated Telegram notification delivery for external callers.
 
-- Receive externally researched Ukrainian digests and deliver to one configured private chat.
-- Separate gateway delivery from AI generation, and distinguish accepted jobs from delivery.
+- Receive prepared notifications and structured digests from AI agents, applications, scripts
+  and monitoring systems, and deliver them to one configured private chat.
+- Separate delivery from content preparation, and distinguish accepted jobs from delivery.
 - Preserve source URLs, Unicode, useful formatting and safe Telegram message boundaries.
 - Persist daily idempotency, attempts, successful IDs and partial/failed state across restart.
 - Protect write/content-related metadata with API-key auth, request limits and HTTPS at the edge.
 - Use lightweight local storage, non-root Docker and a persistent volume without public ports.
 - Expose shared delivery services through HTTP and optional official-SDK MCP tools.
-- Supply a supported external scheduled workflow and document separate ChatGPT platform setup.
+- Document client authentication, submission, status polling and MCP tool discovery.
 - Prove behaviors using real HTTP/SQLite with mocked Telegram and isolated container lifecycle.
 - Verify the resolved Telegram HTTPS destination and the real container HTTP handler's failure
   path; readiness and a mocked response alone do not establish a valid send destination.
 
-Runtime credentials and third-party registration are installation prerequisites, not generated
-by this change. Exactly-once Telegram semantics are outside the provider API contract (ADR 0001).
+Runtime credentials and client configuration are installation prerequisites. Exactly-once
+Telegram semantics are outside the provider API contract (ADR 0001).

@@ -2,6 +2,10 @@
 
 ## Development — 2026-10-08
 
+- Added optional private client-file configuration for JSON submissions, keeping API keys out
+  of command arguments.
+- Generalized documentation around Telegram notifications from AI agents and other systems,
+  including HTTP/MCP integration, authentication and delivery verification.
 - Fixed Telegram URL resolution: the bot token's colon now remains in the HTTPS path instead
   of becoming an unsupported URI scheme. Added outbound URL regression coverage and safe
   exception-type diagnostics for unexpected worker failures.
