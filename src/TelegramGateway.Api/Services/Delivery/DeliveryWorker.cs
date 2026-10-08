@@ -14,10 +14,11 @@ public sealed class DeliveryWorker(IServiceScopeFactory scopes, TimeProvider tim
                 await Task.Delay(TimeSpan.FromSeconds(1), time, stoppingToken);
             }
             catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested) { return; }
-            catch (Exception)
+            catch (Exception exception)
             {
                 // Exception text can include SQL/message content. Emit a stable code instead.
-                logger.LogError("Delivery worker failed; reconciling persisted attempts before continuing.");
+                logger.LogError("Delivery worker failed ({FailureType}); reconciling persisted attempts before continuing.",
+                    exception.GetType().FullName);
                 using var scope = scopes.CreateScope();
                 await scope.ServiceProvider.GetRequiredService<DeliveryReconciler>().ReconcileAsync(stoppingToken);
                 await Task.Delay(TimeSpan.FromSeconds(5), time, stoppingToken);

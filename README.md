@@ -223,6 +223,7 @@ dotnet ef migrations add Name --project src/TelegramGateway.Api \
 
 | Symptom | Action |
 |---|---|
+| Immediate `process_interrupted` with an older image | Rebuild with the Telegram URL fix; the token must remain in the HTTPS path. Check safe worker failure types in logs; inspect existing uncertain deliveries before any new submission |
 | Options startup failure | Fill required env vars, positive chat ID and allowed hostnames |
 | File lock / DB locked | Stop duplicate instance; use a local volume with correct permissions |
 | Host not allowed | Set GATEWAY_HOST; retain localhost for probes |

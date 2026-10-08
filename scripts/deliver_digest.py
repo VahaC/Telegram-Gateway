@@ -50,6 +50,31 @@ def checked_gateway_url(value):
     return value.rstrip("/")
 
 
+def load_client_config(path):
+    """Read private literal key=value entries without shell evaluation or secret output."""
+    allowed = {"GATEWAY_URL", "API_KEY", "CF_ACCESS_CLIENT_ID", "CF_ACCESS_CLIENT_SECRET"}
+    try:
+        values = {}
+        for line in path.read_text(encoding="utf-8-sig").splitlines():
+            if not line.strip() or line.lstrip().startswith("#"):
+                continue
+            name, separator, value = line.partition("=")
+            if not separator or name not in allowed or name in values or not value:
+                raise WorkflowError("Client configuration must contain unique, non-empty supported entries.")
+            values[name] = value
+    except (OSError, UnicodeError):
+        raise WorkflowError("Private client configuration cannot be read.") from None
+    if not values.get("GATEWAY_URL") or not values.get("API_KEY") or len(values["API_KEY"]) < 32:
+        raise WorkflowError("Client configuration requires GATEWAY_URL and an API_KEY of at least 32 characters.")
+    checked_gateway_url(values["GATEWAY_URL"])
+    if bool(values.get("CF_ACCESS_CLIENT_ID")) != bool(values.get("CF_ACCESS_CLIENT_SECRET")):
+        raise WorkflowError("Both Cloudflare Access service-token values must be configured together.")
+    # Never attach service-token values inherited from another gateway's environment.
+    for name in allowed:
+        os.environ.pop(name, None)
+    os.environ.update(values)
+
+
 def generate_payload(day, prompt, model, key, request=json_request):
     response = request("https://api.openai.com/v1/responses", {"Authorization": f"Bearer {key}"}, {
         "model": model, "store": False, "tools": [{"type": "web_search"}],
@@ -112,7 +137,10 @@ def main():
     parser.add_argument("--prompt", type=Path, help="Personal research instructions; required with --generate")
     parser.add_argument("--state-dir", type=Path, default=Path("Data/workflow"))
     parser.add_argument("--date", help="Digest date, default today in Europe/Kyiv")
+    parser.add_argument("--config", type=Path, help="Private literal client configuration; secrets stay out of command arguments")
     arguments = parser.parse_args()
+    if arguments.config:
+        load_client_config(arguments.config)
     base_url = checked_gateway_url(os.environ.get("GATEWAY_URL", ""))
     api_key = os.environ.get("API_KEY", "")
     if not api_key:

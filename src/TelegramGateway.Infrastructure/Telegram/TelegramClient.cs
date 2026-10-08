@@ -16,8 +16,9 @@ internal sealed class TelegramClient(IHttpClientFactory clients, IOptions<Gatewa
         try
         {
             var settings = options.Value;
+            // The token's colon otherwise makes the first segment look like an absolute URI scheme.
             using var response = await clients.CreateClient(HttpClientName).PostAsJsonAsync(
-                $"bot{settings.BotToken}/sendMessage",
+                $"./bot{settings.BotToken}/sendMessage",
                 new TelegramSendRequest(settings.ChatId, html, "HTML", disableNotification), cancellationToken);
             if ((int)response.StatusCode >= 500)
                 return new(TelegramSendStatus.Retryable, ErrorCode: "telegram_server_error");

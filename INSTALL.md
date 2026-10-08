@@ -95,6 +95,13 @@ does not establish delivery. No real bot or scheduled task is configured in this
 
 ## 7. Backup and uncertain outcomes
 
+If a setup test failed with `process_interrupted` on an older build, update the source and
+rebuild the image: the Telegram URL now explicitly resolves relative to its HTTPS base address.
+The previous code could interpret the token's colon as an unsupported URI scheme before sending.
+Keep the data volume and `.env`. Do not clear `requiresReview` or delete the delivery ledger.
+Check the chat first; if the test is absent, submit a new setup test with a new key after updating.
+New worker logs include only the exception type for unexpected failures, never its message or URL.
+
 Back up the stopped data volume or use SQLite's online backup. Preserve ownership/mode and
 include the WAL for a filesystem snapshot. Do not casually delete delivery rows: that removes
 their idempotency protection.

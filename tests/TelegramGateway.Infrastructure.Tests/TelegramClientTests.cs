@@ -10,6 +10,25 @@ namespace TelegramGateway.Infrastructure.Tests;
 
 public sealed class TelegramClientTests
 {
+    [Theory]
+    [InlineData("123456:test-token-not-real")]
+    [InlineData("9876543210:another-test-token")]
+    public async Task Send_token_colon_stays_in_https_path_and_delivery_is_recorded(string token)
+    {
+        //Arrange
+        await using var factory = new GatewayApiFactory();
+        factory.Settings["TELEGRAM_BOT_TOKEN"] = token;
+        factory.TelegramHttp.ArmSuccess();
+        await factory.SendAsync(HttpMethod.Post, "/api/messages", new MessageRequest("URI regression test"));
+        //Act
+        await factory.ProcessOnceAsync();
+        //Assert
+        var request = Assert.Single(factory.TelegramHttp.Requests);
+        Assert.Equal($"https://api.telegram.org/bot{token}/sendMessage", request.RequestUri.AbsoluteUri);
+        await factory.WithDbAsync(async database => Assert.Equal(DeliveryStatus.Delivered,
+            (await database.Deliveries.SingleAsync(TestContext.Current.CancellationToken)).Status));
+    }
+
     [Fact]
     public async Task Send_name_resolution_failure_can_retry_before_sending()
     {

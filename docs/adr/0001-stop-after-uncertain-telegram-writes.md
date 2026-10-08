@@ -58,3 +58,13 @@ contract, including potentially side-effecting upstream 5xx responses.
 `PersistenceHttpTests.Restart_pending_digest_is_resumed_and_inflight_attempt_requires_review`
 pin this behavior. Container smoke separately verifies the persistent ledger after an actual
 container restart without reaching Telegram.
+
+## Setup-send correction (development)
+
+A bot token contains a colon. An unprefixed `bot{token}/sendMessage` string was parsed as an
+absolute URI with a `bot<number>` scheme, rejected by the real HTTP handler before sending.
+The adapter now prefixes the relative path with `./`; the resolved destination is HTTPS.
+`TelegramClientTests.Send_token_colon_stays_in_https_path_and_delivery_is_recorded` pins the
+actual outbound URI, and container smoke exercises the real handler on a network without egress.
+Unexpected worker failures log only their exception type. Existing uncertain rows are preserved;
+the URL correction does not authorize automatic replay of historical attempts.

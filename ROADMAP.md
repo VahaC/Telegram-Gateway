@@ -3,6 +3,9 @@
 The local implementation and mocked delivery checks are available. Production acceptance is
 pending the installation-specific checks below; no release version has been selected.
 
+The setup-send URL defect has been reproduced and corrected locally. Rebuild the deployed image
+and confirm real delivery before treating the installation as accepted.
+
 - Configure the real private bot/chat and verify a message plus a long Ukrainian digest.
 - Deploy through the actual Portainer and HTTPS proxy/tunnel installation.
 - Verify a scheduled external researcher run through to the actual Telegram chat.

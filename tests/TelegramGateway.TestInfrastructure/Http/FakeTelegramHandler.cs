@@ -16,7 +16,7 @@ public sealed class FakeTelegramHandler : HttpMessageHandler
         using var body = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
         var root = body.RootElement;
         Requests.Enqueue(new(root.GetProperty("chat_id").GetString()!, root.GetProperty("text").GetString()!,
-            root.GetProperty("parse_mode").GetString()!, root.GetProperty("disable_notification").GetBoolean()));
+            root.GetProperty("parse_mode").GetString()!, root.GetProperty("disable_notification").GetBoolean(), request.RequestUri!));
         var number = Interlocked.Increment(ref requestCount);
         return ResponseFactory?.Invoke(number) ?? Json(HttpStatusCode.ServiceUnavailable, "{\"ok\":false,\"error_code\":503}");
     }

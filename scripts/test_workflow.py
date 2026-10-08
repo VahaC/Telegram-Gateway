@@ -1,10 +1,38 @@
+import os
 import tempfile
 import unittest
 from pathlib import Path
-from deliver_digest import WorkflowError, cache_payload, checked_gateway_url, deliver_payload, generate_payload
+from unittest import mock
+from deliver_digest import WorkflowError, cache_payload, checked_gateway_url, deliver_payload, generate_payload, load_client_config
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_private_config_selects_gateway_credentials(self):
+        with tempfile.TemporaryDirectory() as directory, mock.patch.dict(os.environ,
+                {"CF_ACCESS_CLIENT_ID": "stale-id", "CF_ACCESS_CLIENT_SECRET": "stale-secret"}, clear=True):
+            path = Path(directory) / "client.env"
+            path.write_text("GATEWAY_URL=https://gateway.example\nAPI_KEY=" + "a" * 64 + "\n", encoding="utf-8")
+            load_client_config(path)
+            self.assertEqual("https://gateway.example", os.environ["GATEWAY_URL"])
+            self.assertEqual("a" * 64, os.environ["API_KEY"])
+            self.assertNotIn("CF_ACCESS_CLIENT_ID", os.environ)
+            self.assertNotIn("CF_ACCESS_CLIENT_SECRET", os.environ)
+
+    def test_invalid_private_config_does_not_expose_secrets(self):
+        for content in [
+            "GATEWAY_URL=http://public.example\nAPI_KEY=" + "b" * 64,
+            "GATEWAY_URL=https://gateway.example\nAPI_KEY=private-short-secret",
+            "GATEWAY_URL=https://gateway.example\nAPI_KEY=" + "b" * 64 + "\nTELEGRAM_BOT_TOKEN=private-bot-token",
+            "GATEWAY_URL=https://gateway.example\nAPI_KEY=" + "b" * 64 + "\nAPI_KEY=duplicate-secret",
+            "GATEWAY_URL=https://gateway.example\nAPI_KEY=" + "b" * 64 + "\nCF_ACCESS_CLIENT_ID=private-unpaired-id",
+        ]:
+            with self.subTest(entry=content.splitlines()[-1].split("=")[0]), tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / "client.env"
+                path.write_text(content, encoding="utf-8")
+                with self.assertRaises(WorkflowError) as raised:
+                    load_client_config(path)
+                self.assertNotIn("private-", str(raised.exception))
+
     def test_submission_polls_until_delivery_without_reposting(self):
         requests = []
 

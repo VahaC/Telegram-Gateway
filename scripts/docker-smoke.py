@@ -48,6 +48,16 @@ def main():
         accepted_status, accepted = request("/api/messages", payload)
         assert accepted_status == 202
         assert request("/api/deliveries/" + accepted["id"], authenticated=False)[0] == 401
+        # Exercise the real HTTP handler before restart: an invalid URI must not hide behind readiness.
+        for _ in range(45):
+            _, outcome = request("/api/deliveries/" + accepted["id"])
+            if outcome["status"] == "Failed":
+                break
+            time.sleep(1)
+        else:
+            raise AssertionError("The isolated send did not reach a recorded transport failure.")
+        assert outcome["errorCode"] in {"telegram_connection_failed", "telegram_outcome_unknown"}, outcome["errorCode"]
+        assert outcome["attempts"] and all(attempt["errorCode"] != "process_interrupted" for attempt in outcome["attempts"])
         # Recreate the process/container on the same volume. No outbound sends are possible.
         run(compose + ["restart", "gateway"])
         for _ in range(30):
@@ -61,7 +71,7 @@ def main():
         assert status == 200 and persisted["id"] == accepted["id"]
         assert persisted["idempotencyKey"] == "container-smoke"
         assert request("/api/messages", {**payload, "text": "Changed payload"})[0] == 409
-        print("Docker smoke passed: healthy non-root Compose service, no host ports, authentication, persistent ledger after container restart.")
+        print("Docker smoke passed: healthy non-root Compose service, no host ports, authentication, real HTTP handler transport failure, persistent ledger after container restart.")
         print("Telegram delivery was blocked by the isolated network; no real send was performed.")
     finally:
         run(compose + ["down", "--volumes", "--remove-orphans"])

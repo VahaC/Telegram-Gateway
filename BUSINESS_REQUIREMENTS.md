@@ -11,6 +11,8 @@ Development implementation, based on the supplied Telegram News Delivery Gateway
 - Expose shared delivery services through HTTP and optional official-SDK MCP tools.
 - Supply a supported external scheduled workflow and document separate ChatGPT platform setup.
 - Prove behaviors using real HTTP/SQLite with mocked Telegram and isolated container lifecycle.
+- Verify the resolved Telegram HTTPS destination and the real container HTTP handler's failure
+  path; readiness and a mocked response alone do not establish a valid send destination.
 
 Runtime credentials and third-party registration are installation prerequisites, not generated
 by this change. Exactly-once Telegram semantics are outside the provider API contract (ADR 0001).
