@@ -44,7 +44,7 @@ message acceptance by Telegram.
 `FloodControlHttpTests` stops and restarts the application over the same actual SQLite path,
 then proves the persisted 429 deadline blocks another delivery until the injected clock advances.
 
-The gateway has no browser UI, so browser layout validation is not applicable. Deployment
+The gateway has an optional OAuth consent form. Deployment
 guides describe installation procedures; automated checks do not verify a particular live
 proxy, management interface or caller configuration.
 
@@ -59,6 +59,42 @@ Two outbound-URI regression cases failed against the original adapter, then pass
 passed. Unexpected worker failures now log the exception type without message/URL disclosure.
 Installation verification must include an actual Telegram success check. The correction
 preserves existing uncertain rows and does not automatically replay them.
+
+## OAuth implementation checks
+
+- Release build and 86 .NET tests passed: Core 5, Infrastructure 20, API 61.
+- A browser regression test reproduced a blocked OAuth POST redirect under `form-action 'self'`.
+  The HTTP regression failed with the original header and passed after permitting only the
+  requested, validated callback path. It also verifies code exchange with `openid`,
+  `offline_access` and `telegram:send`.
+- A local Vivaldi/Chromium check used the real gateway, a loopback proxy and fake credentials.
+  Consent returned 302, the browser navigated to the registered test callback and code exchange
+  returned 200. The intentionally closed callback destination was not a live client service;
+  this verifies browser redirect behavior, not a completed production-client connection.
+- OAuth tests cover metadata and issuer identification, owner consent, antiforgery, exact
+  redirects, PKCE S256, code exchange/replay rejection, refresh rotation, token revocation,
+  expiration, issuer/audience/scope rejection, persistent keys across restart and API-key rotation.
+- An official MCP SDK client can discover tools and queue a digest using an OAuth bearer token
+  through the application HTTP pipeline with fake Telegram credentials.
+- Isolated Docker smoke passed with a non-root/read-only container: discovery, consent, PKCE,
+  token exchange, MCP initialization and bearer access after container restart. Outbound
+  Telegram access was blocked by the internal test network.
+- Client-account registration and real proxy/Telegram verification remain installation checks.
+
+## MCP delivery status checks
+
+- Release build passed with zero warnings/errors. The full 92-test .NET suite passed:
+  Core 5, Infrastructure 20, API 67.
+- The new MCP status tests first failed against the previous implementation because
+  `get_delivery_status` was absent, then passed with the UUID lookup tool.
+- Official SDK clients exercise the real application HTTP pipeline, authentication,
+  serialization and SQLite. Message and digest submissions transition from Pending to
+  Delivered, with recorded Telegram IDs and attempts. Rejection and uncertain outcomes
+  preserve safe error codes and review flags; status queries produce no additional sends.
+- Unknown UUIDs return no metadata; malformed UUIDs produce tool errors; unauthenticated
+  calls are rejected. OAuth bearer clients can discover and call the UUID lookup too.
+- Telegram transport is faked in these tests. Production deployment, client tool refresh
+  and actual Telegram receipt require installation verification.
 
 ## Installation verification
 

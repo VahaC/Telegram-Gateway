@@ -10,13 +10,23 @@ namespace TelegramGateway.Api.Mcp;
 public sealed class GatewayTools(IServiceScopeFactory scopes)
 {
     [McpServerTool(Name = "send_telegram_message", ReadOnly = false, Destructive = false, Idempotent = false, OpenWorld = true)]
-    [Description("Queue a notification to the configured private chat. Use a stable idempotency key to avoid duplicate submissions. Acceptance is not proof of Telegram delivery.")]
+    [Description("Queue a notification to the configured private chat. Use a stable idempotency key to avoid duplicate submissions. Acceptance is not proof of Telegram delivery. Poll get_delivery_status with the returned Delivery.Id to confirm Delivered.")]
     public async Task<SubmitResult> SendMessageAsync(string text, string idempotencyKey, string format = "plain",
         bool disableNotification = false, CancellationToken cancellationToken = default)
     {
         using var scope = scopes.CreateScope();
         return await scope.ServiceProvider.GetRequiredService<DeliveryService>()
             .SubmitMessageAsync(new(text, format, disableNotification, idempotencyKey), cancellationToken);
+    }
+
+    [McpServerTool(Name = "get_delivery_status", ReadOnly = true, Destructive = false, Idempotent = true, OpenWorld = false)]
+    [Description("Read delivery metadata for any notification or digest using the returned Delivery.Id. Does not send or retry messages. Delivered confirms recorded Telegram message IDs; Pending or Sending is not delivery confirmation. RequiresReview needs chat inspection. An empty result means no delivery exists for this ID.")]
+    public async Task<DeliveryResponse?> GetDeliveryStatusAsync(
+        [Description("The delivery UUID returned as Delivery.Id by a submission tool.")] Guid id,
+        CancellationToken cancellationToken = default)
+    {
+        using var scope = scopes.CreateScope();
+        return await scope.ServiceProvider.GetRequiredService<DeliveryService>().GetAsync(id, cancellationToken);
     }
 
     [McpServerTool(Name = "send_technology_digest", ReadOnly = false, Destructive = false, Idempotent = true, OpenWorld = true)]

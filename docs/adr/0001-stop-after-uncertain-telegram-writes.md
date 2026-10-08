@@ -71,4 +71,8 @@ the URL correction does not authorize automatic replay of historical attempts.
 
 MCP clients follow the same rule: reuse the daily key and content on a retry, and confirm
 Delivered rather than accepting queue submission as completed delivery.
+`get_delivery_status` adapts the existing delivery service's UUID lookup for notifications
+and digests; the digest-date lookup remains available. Neither status query mutates the ledger
+or retries Telegram writes. HTTP/MCP tests verify pending-to-delivered transitions and
+failed/uncertain outcomes without additional outbound requests.
 Private client-file configuration changes how credentials are supplied, not delivery semantics.

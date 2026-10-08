@@ -11,6 +11,11 @@ services:
       TELEGRAMGATEWAY_Gateway__AllowedHosts__1: ${GATEWAY_HOST:-gateway.example.invalid}
       TELEGRAMGATEWAY_Gateway__KnownProxies__0: ${TRUSTED_PROXY_IP:-}
       TELEGRAMGATEWAY_Gateway__EnableMcp: ${ENABLE_MCP:-false}
+      TELEGRAMGATEWAY_McpOAuth__Enabled: ${ENABLE_MCP_OAUTH:-false}
+      TELEGRAMGATEWAY_McpOAuth__PublicUrl: ${MCP_PUBLIC_URL:-}
+      TELEGRAMGATEWAY_McpOAuth__ClientId: ${MCP_OAUTH_CLIENT_ID:-telegram-gateway}
+      OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET:-}
+      TELEGRAMGATEWAY_McpOAuth__RedirectUris__0: ${MCP_OAUTH_REDIRECT_URI:-}
       TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: ${REQUEST_LIMIT_PER_MINUTE:-30}
     # No host port is published. Attach your reverse proxy to this network.
     expose:

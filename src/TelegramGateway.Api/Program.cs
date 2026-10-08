@@ -9,6 +9,10 @@ using TelegramGateway.Api.Services.Delivery;
 using TelegramGateway.Core.Options;
 using TelegramGateway.Core.Security;
 using TelegramGateway.Infrastructure.Persistence;
+using TelegramGateway.Api.Auth;
+using Microsoft.AspNetCore.Authentication;
+using OpenIddict.Abstractions;
+using OpenIddict.Validation.AspNetCore;
 
 namespace TelegramGateway.Api;
 
@@ -26,6 +30,7 @@ public class Program
         builder.Logging.AddFilter("Microsoft.AspNetCore", LogLevel.Warning);
         builder.Logging.AddFilter("Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware", LogLevel.None);
         builder.Logging.AddFilter("ModelContextProtocol", LogLevel.Warning);
+        builder.Logging.AddFilter("OpenIddict", LogLevel.None); // Protocol logs may contain token or authorization-code values.
         builder.Services.ConfigureHttpJsonOptions(options =>
         {
             options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -36,6 +41,7 @@ public class Program
         builder.Services.Configure<RouteHandlerOptions>(options => options.ThrowOnBadRequest = true);
         var application = builder.Build();
         var settings = application.Services.GetRequiredService<IOptions<GatewayOptions>>().Value;
+        var oauth = application.Services.GetRequiredService<IOptions<McpOAuthOptions>>().Value;
         Directory.CreateDirectory(settings.DataPath);
         if (!OperatingSystem.IsWindows()) File.SetUnixFileMode(settings.DataPath, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute);
         // A single process owns crash recovery and chat ordering; multiple replicas must fail closed.
@@ -47,6 +53,7 @@ public class Program
             await database.Database.MigrateAsync();
             await scope.ServiceProvider.GetRequiredService<DeliveryReconciler>().ReconcileAsync(CancellationToken.None);
         }
+        await application.Services.InitializeMcpOAuthAsync(settings);
         if (settings.KnownProxies.Length > 0) application.UseForwardedHeaders();
         application.UseExceptionHandler(handler => handler.Run(async context =>
         {
@@ -84,6 +91,37 @@ public class Program
         application.UseRateLimiter();
         application.Use(async (context, next) =>
         {
+            if (!oauth.Enabled && McpOAuthEndpoints.IsPublicPath(context.Request.Path))
+            {
+                await ApiErrors.Error(401, "Authentication required.").ExecuteAsync(context);
+                return;
+            }
+            await next(context);
+        });
+        application.UseAuthentication();
+        application.Use(async (context, next) =>
+        {
+            if (oauth.Enabled && McpOAuthEndpoints.IsPublicPath(context.Request.Path))
+            {
+                await next(context);
+                return;
+            }
+            if (oauth.Enabled && context.Request.Path.StartsWithSegments("/mcp") && !context.Request.Headers.ContainsKey("X-Api-Key"))
+            {
+                var authentication = await context.AuthenticateAsync(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+                var principal = authentication.Principal;
+                if (!authentication.Succeeded || principal is null || !principal.HasScope(McpOAuthOptions.Scope)
+                    || principal.GetClaim(OpenIddictConstants.Claims.Subject) != "gateway-owner"
+                    || principal.GetClaim("credential_version") != McpOAuthEndpoints.CredentialVersion(settings.ApiKey))
+                {
+                    context.Response.Headers.WWWAuthenticate = $"Bearer resource_metadata=\"{oauth.Issuer}.well-known/oauth-protected-resource\", scope=\"{McpOAuthOptions.Scope}\"";
+                    await ApiErrors.Error(401, "Authentication required.").ExecuteAsync(context);
+                    return;
+                }
+                context.User = principal;
+                await next(context);
+                return;
+            }
             if (context.Request.Path is not { Value: "/api/health" or "/api/ready" }
                 && (!context.Request.Headers.TryGetValue("X-Api-Key", out var credential) || credential.Count != 1
                     || credential[0] is not { Length: <= 256 } supplied || !ApiKeyComparison.Matches(supplied, settings.ApiKey)))
@@ -94,6 +132,7 @@ public class Program
             await next(context);
         });
         application.MapGatewayEndpoints();
+        if (oauth.Enabled) application.MapMcpOAuth(oauth);
         if (settings.EnableMcp) application.MapMcp("/mcp");
         await application.RunAsync();
     }

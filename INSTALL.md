@@ -92,8 +92,19 @@ messages. Restart the container and confirm IDs/status persist.
 Configure the calling agent, application or script using
 [docs/integrations.md](docs/integrations.md). Verify that it can supply X-Api-Key, submit
 content and read delivery status. For MCP, enable ENABLE_MCP and check tool discovery through
-the secured endpoint. A 202 response or successful tool call alone does not establish delivery.
+the secured endpoint. Refresh client tool discovery after upgrading. Verify `get_delivery_status`
+using the `Delivery.Id` returned by either submission tool; the date lookup only covers digests.
+A 202 response or successful submission tool call alone does not establish delivery.
 If the caller sends recurring notifications, verify its scheduling separately.
+
+For OAuth-capable MCP clients, configure the optional flow described in
+[OAuth integration](docs/integrations.md#oauth-for-mcp). Set the actual trusted proxy IP so
+forwarded HTTPS is recognized; do not disable transport-security validation. Register the
+exact client callback and provide its client ID/secret privately. Include OAuth records and
+`.secrets` when backing up the data volume.
+
+After owner consent, the browser should return to the client. A `form-action` policy violation
+means the deployed image lacks the callback CSP correction; rebuild from current source.
 
 ## 7. Backup and uncertain outcomes
 

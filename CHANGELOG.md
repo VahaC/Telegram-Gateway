@@ -2,6 +2,13 @@
 
 ## Development — 2026-10-08
 
+- Added read-only MCP `get_delivery_status` for any notification or digest UUID, with shared
+  delivery metadata and submission-tool guidance to verify delivery after acceptance.
+- Fixed browser OAuth completion: the consent form's CSP permits the validated callback,
+  allowing its POST response to redirect to the client without relaxing script restrictions.
+- Added optional single-owner MCP OAuth using OpenIddict: HTTPS consent, PKCE S256, discovery,
+  exact callbacks, scoped bearer tokens, rotating refresh tokens and persistent keys/records.
+- Added end-to-end OAuth/MCP tests and isolated Docker authorization checks.
 - Added optional private client-file configuration for JSON submissions, keeping API keys out
   of command arguments.
 - Generalized documentation around Telegram notifications from AI agents and other systems,

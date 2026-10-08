@@ -100,7 +100,7 @@ required configuration. Generate an API key with `openssl rand -hex 32`.
 
 ## HTTP API
 
-Use `X-Api-Key` on every route except `/api/health` and `/api/ready`. Unknown JSON fields
+Use `X-Api-Key` on HTTP API routes except `/api/health` and `/api/ready`. Unknown JSON fields
 (including destination `chatId`) are rejected. Status routes return metadata only.
 
 | Method | Route | Behavior |
@@ -139,12 +139,15 @@ override the UTF-8 byte limit: Ukrainian text can reach the byte limit sooner.
 ## Client integrations
 
 AI agents and other systems can use the authenticated HTTP endpoints directly. MCP clients
-can use `send_telegram_message`, `send_technology_digest`, and `get_digest_delivery_status`
+can use `send_telegram_message`, `send_technology_digest`, `get_delivery_status`, and `get_digest_delivery_status`
 after enabling `/mcp` and supplying `X-Api-Key` on every request.
+After any submission, poll `get_delivery_status` with the returned `Delivery.Id` to confirm
+`Delivered`. The date-based tool applies only to dated digests, not ordinary messages.
 
-The current authentication mechanism is a static API key. Clients that require OAuth need an
-additional compatible authorization implementation; OAuth discovery and token validation are
-not implemented. Check the client's transport and authentication requirements before connecting.
+OAuth clients can instead use the optional authorization-code flow with PKCE S256. Configure
+the public origin, exact callback URI and separate client secret. The owner enters the gateway
+API key only in the gateway's HTTPS consent form. Tokens are restricted by issuer, audience,
+lifetime and scope. See [OAuth configuration](docs/integrations.md#oauth-for-mcp).
 
 The gateway queues and delivers submitted content. A calling system owns content preparation,
 event triggers and scheduling. See [docs/integrations.md](docs/integrations.md) for the HTTP
@@ -161,7 +164,10 @@ and MCP contracts, optional client helper, and delivery verification.
 - Protect .env and Docker/Portainer administration. Docker administrators can read container
   environment values. API keys are single-user credentials, not per-user authorization.
 - The private data volume retains message HTML **without content encryption**. Restrict host
-  access, encrypt the disk/backups as needed, and never share DB files. Credentials are not in DB.
+  access, encrypt the disk/backups as needed, and never share DB files. The delivery DB contains
+  no bot token or raw API key; OAuth records and private key files are also sensitive backup data.
+- Optional MCP OAuth uses owner consent, exact HTTPS callbacks and PKCE S256. See
+  [ADR 0002](docs/adr/0002-single-owner-mcp-oauth.md).
 - Cloudflare Access or equivalent network controls are recommended as an additional layer.
 - Back up the stopped volume or use SQLite's online backup, rather than copying only a live
   DB file while ignoring its WAL. Deleting ledger rows also removes idempotency protection.
@@ -220,7 +226,8 @@ dotnet ef migrations add Name --project src/TelegramGateway.Api \
 | Outcome unknown / interrupted | Inspect chat before replay; see ADR 0001 |
 | Gateway 429 | Wait; configure the exact trusted proxy if distinct client IPs are needed |
 | Data permission error | Fix volume ownership for image user app; do not run the app as root |
-| Client cannot connect | Verify HTTPS, the enabled interface and support for X-Api-Key; OAuth-only clients require additional authorization support |
+| Client cannot connect | Verify HTTPS, interface and authentication; OAuth requires the configured client ID/secret and exact callback |
+| OAuth form stays open after consent | Check for a browser `form-action` violation; rebuild with the callback CSP correction |
 
 Test results and installation verification steps are in [docs/validation.md](docs/validation.md).
 

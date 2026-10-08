@@ -11,6 +11,9 @@ The gateway provides authenticated Telegram notification delivery for external c
 - Use lightweight local storage, non-root Docker and a persistent volume without public ports.
 - Expose shared delivery services through HTTP and optional official-SDK MCP tools.
 - Document client authentication, submission, status polling and MCP tool discovery.
+- Allow MCP callers to verify any submitted notification or digest by its delivery UUID,
+  with no resend or retry side effects from status queries.
+- Support optional owner-authorized OAuth for MCP clients without custom API-key headers.
 - Prove behaviors using real HTTP/SQLite with mocked Telegram and isolated container lifecycle.
 - Verify the resolved Telegram HTTPS destination and the real container HTTP handler's failure
   path; readiness and a mocked response alone do not establish a valid send destination.

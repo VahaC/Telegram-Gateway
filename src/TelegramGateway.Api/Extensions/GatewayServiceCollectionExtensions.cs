@@ -39,6 +39,7 @@ public static class GatewayServiceCollectionExtensions
             .Validate(options => options.AllowedHosts.Length > 0 && options.AllowedHosts.All(host => !string.IsNullOrWhiteSpace(host) && !host.Contains('*') && !host.Contains('/')), "Explicit allowed hostnames are required.")
             .ValidateOnStart();
         services.TryAddSingleton(TimeProvider.System);
+        services.AddMcpOAuth(configuration);
         services.AddGatewayInfrastructure();
         services.AddSingleton<IDeliveryMapper, DeliveryMapper>();
         services.AddSingleton<IValidator<MessageRequest>, MessageValidator>();

@@ -4,6 +4,7 @@ services:
     environment:
       TELEGRAMGATEWAY_Gateway__MaxAttempts: 1
       TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: 1000
+      TELEGRAMGATEWAY_Gateway__KnownProxies__1: "::1"
 networks:
   gateway:
     internal: true
