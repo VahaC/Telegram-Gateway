@@ -1,0 +1,21 @@
+[Unit]
+Description=Research and deliver a private technology digest
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=telegram-digest
+Group=telegram-digest
+WorkingDirectory=/opt/telegram-gateway
+EnvironmentFile=/etc/telegram-digest.env
+ExecStart=/usr/bin/python3 /opt/telegram-gateway/scripts/deliver_digest.py --generate --prompt /opt/telegram-gateway/examples/research-prompt.txt --state-dir /var/lib/telegram-digest
+StateDirectory=telegram-digest
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+TimeoutStartSec=15min
+

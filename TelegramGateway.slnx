@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TelegramGateway.Api/TelegramGateway.Api.csproj" />
+    <Project Path="src/TelegramGateway.Core/TelegramGateway.Core.csproj" />
+    <Project Path="src/TelegramGateway.Infrastructure/TelegramGateway.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TelegramGateway.Api.Tests/TelegramGateway.Api.Tests.csproj" />
+    <Project Path="tests/TelegramGateway.Core.Tests/TelegramGateway.Core.Tests.csproj" />
+    <Project Path="tests/TelegramGateway.Infrastructure.Tests/TelegramGateway.Infrastructure.Tests.csproj" />
+    <Project Path="tests/TelegramGateway.TestInfrastructure/TelegramGateway.TestInfrastructure.csproj" />
+  </Folder>
+</Solution>

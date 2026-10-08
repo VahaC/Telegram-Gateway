@@ -1,0 +1,34 @@
+services:
+  gateway:
+    image: telegram-gateway:local
+    restart: unless-stopped
+    init: true
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:?Set TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:?Set TELEGRAM_CHAT_ID}
+      API_KEY: ${API_KEY:?Set API_KEY}
+      TELEGRAMGATEWAY_Gateway__AllowedHosts__0: localhost
+      TELEGRAMGATEWAY_Gateway__AllowedHosts__1: ${GATEWAY_HOST:-gateway.example.invalid}
+      TELEGRAMGATEWAY_Gateway__KnownProxies__0: ${TRUSTED_PROXY_IP:-}
+      TELEGRAMGATEWAY_Gateway__EnableMcp: ${ENABLE_MCP:-false}
+      TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: ${REQUEST_LIMIT_PER_MINUTE:-30}
+    # No host port is published. Attach your reverse proxy to this network.
+    expose:
+      - "8080"
+    volumes:
+      - gateway-data:/app/Data
+    networks:
+      - gateway
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 40s
+volumes:
+  gateway-data:
+networks:
+  gateway:
+    name: ${GATEWAY_NETWORK:-telegram-gateway}

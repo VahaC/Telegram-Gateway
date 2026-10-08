@@ -1,0 +1,9 @@
+# Isolated smoke stack. Its internal network blocks all outbound Telegram calls.
+services:
+  gateway:
+    environment:
+      TELEGRAMGATEWAY_Gateway__MaxAttempts: 1
+      TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: 1000
+networks:
+  gateway:
+    internal: true

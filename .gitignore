@@ -55,3 +55,18 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Local IDE state, private payloads, and runtime data
+.vs/
+.idea/
+.scratch/
+Data/
+*.db
+*.db-shm
+*.db-wal
+.secrets/
+*.pfx
+appsettings.Production.json
+__pycache__/
+*.pyc
+/.vs

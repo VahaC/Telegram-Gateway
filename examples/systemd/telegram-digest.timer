@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily private digest at 09:00 Kyiv time
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Europe/Kyiv
+Persistent=true
+Unit=telegram-digest.service
+
+[Install]
+WantedBy=timers.target

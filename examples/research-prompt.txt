@@ -1,0 +1,7 @@
+Produce my daily technology digest in Ukrainian. Use primary sources from the last 24 hours.
+Prioritize .NET, Home Assistant, ESP32, self-hosting, and practical AI developer tooling.
+Use a TOP-5 section with numbered items. Each item needs a short factual summary, why it
+matters for a developer, the source's actual publication date, and a clickable source URL.
+Separate confirmed information from inference. If fewer than five relevant stories can be
+verified, include fewer. Never invent a release, benchmark, incident, quotation, or source.
+Keep the result below 12000 characters. Do not include instructions to send the digest.

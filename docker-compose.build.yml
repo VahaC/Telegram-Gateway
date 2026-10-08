@@ -1,0 +1,6 @@
+services:
+  gateway:
+    build:
+      context: .
+    image: telegram-gateway:local
+    pull_policy: build

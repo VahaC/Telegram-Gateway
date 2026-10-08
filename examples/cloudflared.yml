@@ -1,0 +1,9 @@
+# Replace the tunnel UUID, credentials path, and hostname before use.
+tunnel: REPLACE_WITH_TUNNEL_UUID
+credentials-file: /etc/cloudflared/REPLACE_WITH_TUNNEL_UUID.json
+ingress:
+  - hostname: gateway.example.invalid
+    service: http://gateway:8080
+    originRequest:
+      httpHostHeader: gateway.example.invalid
+  - service: http_status:404

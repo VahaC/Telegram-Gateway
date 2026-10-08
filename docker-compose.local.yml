@@ -1,0 +1,5 @@
+# Local testing only: loopback access. Do not expose this port on all interfaces.
+services:
+  gateway:
+    ports:
+      - "127.0.0.1:5080:8080"
