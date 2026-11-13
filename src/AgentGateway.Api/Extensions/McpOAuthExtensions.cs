@@ -56,7 +56,9 @@ public static class McpOAuthExtensions
             Directory.CreateDirectory(path);
             if (!OperatingSystem.IsWindows()) File.SetUnixFileMode(path, UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute);
             options.XmlRepository = new Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository(new DirectoryInfo(path), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
-            options.XmlEncryptor = new Microsoft.AspNetCore.DataProtection.XmlEncryption.CertificateXmlEncryptor(OAuthKeyMaterial.Load(gateway.Value.DataPath, time), Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
+            // Not the framework's CertificateXmlEncryptor: its decryptor searches the OS certificate store, so after a
+            // restart every key was unreadable ("Unable to retrieve the decryption key") and a new one was written.
+            options.XmlEncryptor = new CertificateFileXmlEncryptor(OAuthKeyMaterial.Load(gateway.Value.DataPath, time));
         });
         services.AddOpenIddict()
             .AddCore(options => options.UseEntityFrameworkCore().UseDbContext<OAuthDbContext>())

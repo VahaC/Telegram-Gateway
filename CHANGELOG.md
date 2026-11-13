@@ -2,6 +2,13 @@
 
 ## Development — 2026-11-13
 
+- Fixed the OAuth data-protection key ring being unreadable after every restart. Keys were
+  encrypted with `.secrets/oauth.pfx`, but the framework's decryptor looked the certificate up in
+  the OS certificate store, so each start logged "Unable to retrieve the decryption key", wrote a
+  new key and invalidated consent forms open during a restart. OAuth tokens were not affected.
+  A gateway-specific encryptor/decryptor pair now resolves the certificate from the data volume.
+  Keys written by older versions stay unreadable; move them out of
+  `.secrets/data-protection` (the gateway writes a fresh key on the next start).
 - Renamed TelegramGateway to AgentGateway: solution, projects, namespaces, assemblies, Docker image
   `agent-gateway:local` and docs. The Compose service, network default `telegram-gateway`, OAuth
   issuer/client ID/scope, `/mcp` and the SQLite files are unchanged.

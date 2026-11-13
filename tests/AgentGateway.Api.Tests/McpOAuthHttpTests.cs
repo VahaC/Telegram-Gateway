@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Web;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -276,6 +277,37 @@ public sealed class McpOAuthHttpTests
             rotatedClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", access);
             var rejected = await rotatedClient.PostAsJsonAsync("/mcp", new { jsonrpc = "2.0", id = 1, method = "tools/list" }, TestContext.Current.CancellationToken);
             Assert.Equal(HttpStatusCode.Unauthorized, rejected.StatusCode);
+        }
+        finally
+        {
+            Microsoft.Data.Sqlite.SqliteConnection.ClearAllPools();
+            if (!Path.GetFullPath(path).StartsWith(Path.GetFullPath(Path.GetTempPath()), StringComparison.OrdinalIgnoreCase)) throw new InvalidOperationException("Unexpected test path.");
+            if (Directory.Exists(path)) Directory.Delete(path, true);
+        }
+    }
+
+    [Fact]
+    public async Task Data_protection_keys_are_decrypted_after_restart_and_not_regenerated()
+    {
+        //Arrange
+        var path = Path.Combine(Path.GetTempPath(), "agent-gateway-dp-restart-" + Guid.NewGuid().ToString("N"));
+        var keys = Path.Combine(path, ".secrets", "data-protection");
+        try
+        {
+            string protectedValue;
+            await using (var first = CreateFactory(path))
+            {
+                protectedValue = first.Services.GetRequiredService<IDataProtectionProvider>().CreateProtector("restart-test").Protect("antiforgery-payload");
+            }
+            var keysBefore = Directory.GetFiles(keys, "key-*.xml");
+            //Act
+            await using var restarted = CreateFactory(path);
+            var unprotected = restarted.Services.GetRequiredService<IDataProtectionProvider>().CreateProtector("restart-test").Unprotect(protectedValue);
+            //Assert
+            Assert.Equal("antiforgery-payload", unprotected);
+            Assert.Single(keysBefore);
+            Assert.Equal(keysBefore, Directory.GetFiles(keys, "key-*.xml"));
+            Assert.Contains("EncryptedData", File.ReadAllText(keysBefore[0]), StringComparison.Ordinal);
         }
         finally
         {
