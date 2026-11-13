@@ -2,5 +2,5 @@ services:
   gateway:
     build:
       context: .
-    image: telegram-gateway:local
+    image: agent-gateway:local
     pull_policy: build

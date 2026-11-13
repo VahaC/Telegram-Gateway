@@ -1,0 +1,1195 @@
+{
+  "contractVersion": 1,
+  "date": "2026-11-14",
+  "title": "FIXTURE — not real news",
+  "language": "uk",
+  "intro": "Тестовий випуск із вигаданими новинами для перевірки шлюзу та теми. Нічого з цього не відбувалося.",
+  "items": [
+    {
+      "number": 1,
+      "category": "dotnet",
+      "isTop": true,
+      "importance": 5,
+      "title": "FIXTURE 01: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №1. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №1: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-01",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-01",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-01",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet",
+        "top"
+      ],
+      "releaseStatus": "stable",
+      "version": "1.0.1",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 1"
+      }
+    },
+    {
+      "number": 2,
+      "category": "homelab",
+      "isTop": true,
+      "importance": 5,
+      "title": "FIXTURE 02: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №2. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №2: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-02",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-02",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-homelab-item-02",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-homelab-item-02",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "homelab",
+        "top"
+      ],
+      "image": {
+        "url": "https://www.w3.org/Graphics/PNG/nurbcup2si.png",
+        "alt": "FIXTURE: test image for item 2"
+      }
+    },
+    {
+      "number": 3,
+      "category": "smarthome",
+      "isTop": true,
+      "importance": 5,
+      "title": "FIXTURE 03: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №3. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №3: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-03",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-03",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-03",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-smarthome-item-03",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-smarthome-item-03",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome",
+        "top"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "beta",
+      "version": "3.0.3",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 3"
+      }
+    },
+    {
+      "number": 4,
+      "category": "hardware",
+      "isTop": true,
+      "importance": 5,
+      "title": "FIXTURE 04: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №4. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №4: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-04",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-04",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "hardware",
+        "top"
+      ],
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 4"
+      }
+    },
+    {
+      "number": 5,
+      "category": "security",
+      "isTop": true,
+      "importance": 5,
+      "title": "FIXTURE 05: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №5. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №5: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-05",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-05",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-05",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security",
+        "top"
+      ],
+      "releaseStatus": "preview",
+      "version": "5.0.5",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 5"
+      }
+    },
+    {
+      "number": 6,
+      "category": "ai",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 06: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №6. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №6: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-06",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-06",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-ai-item-06",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-ai-item-06",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 6"
+      }
+    },
+    {
+      "number": 7,
+      "category": "dotnet",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 07: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №7. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №7: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-07",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-07",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-07",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-dotnet-item-07",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-dotnet-item-07",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet"
+      ],
+      "releaseStatus": "rc",
+      "version": "7.0.0",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/AgentGateway-fixture-broken-image.jpg",
+        "alt": "FIXTURE: deliberately broken image URL (expected image result: failed)"
+      }
+    },
+    {
+      "number": 8,
+      "category": "homelab",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 08: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №8. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №8: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-08",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-08",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "homelab"
+      ],
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 8"
+      }
+    },
+    {
+      "number": 9,
+      "category": "smarthome",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 09: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №9. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №9: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-09",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-09",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-09",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "rfc",
+      "version": "9.0.2"
+    },
+    {
+      "number": 10,
+      "category": "hardware",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 10: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №10. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №10: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-10",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-10",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-hardware-item-10",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-hardware-item-10",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "hardware"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 10"
+      }
+    },
+    {
+      "number": 11,
+      "category": "security",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 11: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №11. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №11: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-11",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-11",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-11",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-security-item-11",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-security-item-11",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security"
+      ],
+      "releaseStatus": "announced",
+      "version": "11.0.4",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 11"
+      }
+    },
+    {
+      "number": 12,
+      "category": "ai",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 12: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №12. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №12: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-12",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-12",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12",
+      "image": {
+        "url": "https://www.w3.org/Graphics/PNG/nurbcup2si.png",
+        "alt": "FIXTURE: test image for item 12"
+      }
+    },
+    {
+      "number": 13,
+      "category": "dotnet",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 13: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №13. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №13: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-13",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-13",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-13",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet"
+      ],
+      "releaseStatus": "research",
+      "version": "13.0.6",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 13"
+      }
+    },
+    {
+      "number": 14,
+      "category": "homelab",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 14: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №14. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №14: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-14",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-14",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-homelab-item-14",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-homelab-item-14",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "homelab"
+      ],
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 14"
+      }
+    },
+    {
+      "number": 15,
+      "category": "smarthome",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 15: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №15. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №15: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-15",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-15",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-15",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-smarthome-item-15",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-smarthome-item-15",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "incident",
+      "version": "15.0.1",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 15"
+      }
+    },
+    {
+      "number": 16,
+      "category": "hardware",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 16: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №16. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №16: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-16",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-16",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "hardware"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 16"
+      }
+    },
+    {
+      "number": 17,
+      "category": "security",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 17: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №17. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №17: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-17",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-17",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-17",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security"
+      ],
+      "releaseStatus": "other",
+      "version": "17.0.3",
+      "image": {
+        "url": "https://www.w3.org/Graphics/PNG/nurbcup2si.png",
+        "alt": "FIXTURE: test image for item 17"
+      }
+    },
+    {
+      "number": 18,
+      "category": "ai",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 18: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №18. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №18: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-18",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-18",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-ai-item-18",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-ai-item-18",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12"
+    },
+    {
+      "number": 19,
+      "category": "dotnet",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 19: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №19. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №19: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-19",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-19",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-19",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-dotnet-item-19",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-dotnet-item-19",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet"
+      ],
+      "releaseStatus": "stable",
+      "version": "19.0.5",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 19"
+      }
+    },
+    {
+      "number": 20,
+      "category": "homelab",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 20: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №20. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №20: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-20",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-20",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "homelab"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 20"
+      }
+    },
+    {
+      "number": 21,
+      "category": "smarthome",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 21: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №21. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №21: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-21",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-21",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-21",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "beta",
+      "version": "21.0.0",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 21"
+      }
+    },
+    {
+      "number": 22,
+      "category": "hardware",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 22: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №22. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №22: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-22",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-22",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-hardware-item-22",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-hardware-item-22",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "hardware"
+      ],
+      "image": {
+        "url": "https://www.w3.org/Graphics/PNG/nurbcup2si.png",
+        "alt": "FIXTURE: test image for item 22"
+      }
+    },
+    {
+      "number": 23,
+      "category": "security",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 23: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №23. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №23: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-23",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-23",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-23",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-security-item-23",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-security-item-23",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security"
+      ],
+      "releaseStatus": "preview",
+      "version": "23.0.2",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 23"
+      }
+    },
+    {
+      "number": 24,
+      "category": "ai",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 24: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №24. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №24: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-24",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-24",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 24"
+      }
+    },
+    {
+      "number": 25,
+      "category": "dotnet",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 25: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №25. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №25: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-25",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-25",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-25",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet"
+      ],
+      "releaseStatus": "rc",
+      "version": "25.0.4",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 25"
+      }
+    },
+    {
+      "number": 26,
+      "category": "homelab",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 26: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №26. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №26: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-26",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-26",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-homelab-item-26",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-homelab-item-26",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "homelab"
+      ],
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 26"
+      }
+    },
+    {
+      "number": 27,
+      "category": "smarthome",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 27: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №27. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №27: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-27",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-27",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-27",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-smarthome-item-27",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-smarthome-item-27",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "rfc",
+      "version": "27.0.6"
+    },
+    {
+      "number": 28,
+      "category": "hardware",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 28: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №28. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №28: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-28",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-28",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "hardware"
+      ],
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 28"
+      }
+    },
+    {
+      "number": 29,
+      "category": "security",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 29: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №29. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №29: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-29",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-29",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-29",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security"
+      ],
+      "releaseStatus": "announced",
+      "version": "29.0.1",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 29"
+      }
+    },
+    {
+      "number": 30,
+      "category": "ai",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 30: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №30. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №30: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-30",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-30",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-ai-item-30",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-ai-item-30",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 30"
+      }
+    },
+    {
+      "number": 31,
+      "category": "dotnet",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 31: тестова новина категорії dotnet",
+      "summary": "Це вигаданий текст тестової новини №31. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №31: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-dotnet-item-31",
+      "source": {
+        "url": "https://fixture.example/news/fixture-dotnet-item-31",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-dotnet-item-31",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-dotnet-item-31",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-dotnet-item-31",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "dotnet"
+      ],
+      "releaseStatus": "research",
+      "version": "31.0.3",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png",
+        "alt": "FIXTURE: test image for item 31"
+      }
+    },
+    {
+      "number": 32,
+      "category": "homelab",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 32: тестова новина категорії homelab",
+      "summary": "Це вигаданий текст тестової новини №32. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №32: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-homelab-item-32",
+      "source": {
+        "url": "https://fixture.example/news/fixture-homelab-item-32",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "homelab"
+      ],
+      "image": {
+        "url": "https://www.w3.org/Graphics/PNG/nurbcup2si.png",
+        "alt": "FIXTURE: test image for item 32"
+      }
+    },
+    {
+      "number": 33,
+      "category": "smarthome",
+      "isTop": false,
+      "importance": 2,
+      "title": "FIXTURE 33: тестова новина категорії smarthome",
+      "summary": "Це вигаданий текст тестової новини №33. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №33: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-smarthome-item-33",
+      "source": {
+        "url": "https://fixture.example/news/fixture-smarthome-item-33",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-smarthome-item-33",
+          "name": "Fixture Confirmation 1"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "smarthome"
+      ],
+      "eventOn": "2026-11-12",
+      "releaseStatus": "incident",
+      "version": "33.0.5",
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+A",
+        "alt": "FIXTURE: test image for item 33"
+      }
+    },
+    {
+      "number": 34,
+      "category": "hardware",
+      "isTop": false,
+      "importance": 3,
+      "title": "FIXTURE 34: тестова новина категорії hardware",
+      "summary": "Це вигаданий текст тестової новини №34. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №34: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-hardware-item-34",
+      "source": {
+        "url": "https://fixture.example/news/fixture-hardware-item-34",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-hardware-item-34",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-hardware-item-34",
+          "name": "Fixture Confirmation 2"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "hardware"
+      ],
+      "image": {
+        "url": "https://placehold.co/1200x630/png?text=Fixture+B",
+        "alt": "FIXTURE: test image for item 34"
+      }
+    },
+    {
+      "number": 35,
+      "category": "security",
+      "isTop": false,
+      "importance": 4,
+      "title": "FIXTURE 35: тестова новина категорії security",
+      "summary": "Це вигаданий текст тестової новини №35. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №35: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-security-item-35",
+      "source": {
+        "url": "https://fixture.example/news/fixture-security-item-35",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [
+        {
+          "url": "https://fixture-confirm1.example/fixture-security-item-35",
+          "name": "Fixture Confirmation 1"
+        },
+        {
+          "url": "https://fixture-confirm2.example/fixture-security-item-35",
+          "name": "Fixture Confirmation 2"
+        },
+        {
+          "url": "https://fixture-confirm3.example/fixture-security-item-35",
+          "name": "Fixture Confirmation 3"
+        }
+      ],
+      "tags": [
+        "fixture",
+        "security"
+      ],
+      "releaseStatus": "other",
+      "version": "35.0.0",
+      "image": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg",
+        "alt": "FIXTURE: test image for item 35"
+      }
+    },
+    {
+      "number": 36,
+      "category": "ai",
+      "isTop": false,
+      "importance": 1,
+      "title": "FIXTURE 36: тестова новина категорії ai",
+      "summary": "Це вигаданий текст тестової новини №36. Він потрібен лише для перевірки шлюзу і теми, а не описує реальну подію.\n\nДругий абзац показує, що розрив між абзацами зберігається.",
+      "whyItMatters": "Перевіряє публікацію новини №36: зображення, джерела, теги та порядок у дні.",
+      "publishedOn": "2026-11-13",
+      "eventKey": "fixture-ai-item-36",
+      "source": {
+        "url": "https://fixture.example/news/fixture-ai-item-36",
+        "name": "Fixture Example News"
+      },
+      "extraSources": [],
+      "tags": [
+        "fixture",
+        "ai"
+      ],
+      "eventOn": "2026-11-12"
+    }
+  ],
+  "releases": [
+    {
+      "name": "Fixture Release One",
+      "version": "1.2.3",
+      "date": "2026-11-13",
+      "url": "https://fixture.example/releases/fixture-release-one-1.2.3",
+      "note": "Вигаданий реліз для перевірки."
+    },
+    {
+      "name": "Fixture Release Two",
+      "version": "2026.11.0",
+      "date": "2026-11-12",
+      "url": "https://fixture.example/releases/fixture-release-two-2026.11.0",
+      "note": "Ще один вигаданий реліз."
+    }
+  ],
+  "securityAlerts": [
+    {
+      "id": "FIXTURE-CVE-0001",
+      "product": "Fixture Server",
+      "severity": "critical",
+      "cvss": 9.8,
+      "date": "2026-11-13",
+      "url": "https://fixture.example/security/fixture-cve-0001",
+      "note": "Вигадана вразливість для перевірки."
+    },
+    {
+      "id": "FIXTURE-CVE-0002",
+      "product": "Fixture Client",
+      "severity": "low",
+      "date": "2026-11-12",
+      "url": "https://fixture.example/security/fixture-cve-0002",
+      "note": "Без оцінки CVSS, щоб перевірити необов'язкове поле."
+    }
+  ],
+  "research": {
+    "mode": "fixture",
+    "searchPasses": 1,
+    "candidates": 36,
+    "duplicatesRemoved": 0,
+    "windowHours": 48
+  }
+}

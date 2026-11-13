@@ -1,10 +1,13 @@
-# Isolated smoke stack. Its internal network blocks all outbound Telegram calls.
+# Isolated smoke stack. Its internal network blocks all outbound Telegram and WordPress calls.
 services:
   gateway:
     environment:
+      # Old prefix on purpose: the smoke proves a TELEGRAMGATEWAY_ setting from an existing stack still applies.
       TELEGRAMGATEWAY_Gateway__MaxAttempts: 1
-      TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: 1000
-      TELEGRAMGATEWAY_Gateway__KnownProxies__1: "::1"
+      AGENTGATEWAY_Gateway__RequestLimitPerMinute: 1000
+      AGENTGATEWAY_Gateway__KnownProxies__1: "::1"
+      AGENTGATEWAY_News__MaxAttempts: 1
+      AGENTGATEWAY_News__CallIntervalMilliseconds: 0
 networks:
   gateway:
     internal: true

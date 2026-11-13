@@ -1,5 +1,27 @@
 # Development notes
 
+## AgentGateway and the news module
+
+TelegramGateway is now AgentGateway. Telegram works exactly as before, through the same
+hostname, `/mcp`, OAuth client and API key; ChatGPT needs no change. New: a Claude routine can
+submit the daily tech-news issue once; the gateway checks it, refuses items that were already
+published on an earlier day (and says which), publishes every news item as its own private post
+with the source's picture on vahac.com, and sends one Telegram line with the day page link.
+
+### Turning it on
+
+The news module is off by default.
+
+1. Read INSTALL.md §9 before redeploying: set `GATEWAY_VOLUME_NAME` (and, for plain Compose,
+   `COMPOSE_PROJECT_NAME`) to the existing names, back up the volume, build `agent-gateway:local`.
+2. Install the theme version with the news routes, create the `vahac_news_publisher` user and its
+   Application Password (INSTALL.md §8).
+3. Set `NEWS_ENABLED=true`, `NEWS_WORDPRESS_USER`, `WORDPRESS_APP_PASSWORD`; recreate the container.
+4. Run `bash scripts/check-news.sh`, look at the day page and the Telegram line, then
+   `bash scripts/check-news.sh --cleanup`.
+5. For the Claude routine: set the `MCP_OAUTH_CLIENT_1_*` variables and add the claude.ai custom
+   connector (docs/integrations.md, "claude.ai custom connector").
+
 AI agents, applications and scripts can submit notifications and structured digests through
 an authenticated HTTP API or optional MCP tools. Delivery metadata includes Telegram message
 IDs; retries of confirmed partial failures skip parts with recorded IDs.

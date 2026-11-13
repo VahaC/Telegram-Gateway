@@ -32,5 +32,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: docker version
-      - run: docker build -t telegram-gateway:local .
+      - run: docker build -t agent-gateway:local .
       - run: python3 scripts/docker-smoke.py

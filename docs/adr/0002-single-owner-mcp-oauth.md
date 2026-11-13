@@ -36,3 +36,21 @@ HTTP clients retain X-Api-Key authentication. MCP accepts either an API key or, 
 an OAuth bearer token. HTTP container deployments require a trusted HTTPS reverse proxy.
 Operators supply the preconfigured client ID and secret. Authorization does not provide
 content research, event triggers or scheduling.
+
+## Update: two scopes and several clients (AgentGateway)
+
+The gateway gained a news module, used by a Claude cloud routine through a claude.ai custom
+connector, while ChatGPT keeps sending Telegram messages. Both are OAuth clients of the same
+owner, but they need different powers.
+
+- Scopes: `telegram:send` (Telegram tools) and `news:publish` (news tools). Each MCP tool call is
+  checked against its scope; tools a token may not call are also hidden from its tool list. The
+  API key is the owner's credential and grants both.
+- Clients: `McpOAuth:Clients:{n}:ClientId|ClientSecret|RedirectUris|Scopes`. The original keys
+  (`McpOAuth:ClientId`, `OAUTH_CLIENT_SECRET`, `McpOAuth:RedirectUris`) remain client 0 with scope
+  `telegram:send`, so the ChatGPT registration, its stored tokens and its client ID are unchanged.
+  A client removed from configuration is deleted from `oauth.db` with its tokens at startup.
+- Discovery advertises both scopes. A client may ask for any of them; the authorization endpoint
+  grants only the requested scopes that the client is configured for (RFC 6749 §3.3 permits a
+  narrower grant), and the token exchange re-applies that limit, so a refresh cannot regain a
+  scope removed from the client's configuration.

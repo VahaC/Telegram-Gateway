@@ -16,14 +16,16 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def main():
-    project = "telegram-gateway-smoke-" + uuid.uuid4().hex[:8]
+    project = "agent-gateway-smoke-" + uuid.uuid4().hex[:8]
     environment = {**os.environ, "TELEGRAM_BOT_TOKEN": "123456:mock-token-not-real",
                    "TELEGRAM_CHAT_ID": "123456789", "API_KEY": "smoke-key-never-production-0123456789",
                    "GATEWAY_NETWORK": project, "GATEWAY_HOST": "gateway.example.invalid",
                    "TRUSTED_PROXY_IP": "127.0.0.1", "ENABLE_MCP": "true",
                    "ENABLE_MCP_OAUTH": "true", "MCP_PUBLIC_URL": "https://gateway.example.invalid",
                    "MCP_OAUTH_CLIENT_ID": "telegram-gateway", "MCP_OAUTH_REDIRECT_URI": "https://client.example/callback",
-                   "OAUTH_CLIENT_SECRET": "smoke-oauth-client-secret-never-production-0123456789"}
+                   "OAUTH_CLIENT_SECRET": "smoke-oauth-client-secret-never-production-0123456789",
+                   "NEWS_ENABLED": "true", "NEWS_WORDPRESS_BASE_URL": "https://wordpress.example.invalid",
+                   "NEWS_WORDPRESS_USER": "smoke-news", "WORDPRESS_APP_PASSWORD": "smoke-app-password-not-real"}
     compose = ["docker", "compose", "-p", project, "-f", "docker-compose.yml", "-f", "scripts/docker-compose.smoke.yml"]
 
     def run(arguments, input_text=None):
@@ -63,6 +65,8 @@ def main():
         assert configuration["Config"]["User"] != "root"
         assert not configuration["HostConfig"]["PortBindings"]
         assert configuration["State"]["Health"]["Status"] == "healthy"
+        # The pinned volume name defaults to what Compose has always called it, so existing data is kept.
+        assert any(mount.get("Name") == project + "_gateway-data" for mount in configuration["Mounts"]), configuration["Mounts"]
         assert request("/api/ready", authenticated=False)[0] == 200
         metadata_status, metadata = request("/.well-known/oauth-protected-resource", authenticated=False)
         assert metadata_status == 200 and metadata["resource"] == environment["MCP_PUBLIC_URL"] + "/mcp"
@@ -110,6 +114,21 @@ def main():
             raise AssertionError("The isolated send did not reach a recorded transport failure.")
         assert outcome["errorCode"] in {"telegram_connection_failed", "telegram_outcome_unknown"}, outcome["errorCode"]
         assert outcome["attempts"] and all(attempt["errorCode"] != "process_interrupted" for attempt in outcome["attempts"])
+        # TELEGRAMGATEWAY_Gateway__MaxAttempts=1 (old prefix) applies: a retryable failure was not retried.
+        assert len(outcome["attempts"]) == 1, outcome["attempts"]
+        issue = json.loads((ROOT / "examples" / "news-sample-issue.json").read_text(encoding="utf-8"))
+        issue["date"] = "2099-01-01"
+        news_status, news = request("/api/news/issues", issue)
+        assert news_status == 202 and news["status"] == "Pending", (news_status, news)
+        assert request("/api/news/issues", {**issue, "date": "2099-01-02"})[0] == 409
+        for _ in range(45):
+            _, news = request("/api/news/issues/2099-01-01")
+            if news["status"] == "Failed":
+                break
+            time.sleep(1)
+        else:
+            raise AssertionError("The isolated news publication did not reach a recorded WordPress failure.")
+        assert news["errorCode"] in {"wp_network", "wp_timeout"}, news["errorCode"]
         # Recreate the process/container on the same volume. No outbound sends are possible.
         run(compose + ["restart", "gateway"])
         for _ in range(30):
@@ -123,9 +142,12 @@ def main():
         assert status == 200 and persisted["id"] == accepted["id"]
         assert persisted["idempotencyKey"] == "container-smoke"
         check_bearer()
+        status, persisted_news = request("/api/news/issues/2099-01-01")
+        assert status == 200 and persisted_news["itemCount"] == 36 and persisted_news["status"] == "Failed"
         assert request("/api/messages", {**payload, "text": "Changed payload"})[0] == 409
-        print("Docker smoke passed: non-root/read-only service, OAuth consent/PKCE/token/MCP, real HTTP handler transport failure, persistent ledger and bearer access after restart.")
-        print("Telegram delivery was blocked by the isolated network; no real send was performed.")
+        print("Docker smoke passed: non-root/read-only service, pinned volume name, old-prefix setting, OAuth consent/PKCE/token/MCP, "
+              "real HTTP handler transport failure, news issue accepted/deduplicated/failed safely, persistent ledger, registry and bearer access after restart.")
+        print("Telegram and WordPress were blocked by the isolated network; no real send or publication was performed.")
     finally:
         run(compose + ["down", "--volumes", "--remove-orphans"])
 

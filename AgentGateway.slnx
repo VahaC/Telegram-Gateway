@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AgentGateway.Api/AgentGateway.Api.csproj" />
+    <Project Path="src/AgentGateway.Core/AgentGateway.Core.csproj" />
+    <Project Path="src/AgentGateway.Infrastructure/AgentGateway.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AgentGateway.Api.Tests/AgentGateway.Api.Tests.csproj" />
+    <Project Path="tests/AgentGateway.Core.Tests/AgentGateway.Core.Tests.csproj" />
+    <Project Path="tests/AgentGateway.Infrastructure.Tests/AgentGateway.Infrastructure.Tests.csproj" />
+    <Project Path="tests/AgentGateway.TestInfrastructure/AgentGateway.TestInfrastructure.csproj" />
+  </Folder>
+</Solution>

@@ -3,7 +3,8 @@
 No release number or registry namespace has been selected. Builds use the development fallback
 0.0.0-dev; no version bump, tag, commit, push or registry publication is performed automatically.
 
-Build locally with `docker build -t telegram-gateway:local .`. On a remote Portainer host,
+Build locally with `docker build -t agent-gateway:local .` (the image was `telegram-gateway:local`
+before the rename; the Compose file now expects the new tag). On a remote Portainer host,
 either build there or privately transfer a local image using `docker save` / `docker load`.
 The compose stack expects that local image on its Docker endpoint.
 

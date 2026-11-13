@@ -1,9 +1,30 @@
 # Validation evidence
 
+## AgentGateway rename and news module (2026-11-13)
+
+Validated in the local Windows workspace (.NET SDK 10.0.400, Docker Desktop Linux engine,
+Compose v5.7.0, Python 3.10) with fake credentials only.
+
+| Check | Result |
+|---|---|
+| `dotnet restore --force` | Passed; no NU1902/NU1903 after the test projects reference the ASP.NET Core framework |
+| `dotnet build -c Release` | Passed, 0 warnings and 0 errors (warnings are errors) |
+| `bash run-tests.sh` | Passed: 164 tests (Core 30, Infrastructure 20, Api 114), 0 failures |
+| `python -m unittest discover -s scripts -p 'test_*.py'` | Passed: 9 tests |
+| `dotnet ef migrations has-pending-model-changes` (both contexts) | No pending changes; `AddNewsRegistry` only creates tables and indexes |
+| `docker build -t agent-gateway:local .` + `python scripts/docker-smoke.py` | Passed: pinned volume name equals `<project>_gateway-data`, an old-prefix `TELEGRAMGATEWAY_` setting applies, OAuth/MCP, news issue 202 then duplicate 409, WordPress failure recorded as `wp_network` without egress, registry and ledger persist across restart |
+| `scripts/check-news.sh` against a local container (WordPress unreachable) | Prompts, submission, polling, per-item table, 409 duplicate report and `--cleanup` path behave as documented; not run against the real site |
+
+Not verified here: the real vahac.com theme, the real Telegram chat, the claude.ai connector and
+the Portainer redeploy. They need secrets and the live installation; INSTALL.md §8 and §9 list
+the steps.
+
+## Original TelegramGateway validation (2026-10-08)
+
 Validated on 2026-10-08 in the local Windows workspace using .NET SDK 10.0.400 and Docker
 Desktop's Linux/amd64 engine. Automated checks used fake external-service credentials.
 
-## Completed checks
+### Completed checks
 
 | Check | Result |
 |---|---|
@@ -29,7 +50,7 @@ Migrations were generated with the installed EF CLI 10.0.0 against runtime 10.0.
 printed its version mismatch notice. Migrations, real SQLite HTTP tests, pending-model check,
 and container startup all passed. Use a matching CLI for future migration work.
 
-## Important test boundaries
+### Important test boundaries
 
 All Telegram calls in .NET tests go through a recording fake primary HttpMessageHandler.
 Routing, validation, authentication, serialization, EF Core and SQLite are real. The official
@@ -48,7 +69,7 @@ The gateway has an optional OAuth consent form. Deployment
 guides describe installation procedures; automated checks do not verify a particular live
 proxy, management interface or caller configuration.
 
-## Setup-send defect reproduction
+### Setup-send defect reproduction
 
 The setup-send defect was reproduced locally: `bot123456:test-token-not-real/sendMessage`
 is an absolute URI with scheme `bot123456`; a real HttpClient throws NotSupportedException
@@ -60,7 +81,7 @@ passed. Unexpected worker failures now log the exception type without message/UR
 Installation verification must include an actual Telegram success check. The correction
 preserves existing uncertain rows and does not automatically replay them.
 
-## OAuth implementation checks
+### OAuth implementation checks
 
 - Release build and 86 .NET tests passed: Core 5, Infrastructure 20, API 61.
 - A browser regression test reproduced a blocked OAuth POST redirect under `form-action 'self'`.
@@ -81,7 +102,7 @@ preserves existing uncertain rows and does not automatically replay them.
   Telegram access was blocked by the internal test network.
 - Client-account registration and real proxy/Telegram verification remain installation checks.
 
-## MCP delivery status checks
+### MCP delivery status checks
 
 - Release build passed with zero warnings/errors. The full 92-test .NET suite passed:
   Core 5, Infrastructure 20, API 67.
@@ -96,7 +117,7 @@ preserves existing uncertain rows and does not automatically replay them.
 - Telegram transport is faked in these tests. Production deployment, client tool refresh
   and actual Telegram receipt require installation verification.
 
-## Installation verification
+### Installation verification
 
 Each installation should verify:
 

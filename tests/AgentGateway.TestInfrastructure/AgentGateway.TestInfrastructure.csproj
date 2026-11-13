@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><IsTestProject>false</IsTestProject></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/AgentGateway.Api/AgentGateway.Api.csproj" />
+    <!-- Shares the API's ASP.NET Core framework, so its packages resolve from the patched runtime rather than as old NuGet copies (NU1903). -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.12" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+  </ItemGroup>
+</Project>

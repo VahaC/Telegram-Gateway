@@ -1,22 +1,35 @@
 services:
   gateway:
-    image: telegram-gateway:local
+    image: agent-gateway:local
     restart: unless-stopped
     init: true
     environment:
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:?Set TELEGRAM_BOT_TOKEN}
       TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:?Set TELEGRAM_CHAT_ID}
       API_KEY: ${API_KEY:?Set API_KEY}
-      TELEGRAMGATEWAY_Gateway__AllowedHosts__0: localhost
-      TELEGRAMGATEWAY_Gateway__AllowedHosts__1: ${GATEWAY_HOST:-gateway.example.invalid}
-      TELEGRAMGATEWAY_Gateway__KnownProxies__0: ${TRUSTED_PROXY_IP:-}
-      TELEGRAMGATEWAY_Gateway__EnableMcp: ${ENABLE_MCP:-false}
-      TELEGRAMGATEWAY_McpOAuth__Enabled: ${ENABLE_MCP_OAUTH:-false}
-      TELEGRAMGATEWAY_McpOAuth__PublicUrl: ${MCP_PUBLIC_URL:-}
-      TELEGRAMGATEWAY_McpOAuth__ClientId: ${MCP_OAUTH_CLIENT_ID:-telegram-gateway}
+      AGENTGATEWAY_Gateway__AllowedHosts__0: localhost
+      AGENTGATEWAY_Gateway__AllowedHosts__1: ${GATEWAY_HOST:-gateway.example.invalid}
+      AGENTGATEWAY_Gateway__KnownProxies__0: ${TRUSTED_PROXY_IP:-}
+      AGENTGATEWAY_Gateway__EnableMcp: ${ENABLE_MCP:-false}
+      AGENTGATEWAY_McpOAuth__Enabled: ${ENABLE_MCP_OAUTH:-false}
+      AGENTGATEWAY_McpOAuth__PublicUrl: ${MCP_PUBLIC_URL:-}
+      # OAuth client 0 (ChatGPT): unchanged keys, scope telegram:send.
+      AGENTGATEWAY_McpOAuth__ClientId: ${MCP_OAUTH_CLIENT_ID:-telegram-gateway}
       OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET:-}
-      TELEGRAMGATEWAY_McpOAuth__RedirectUris__0: ${MCP_OAUTH_REDIRECT_URI:-}
-      TELEGRAMGATEWAY_Gateway__RequestLimitPerMinute: ${REQUEST_LIMIT_PER_MINUTE:-30}
+      AGENTGATEWAY_McpOAuth__RedirectUris__0: ${MCP_OAUTH_REDIRECT_URI:-}
+      # OAuth client 1 (the claude.ai connector of the news routine). A blank client ID leaves it out.
+      AGENTGATEWAY_McpOAuth__Clients__1__ClientId: ${MCP_OAUTH_CLIENT_1_ID:-}
+      AGENTGATEWAY_McpOAuth__Clients__1__ClientSecret: ${OAUTH_CLIENT_1_SECRET:-}
+      AGENTGATEWAY_McpOAuth__Clients__1__RedirectUris__0: ${MCP_OAUTH_CLIENT_1_REDIRECT_URI:-}
+      AGENTGATEWAY_McpOAuth__Clients__1__RedirectUris__1: ${MCP_OAUTH_CLIENT_1_REDIRECT_URI_2:-}
+      AGENTGATEWAY_McpOAuth__Clients__1__Scopes__0: ${MCP_OAUTH_CLIENT_1_SCOPE:-news:publish}
+      AGENTGATEWAY_Gateway__RequestLimitPerMinute: ${REQUEST_LIMIT_PER_MINUTE:-30}
+      # News module: off until WordPress credentials are set.
+      AGENTGATEWAY_News__Enabled: ${NEWS_ENABLED:-false}
+      AGENTGATEWAY_News__WordPressBaseUrl: ${NEWS_WORDPRESS_BASE_URL:-https://vahac.com}
+      AGENTGATEWAY_News__WordPressUser: ${NEWS_WORDPRESS_USER:-}
+      WORDPRESS_APP_PASSWORD: ${WORDPRESS_APP_PASSWORD:-}
+      AGENTGATEWAY_News__NotifyTelegramOnPublish: ${NEWS_NOTIFY_TELEGRAM:-true}
     # No host port is published. Attach your reverse proxy to this network.
     expose:
       - "8080"
@@ -34,6 +47,10 @@ services:
     stop_grace_period: 40s
 volumes:
   gateway-data:
+    # The default is exactly the name Compose has always given this volume (<project>_gateway-data), so nothing moves.
+    # Renaming the folder or the stack changes the project name: set GATEWAY_VOLUME_NAME to the name shown by
+    # `docker volume ls` before redeploying (INSTALL.md, "Renaming to AgentGateway").
+    name: ${GATEWAY_VOLUME_NAME:-${COMPOSE_PROJECT_NAME}_gateway-data}
 networks:
   gateway:
     name: ${GATEWAY_NETWORK:-telegram-gateway}
