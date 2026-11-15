@@ -75,7 +75,7 @@ public static class NewsEndpointExtensions
             .WithName("CheckNewsCandidates").WithDescription("Which candidate URLs or eventKeys are already in the registry.")
             .Produces<NewsCheckResponse>().Produces<ApiErrorResponse>(400);
         news.MapGet("/feed", async (NewsFeedService service, CancellationToken cancellationToken, int sinceHours = NewsFeedService.MaxSinceHours,
-                string? category = null, string? query = null, bool excludePublished = true, int limit = 50, string? cursor = null) =>
+                string? category = null, string? query = null, bool excludePublished = true, int limit = 30, string? cursor = null) =>
                 MapFeedResult(await service.GetFeedAsync(sinceHours, category, query, excludePublished, limit, cursor, cancellationToken)))
             .WithName("NewsFeed")
             .WithDescription("Entries collected from the publishers' RSS/Atom feeds, newest first (same parameters as MCP get_news_feed). "

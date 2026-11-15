@@ -24,7 +24,7 @@ gateway behaves like an ordinary feed reader and never works around a refusal.
 - The catalog `src/AgentGateway.Api/NewsFeeds/news-feeds.json` (id, name, https URL, 1–3 category
   hints, kind, language) ships in the image next to the DLL. At startup it is synced into the
   `NewsFeeds` table: new feeds are added, changed ones updated, removed ones disabled; their
-  entries stay until they age out. A broken entry is skipped with a reason; an unreadable file
+  entries stay until they age out but leave the list at once. A broken entry is skipped with a reason; an unreadable file
   leaves the table as it was.
 - `NewsFeedWorker` polls shortly after start and then every `News:FeedPollMinutes` (60). Hosts are
   polled in parallel (`News:FeedParallelism`, 4) but each host sees one request at a time: a third
@@ -44,7 +44,7 @@ gateway behaves like an ordinary feed reader and never works around a refusal.
   first saw them; entries already older than that are not stored. `get_news_feed` reads a 1–168 hour
   window newest first, filters by category hint, by up to 20 `|`-separated terms and, by default,
   by the news registry (the set `check_news_candidates` reports), pages with an opaque snapshot
-  cursor and keeps a page under 60 KB, because cloud agents truncate large tool results.
+  cursor and keeps a page under 25 KB, because cloud agents truncate large tool results.
 - The tool descriptions tell the agent that the date comes from the publisher's own feed, and that
   facts beyond the feed text need the source page or another source.
 

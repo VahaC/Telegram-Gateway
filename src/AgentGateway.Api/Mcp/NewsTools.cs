@@ -94,19 +94,19 @@ public sealed class NewsTools(IServiceScopeFactory scopes)
     [McpServerTool(Name = FeedTool, ReadOnly = true, Destructive = false, Idempotent = true, OpenWorld = false)]
     [Description("Leads for the issue: entries the gateway collected from the publishers' own RSS/Atom feeds, newest first. Each entry has "
         + "id, feedId, feedName, feedCategories (hints, not a verdict), kind (vendor, release, news, blog, advisory, community, aggregator), "
-        + "title, url, publishedUtc, firstSeenUtc, a summary cut to 300 characters and imageUrl (https, taken from the feed). "
+        + "title, url, publishedUtc, firstSeenUtc, a summary cut to 200 characters and imageUrl (https, taken from the feed). "
         + "publishedUtc is the publication date from the publisher's own feed, so it counts as verified; when it is null the feed gave no "
         + "date and firstSeenUtc is when the gateway first saw the entry. Facts beyond the summary need get_news_feed_entry, the source "
         + "page or another source. Narrow the list with category and with query, e.g. 'Proxmox|ZFS|WireGuard' (any term, case-insensitive "
         + "for Latin letters, in title or summary) instead of paging through thousands of entries. excludePublished (default true) drops "
         + "entries already in the news registry, the same check as check_news_candidates. Follow nextCursor only while you need more (it is null on the "
-        + "last page); a page stays under 60 KB, so it may hold fewer entries than limit. health counts enabled and failing feeds and the last successful poll.")]
+        + "last page); a page stays under 25 KB, so it may hold fewer entries than limit. health counts enabled and failing feeds and the last successful poll.")]
     public async Task<NewsFeedResponse> GetFeedAsync(
         [Description("Look back this many hours, 1..168. Default 168 (7 days).")] int sinceHours = NewsFeedService.MaxSinceHours,
         [Description("Optional: only feeds whose category hints include dotnet, homelab, smarthome, hardware, security or ai.")] string? category = null,
         [Description("Optional: up to 20 alternatives separated by |; an entry matches when its title or summary contains any of them.")] string? query = null,
         [Description("Default true: leave out entries whose URL is already in the news registry.")] bool excludePublished = true,
-        [Description("Entries per page, 1..100. Default 50.")] int limit = 50,
+        [Description("Entries per page, 1..50. Default 30.")] int limit = 30,
         [Description("nextCursor from the previous page; omit for the first page.")] string? cursor = null,
         CancellationToken cancellationToken = default)
     {

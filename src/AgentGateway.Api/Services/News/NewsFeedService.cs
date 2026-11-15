@@ -16,14 +16,17 @@ namespace AgentGateway.Api.Services.News;
 public sealed class NewsFeedService(ApplicationDbContext database, NewsDuplicateFinder duplicates, IOptions<NewsOptions> options, TimeProvider time)
 {
     public const int MaxSinceHours = 168;
-    public const int MaxLimit = 100;
+    public const int MaxLimit = 50;
     /// <summary>Twenty alternatives cover a reader's stack in one call; more would turn the filter into a full scan of every text.</summary>
     public const int MaxQueryTerms = 20;
     public const int MaxTermLength = 100;
     /// <summary>Enough of the text to judge a lead; the whole text costs one get_news_feed_entry call.</summary>
-    public const int ListSummaryLength = 300;
-    /// <summary>Cloud agents truncate large tool results; a page ends before its JSON would pass this size.</summary>
-    public const int MaxPageBytes = 60_000;
+    public const int ListSummaryLength = 200;
+    /// <summary>
+    /// Cloud agents truncate or refuse large tool results: a 60 KB page made the 15.11 Haiku run retry with smaller limits.
+    /// A page ends before its JSON would pass this size.
+    /// </summary>
+    public const int MaxPageBytes = 25_000;
     /// <summary>Room for total, nextCursor and the health block, and for the HTTP routes' longer seven-digit date format.</summary>
     private const int EnvelopeBytes = 2_000;
     private const int MaxCursorLength = 100;
@@ -56,6 +59,9 @@ public sealed class NewsFeedService(ApplicationDbContext database, NewsDuplicate
         // entries when a poll adds new ones in between.
         var since = asOfUtc.AddHours(-sinceHours);
         var entries = database.NewsFeedEntries.AsNoTracking().Where(entry => entry.SortUtc >= since && entry.FirstSeenUtc <= asOfUtc);
+        // A feed dropped from the catalog is disabled with its entries kept; they leave the list at once, otherwise a removed
+        // noisy feed (Arch package updates, dev.to) would keep crowding the pages for the whole 14-day retention.
+        entries = entries.Where(entry => database.NewsFeeds.Any(feed => feed.Id == entry.FeedId && feed.Enabled));
         if (category is not null)
             entries = entries.Where(entry => database.NewsFeeds.Any(feed => feed.Id == entry.FeedId && feed.Categories.Contains(category)));
         if (terms.Count > 0)

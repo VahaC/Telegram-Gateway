@@ -114,26 +114,6 @@
       "language": "en"
     },
     {
-      "id": "devto-ai",
-      "name": "DEV ai",
-      "url": "https://dev.to/feed/tag/ai",
-      "categories": [
-        "ai"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-mcp",
-      "name": "DEV mcp",
-      "url": "https://dev.to/feed/tag/mcp",
-      "categories": [
-        "ai"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
       "id": "dou-ai",
       "name": "DOU AI",
       "url": "https://dou.ua/lenta/tags/ai/feed/",
@@ -287,16 +267,6 @@
       "id": "gh-ggml-org-ggml",
       "name": "ggml-org/ggml releases",
       "url": "https://github.com/ggml-org/ggml/releases.atom",
-      "categories": [
-        "ai"
-      ],
-      "kind": "release",
-      "language": "en"
-    },
-    {
-      "id": "gh-ggml-org-llama-cpp",
-      "name": "ggml-org/llama.cpp releases",
-      "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
       "categories": [
         "ai"
       ],
@@ -1053,15 +1023,14 @@
       "language": "en"
     },
     {
-      "id": "ain-ua",
-      "name": "AIN.UA",
-      "url": "https://ain.ua/feed/",
+      "id": "wired-ai",
+      "name": "WIRED AI",
+      "url": "https://www.wired.com/feed/tag/ai/latest/rss",
       "categories": [
-        "dotnet",
         "ai"
       ],
       "kind": "news",
-      "language": "uk"
+      "language": "en"
     },
     {
       "id": "andrewlock",
@@ -1124,16 +1093,6 @@
       "language": "en"
     },
     {
-      "id": "cloud-watch",
-      "name": "Cloud Watch",
-      "url": "https://cloud.watch.impress.co.jp/data/rss/1.0/clw/feed.rdf",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "news",
-      "language": "ja"
-    },
-    {
       "id": "computerworld",
       "name": "Computerworld",
       "url": "https://www.computerworld.com/feed/",
@@ -1174,66 +1133,6 @@
       "language": "en"
     },
     {
-      "id": "devto-aspnet",
-      "name": "DEV aspnet",
-      "url": "https://dev.to/feed/tag/aspnet",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-azure",
-      "name": "DEV azure",
-      "url": "https://dev.to/feed/tag/azure",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-csharp",
-      "name": "DEV csharp",
-      "url": "https://dev.to/feed/tag/csharp",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-dotnet",
-      "name": "DEV dotnet",
-      "url": "https://dev.to/feed/tag/dotnet",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-postgres",
-      "name": "DEV postgres",
-      "url": "https://dev.to/feed/tag/postgres",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "digi-no",
-      "name": "Digi.no",
-      "url": "https://www.digi.no/?lab_viewport=rss",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "news",
-      "language": "no"
-    },
-    {
       "id": "dou-feed",
       "name": "DOU",
       "url": "https://dou.ua/feed/",
@@ -1254,16 +1153,6 @@
       "language": "uk"
     },
     {
-      "id": "epravda",
-      "name": "Ekonomichna Pravda",
-      "url": "https://epravda.com.ua/rss/",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "news",
-      "language": "uk"
-    },
-    {
       "id": "erikdarling",
       "name": "Erik Darling",
       "url": "https://erikdarling.com/feed/",
@@ -1272,17 +1161,6 @@
       ],
       "kind": "blog",
       "language": "en"
-    },
-    {
-      "id": "genbeta",
-      "name": "Genbeta",
-      "url": "https://www.genbeta.com/feedburner.xml",
-      "categories": [
-        "dotnet",
-        "ai"
-      ],
-      "kind": "news",
-      "language": "es"
     },
     {
       "id": "gh-actions-runner",
@@ -1825,6 +1703,17 @@
       "language": "en"
     },
     {
+      "id": "golem-development",
+      "name": "Golem Software Development",
+      "url": "https://rss.golem.de/rss.php?ms=softwareentwicklung&feed=RSS2.0",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
       "id": "google-cloud-blog",
       "name": "Google Cloud Blog",
       "url": "https://cloudblog.withgoogle.com/rss/",
@@ -1920,6 +1809,17 @@
       "language": "hu"
     },
     {
+      "id": "itmedia-at-it",
+      "name": "ITmedia @IT",
+      "url": "https://rss.itmedia.co.jp/rss/2.0/ait.xml",
+      "categories": [
+        "dotnet",
+        "security"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
       "id": "itpro",
       "name": "ITPro",
       "url": "https://www.itpro.com/feeds.xml",
@@ -1989,16 +1889,6 @@
       ],
       "kind": "blog",
       "language": "en"
-    },
-    {
-      "id": "lemondeinformatique",
-      "name": "LeMondeInformatique",
-      "url": "https://www.lemondeinformatique.fr/rss.xml",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "news",
-      "language": "fr"
     },
     {
       "id": "lobsters",
@@ -2256,17 +2146,6 @@
       "language": "en"
     },
     {
-      "id": "neowin",
-      "name": "Neowin",
-      "url": "https://www.neowin.net/news/rss/",
-      "categories": [
-        "dotnet",
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
       "id": "nodejs-blog",
       "name": "Node.js Blog",
       "url": "https://nodejs.org/en/feed/blog.xml",
@@ -2409,16 +2288,6 @@
       "language": "en"
     },
     {
-      "id": "sqlite-news",
-      "name": "SQLite Timeline",
-      "url": "https://sqlite.org/src/timeline.rss",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "vendor",
-      "language": "en"
-    },
-    {
       "id": "sqlskills-paul",
       "name": "Paul Randal SQLskills",
       "url": "https://www.sqlskills.com/blogs/paul/feed/",
@@ -2523,16 +2392,6 @@
       "language": "fi"
     },
     {
-      "id": "windows-central",
-      "name": "Windows Central",
-      "url": "https://www.windowscentral.com/feeds.xml",
-      "categories": [
-        "dotnet"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
       "id": "zdnet",
       "name": "ZDNET",
       "url": "https://www.zdnet.com/rss/news/",
@@ -2584,23 +2443,11 @@
       "language": "ja"
     },
     {
-      "id": "android-com-pl",
-      "name": "Android.com.pl",
-      "url": "https://android.com.pl/feed/",
+      "id": "antyweb-computers",
+      "name": "Antyweb Komputery",
+      "url": "https://antyweb.pl/category/komputery/feed",
       "categories": [
-        "hardware",
-        "smarthome"
-      ],
-      "kind": "news",
-      "language": "pl"
-    },
-    {
-      "id": "antyweb",
-      "name": "Antyweb",
-      "url": "https://antyweb.pl/feed",
-      "categories": [
-        "hardware",
-        "homelab"
+        "hardware"
       ],
       "kind": "news",
       "language": "pl"
@@ -2669,40 +2516,9 @@
       "language": "en"
     },
     {
-      "id": "caschys-blog",
-      "name": "Caschys Blog",
-      "url": "https://stadt-bremerhaven.de/feed/",
-      "categories": [
-        "hardware",
-        "smarthome"
-      ],
-      "kind": "news",
-      "language": "de"
-    },
-    {
-      "id": "chip-pl",
-      "name": "CHIP.pl",
-      "url": "https://www.chip.pl/feed",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "pl"
-    },
-    {
       "id": "chipsandcheese",
       "name": "Chips and Cheese",
       "url": "https://chipsandcheese.com/feed",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
-      "id": "cnet-news",
-      "name": "CNET News",
-      "url": "https://www.cnet.com/rss/news/",
       "categories": [
         "hardware"
       ],
@@ -2739,27 +2555,6 @@
       ],
       "kind": "news",
       "language": "de"
-    },
-    {
-      "id": "devto-raspberrypi",
-      "name": "DEV raspberrypi",
-      "url": "https://dev.to/feed/tag/raspberrypi",
-      "categories": [
-        "hardware",
-        "smarthome"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "dsogaming",
-      "name": "DSOGaming",
-      "url": "https://www.dsogaming.com/feed/",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "en"
     },
     {
       "id": "eetimes",
@@ -2808,16 +2603,6 @@
       "categories": [
         "hardware",
         "smarthome"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
-      "id": "engadget",
-      "name": "Engadget",
-      "url": "https://www.engadget.com/rss.xml",
-      "categories": [
-        "hardware"
       ],
       "kind": "news",
       "language": "en"
@@ -3093,27 +2878,6 @@
       "language": "en"
     },
     {
-      "id": "gigazine",
-      "name": "GIGAZINE",
-      "url": "https://gigazine.net/news/rss_2.0/",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "ja"
-    },
-    {
-      "id": "golem",
-      "name": "Golem.de",
-      "url": "https://rss.golem.de/rss.php?feed=RSS2.0",
-      "categories": [
-        "hardware",
-        "homelab"
-      ],
-      "kind": "news",
-      "language": "de"
-    },
-    {
       "id": "hackaday",
       "name": "Hackaday",
       "url": "https://hackaday.com/feed/",
@@ -3155,6 +2919,17 @@
       "language": "en"
     },
     {
+      "id": "heise-ct",
+      "name": "heise c’t",
+      "url": "https://www.heise.de/ct/feed.xml",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
       "id": "hothardware",
       "name": "HotHardware",
       "url": "https://hothardware.com/rss/news",
@@ -3173,16 +2948,6 @@
       ],
       "kind": "news",
       "language": "en"
-    },
-    {
-      "id": "ifanr",
-      "name": "ifanr",
-      "url": "https://www.ifanr.com/feed",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "zh"
     },
     {
       "id": "igorslab",
@@ -3205,17 +2970,6 @@
       "language": "de"
     },
     {
-      "id": "itc-ua",
-      "name": "ITC.ua",
-      "url": "https://feeds.feedburner.com/itcua",
-      "categories": [
-        "hardware",
-        "ai"
-      ],
-      "kind": "news",
-      "language": "uk"
-    },
-    {
       "id": "itc-ua-news",
       "name": "ITC.ua news",
       "url": "https://itc.ua/news/feed/",
@@ -3226,19 +2980,9 @@
       "language": "uk"
     },
     {
-      "id": "ithome",
-      "name": "IT Home",
-      "url": "https://www.ithome.com/rss/",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "zh"
-    },
-    {
-      "id": "itmedia-news",
-      "name": "ITmedia NEWS",
-      "url": "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml",
+      "id": "itmedia-pcuser",
+      "name": "ITmedia PC USER",
+      "url": "https://rss.itmedia.co.jp/rss/2.0/pcuser.xml",
       "categories": [
         "hardware"
       ],
@@ -3254,6 +2998,17 @@
       ],
       "kind": "news",
       "language": "en"
+    },
+    {
+      "id": "lemondeinformatique-infrastructure",
+      "name": "LeMondeInformatique Infrastructure",
+      "url": "https://www.lemondeinformatique.fr/flux-rss/thematique/infrastructure/rss.xml",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "fr"
     },
     {
       "id": "liliputing",
@@ -3294,17 +3049,6 @@
       ],
       "kind": "news",
       "language": "en"
-    },
-    {
-      "id": "mezha",
-      "name": "Mezha.ua",
-      "url": "https://mezha.ua/feed/",
-      "categories": [
-        "hardware",
-        "ai"
-      ],
-      "kind": "news",
-      "language": "uk"
     },
     {
       "id": "ms-directx-blog",
@@ -3349,17 +3093,6 @@
       "language": "en"
     },
     {
-      "id": "numerama",
-      "name": "Numerama",
-      "url": "https://www.numerama.com/feed/",
-      "categories": [
-        "hardware",
-        "security"
-      ],
-      "kind": "news",
-      "language": "fr"
-    },
-    {
       "id": "overclock3d",
       "name": "Overclock3D",
       "url": "https://overclock3d.net/feed/",
@@ -3370,9 +3103,9 @@
       "language": "en"
     },
     {
-      "id": "pcgamer-hardware",
-      "name": "PC Gamer Hardware",
-      "url": "https://www.pcgamer.com/rss/",
+      "id": "pcgamer-graphics-cards",
+      "name": "PC Gamer Graphics Cards",
+      "url": "https://www.pcgamer.com/feeds/tag/graphics-cards",
       "categories": [
         "hardware"
       ],
@@ -3541,16 +3274,6 @@
       "language": "en"
     },
     {
-      "id": "spidersweb",
-      "name": "Spider's Web",
-      "url": "https://spidersweb.pl/api/post/feed/feed-gn",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "pl"
-    },
-    {
       "id": "sspai",
       "name": "sspai",
       "url": "https://sspai.com/feed",
@@ -3570,26 +3293,6 @@
       ],
       "kind": "news",
       "language": "en"
-    },
-    {
-      "id": "swedroid",
-      "name": "Swedroid",
-      "url": "https://swedroid.se/feed/",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "sv"
-    },
-    {
-      "id": "tabletowo",
-      "name": "Tabletowo",
-      "url": "https://www.tabletowo.pl/feed/",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "pl"
     },
     {
       "id": "techpowerup",
@@ -3612,16 +3315,6 @@
       "language": "en"
     },
     {
-      "id": "techradar",
-      "name": "TechRadar",
-      "url": "https://www.techradar.com/feeds.xml",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
       "id": "techspot",
       "name": "TechSpot",
       "url": "https://www.techspot.com/backend.xml",
@@ -3630,17 +3323,6 @@
       ],
       "kind": "news",
       "language": "en"
-    },
-    {
-      "id": "telepolis",
-      "name": "Telepolis.pl",
-      "url": "https://www.telepolis.pl/rss",
-      "categories": [
-        "hardware",
-        "homelab"
-      ],
-      "kind": "news",
-      "language": "pl"
     },
     {
       "id": "tftcentral",
@@ -3684,11 +3366,12 @@
       "language": "en"
     },
     {
-      "id": "tomsguide-wifi",
-      "name": "Tom's Guide",
-      "url": "https://www.tomsguide.com/feeds.xml",
+      "id": "tomsguide-routers",
+      "name": "Tom’s Guide Routers",
+      "url": "https://www.tomsguide.com/feeds/tag/routers",
       "categories": [
-        "hardware"
+        "hardware",
+        "homelab"
       ],
       "kind": "news",
       "language": "en"
@@ -3807,16 +3490,6 @@
       "language": "de"
     },
     {
-      "id": "xataka",
-      "name": "Xataka",
-      "url": "https://www.xataka.com/feedburner.xml",
-      "categories": [
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "es"
-    },
-    {
       "id": "9to5linux",
       "name": "9to5Linux",
       "url": "https://9to5linux.com/feed",
@@ -3864,27 +3537,6 @@
         "homelab"
       ],
       "kind": "vendor",
-      "language": "en"
-    },
-    {
-      "id": "archlinux-packages",
-      "name": "Arch Linux Package Updates",
-      "url": "https://archlinux.org/feeds/packages/",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "vendor",
-      "language": "en"
-    },
-    {
-      "id": "arstechnica",
-      "name": "Ars Technica",
-      "url": "https://feeds.arstechnica.com/arstechnica/index",
-      "categories": [
-        "homelab",
-        "hardware"
-      ],
-      "kind": "news",
       "language": "en"
     },
     {
@@ -3947,56 +3599,6 @@
         "homelab"
       ],
       "kind": "vendor",
-      "language": "en"
-    },
-    {
-      "id": "debian-planet",
-      "name": "Planet Debian",
-      "url": "https://planet.debian.org/rss20.xml",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "aggregator",
-      "language": "en"
-    },
-    {
-      "id": "devto-docker",
-      "name": "DEV docker",
-      "url": "https://dev.to/feed/tag/docker",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-homelab",
-      "name": "DEV homelab",
-      "url": "https://dev.to/feed/tag/homelab",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-linux",
-      "name": "DEV linux",
-      "url": "https://dev.to/feed/tag/linux",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "devto-selfhosted",
-      "name": "DEV selfhosted",
-      "url": "https://dev.to/feed/tag/selfhosted",
-      "categories": [
-        "homelab"
-      ],
-      "kind": "community",
       "language": "en"
     },
     {
@@ -4781,6 +4383,16 @@
       "language": "en"
     },
     {
+      "id": "golem-opensource",
+      "name": "Golem Open Source",
+      "url": "https://rss.golem.de/rss.php?ms=opensource&feed=RSS2.0",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
       "id": "grafana-blog",
       "name": "Grafana Labs Blog",
       "url": "https://grafana.com/blog/index.xml",
@@ -4808,28 +4420,6 @@
         "homelab"
       ],
       "kind": "vendor",
-      "language": "en"
-    },
-    {
-      "id": "heise-online",
-      "name": "heise online",
-      "url": "https://www.heise.de/rss/heise-atom.xml",
-      "categories": [
-        "homelab",
-        "hardware"
-      ],
-      "kind": "news",
-      "language": "de"
-    },
-    {
-      "id": "howtogeek",
-      "name": "How-To Geek",
-      "url": "https://www.howtogeek.com/feed/",
-      "categories": [
-        "homelab",
-        "smarthome"
-      ],
-      "kind": "news",
       "language": "en"
     },
     {
@@ -5386,6 +4976,16 @@
       "language": "en"
     },
     {
+      "id": "ain-cybersecurity",
+      "name": "AIN.UA Cybersecurity",
+      "url": "https://ain.ua/tag/kiberbezpeka/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
       "id": "android-security-blog",
       "name": "Android Developers Blog",
       "url": "https://developer.android.com/static/blog/atom.xml",
@@ -5570,16 +5170,6 @@
       "language": "en"
     },
     {
-      "id": "cvefeed",
-      "name": "CVEfeed.io",
-      "url": "https://cvefeed.io/rssfeed/latest.xml",
-      "categories": [
-        "security"
-      ],
-      "kind": "advisory",
-      "language": "en"
-    },
-    {
       "id": "cvefeed-critical",
       "name": "CVEfeed.io Critical",
       "url": "https://cvefeed.io/rssfeed/severity/high.xml",
@@ -5588,16 +5178,6 @@
       ],
       "kind": "advisory",
       "language": "en"
-    },
-    {
-      "id": "cyberdefence24",
-      "name": "CyberDefence24",
-      "url": "https://cyberdefence24.pl/_rss",
-      "categories": [
-        "security"
-      ],
-      "kind": "news",
-      "language": "pl"
     },
     {
       "id": "cyberscoop",
@@ -5640,16 +5220,6 @@
       "language": "en"
     },
     {
-      "id": "devto-security",
-      "name": "DEV security",
-      "url": "https://dev.to/feed/tag/security",
-      "categories": [
-        "security"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
       "id": "docker-security",
       "name": "Docker Security Blog",
       "url": "https://www.docker.com/blog/category/security/feed/",
@@ -5664,16 +5234,6 @@
       "id": "exploit-db",
       "name": "Exploit-DB",
       "url": "https://www.exploit-db.com/rss.xml",
-      "categories": [
-        "security"
-      ],
-      "kind": "advisory",
-      "language": "en"
-    },
-    {
-      "id": "fedora-updates",
-      "name": "Fedora Security",
-      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/feed/",
       "categories": [
         "security"
       ],
@@ -6043,6 +5603,16 @@
       "language": "en"
     },
     {
+      "id": "itmedia-enterprise",
+      "name": "ITmedia Enterprise",
+      "url": "https://rss.itmedia.co.jp/rss/2.0/enterprise.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
       "id": "krebsonsecurity",
       "name": "Krebs on Security",
       "url": "https://krebsonsecurity.com/feed/",
@@ -6051,6 +5621,16 @@
       ],
       "kind": "blog",
       "language": "en"
+    },
+    {
+      "id": "lemondeinformatique-security",
+      "name": "LeMondeInformatique Security",
+      "url": "https://www.lemondeinformatique.fr/flux-rss/thematique/securite/rss.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "fr"
     },
     {
       "id": "lobsters-privacy",
@@ -6124,16 +5704,6 @@
       "language": "en"
     },
     {
-      "id": "netzpolitik",
-      "name": "netzpolitik.org",
-      "url": "https://netzpolitik.org/feed/",
-      "categories": [
-        "security"
-      ],
-      "kind": "news",
-      "language": "de"
-    },
-    {
       "id": "nodejs-vuln",
       "name": "Node.js Vulnerability Feed",
       "url": "https://nodejs.org/en/feed/vulnerability.xml",
@@ -6143,6 +5713,16 @@
       ],
       "kind": "advisory",
       "language": "en"
+    },
+    {
+      "id": "numerama-cyberguerre",
+      "name": "Numerama Cyberguerre",
+      "url": "https://www.numerama.com/cyberguerre/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "fr"
     },
     {
       "id": "openssl-news",
@@ -6336,6 +5916,16 @@
       "language": "de"
     },
     {
+      "id": "techradar-security",
+      "name": "TechRadar Security",
+      "url": "https://www.techradar.com/feeds/tag/security",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
       "id": "tenable-blog",
       "name": "Tenable Blog",
       "url": "https://www.tenable.com/blog/feed",
@@ -6386,6 +5976,16 @@
       "language": "en"
     },
     {
+      "id": "tomsguide-security",
+      "name": "Tom’s Guide Security",
+      "url": "https://www.tomsguide.com/feeds/tag/security",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
       "id": "troyhunt",
       "name": "Troy Hunt",
       "url": "https://www.troyhunt.com/rss/",
@@ -6394,16 +5994,6 @@
       ],
       "kind": "blog",
       "language": "en"
-    },
-    {
-      "id": "ua-detector",
-      "name": "Detector Media",
-      "url": "https://detector.media/rss/",
-      "categories": [
-        "security"
-      ],
-      "kind": "news",
-      "language": "uk"
     },
     {
       "id": "unit42",
@@ -6436,12 +6026,11 @@
       "language": "en"
     },
     {
-      "id": "wired",
-      "name": "WIRED",
-      "url": "https://www.wired.com/feed/rss",
+      "id": "wired-security",
+      "name": "WIRED Security",
+      "url": "https://www.wired.com/feed/category/security/latest/rss",
       "categories": [
-        "security",
-        "ai"
+        "security"
       ],
       "kind": "news",
       "language": "en"
@@ -6527,16 +6116,6 @@
       "language": "en"
     },
     {
-      "id": "cleantechnica",
-      "name": "CleanTechnica",
-      "url": "https://cleantechnica.com/feed/",
-      "categories": [
-        "smarthome"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
       "id": "csa-iot",
       "name": "Connectivity Standards Alliance",
       "url": "https://csa-iot.org/feed/",
@@ -6547,20 +6126,9 @@
       "language": "en"
     },
     {
-      "id": "devto-esp32",
-      "name": "DEV esp32",
-      "url": "https://dev.to/feed/tag/esp32",
-      "categories": [
-        "smarthome",
-        "hardware"
-      ],
-      "kind": "community",
-      "language": "en"
-    },
-    {
-      "id": "electrek",
-      "name": "Electrek",
-      "url": "https://electrek.co/feed/",
+      "id": "electrek-home-battery",
+      "name": "Electrek Home Battery",
+      "url": "https://electrek.co/tag/home-battery/feed/",
       "categories": [
         "smarthome"
       ],
@@ -6568,9 +6136,9 @@
       "language": "en"
     },
     {
-      "id": "electrive",
-      "name": "electrive",
-      "url": "https://www.electrive.com/feed/",
+      "id": "electrek-solar",
+      "name": "Electrek Solar",
+      "url": "https://electrek.co/tag/solar/feed/",
       "categories": [
         "smarthome"
       ],
@@ -7041,9 +6609,9 @@
       "language": "en"
     },
     {
-      "id": "home-assistant-community-latest",
-      "name": "Home Assistant Community Latest",
-      "url": "https://community.home-assistant.io/latest.rss",
+      "id": "home-assistant-community-projects",
+      "name": "Home Assistant Community: Share your Projects",
+      "url": "https://community.home-assistant.io/c/projects.rss",
       "categories": [
         "smarthome"
       ],
@@ -7081,17 +6649,6 @@
       "language": "en"
     },
     {
-      "id": "makeuseof",
-      "name": "MakeUseOf",
-      "url": "https://www.makeuseof.com/feed/",
-      "categories": [
-        "smarthome",
-        "homelab"
-      ],
-      "kind": "news",
-      "language": "en"
-    },
-    {
       "id": "pv-magazine",
       "name": "pv magazine",
       "url": "https://www.pv-magazine.com/feed/",
@@ -7120,16 +6677,6 @@
       ],
       "kind": "news",
       "language": "en"
-    },
-    {
-      "id": "rubryka",
-      "name": "Rubryka",
-      "url": "https://rubryka.com/feed/",
-      "categories": [
-        "smarthome"
-      ],
-      "kind": "news",
-      "language": "uk"
     },
     {
       "id": "seeed-blog",

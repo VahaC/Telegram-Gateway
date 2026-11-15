@@ -7,10 +7,24 @@
   `News:MaxAiShare` stays 0.30. On 2026-11-15 the routine had verified fewer than 35 stories and the
   all-or-nothing gate left the day without an issue. The contract still allows 1..80 items, so an
   owner can raise the gate again through the options.
+- **Feed catalog: 668 publisher feeds, without the noise.** The first live polls showed broad
+  outlets burying the stack's news: in one 48-hour homelab page 50 of 95 entries were Arch Linux
+  package updates and 19 were dev.to posts. Removed the Arch package feed, the 14 dev.to tag feeds,
+  Reddit (always 429), the failing hnrss.org search feeds, four raw CVE databases and outlets that
+  are consumer, EV-only or blocked (Telepolis, Chip.pl, Spider's Web, IT Home, ITC.ua, Neowin,
+  Windows Central, CleanTechnica, electrive). heise, Golem, WIRED, TechRadar, PC Gamer, Tom's Guide,
+  Electrek, ITmedia, Le Monde Informatique, AIN, Antyweb and Numerama now come in through their topic
+  feeds. A second pass ranked every feed by the share of its last 7 days that touches the stack and
+  dropped general and consumer outlets with almost none (Gigazine, Xataka, Genbeta, Engadget, CNET,
+  phone sites, gaming, general Ukrainian news), the per-build llama.cpp release feed, the SQLite
+  change log, Planet Debian, the Ars Technica index (its topic feeds stay) and the all-CVE cvefeed.io
+  stream (its high-severity feed stays), the Fedora package-announce list, How-To Geek, MakeUseOf
+  and Mezha. The Home Assistant community comes in through "Share your Projects" (integrations,
+  blueprints, devices) instead of every new forum thread.
 - **Added the news feed collector (ADR 0004).** The catalog
   `src/AgentGateway.Api/NewsFeeds/news-feeds.json` ships with the build and the image and is synced
   into the new `NewsFeeds` table at startup (added, updated, removed feeds disabled with their
-  entries kept). `NewsFeedWorker` polls the RSS 2.0, RSS 1.0/RDF and Atom feeds shortly after start
+  entries kept in the database but left out of `get_news_feed` at once). `NewsFeedWorker` polls the RSS 2.0, RSS 1.0/RDF and Atom feeds shortly after start
   and every `News:FeedPollMinutes` (60) as a plain feed reader: own User-Agent
   (`News:FeedUserAgent`), conditional GET, 20 s timeout, 16 MiB cap, `News:FeedParallelism` (4) hosts
   at a time but one request per host, nothing after a host's 429 until the next run, no retry of any
@@ -20,7 +34,7 @@
   14 days after first seen. One summary log line per run. Additive migration `AddNewsFeeds`
   (`NewsFeeds`, `NewsFeedEntries`, indexed by publication-or-first-seen time).
 - Added MCP tools `get_news_feed` (`sinceHours`, `category`, `query` with up to 20 `|` alternatives,
-  `excludePublished`, `limit`, `cursor`; pages under 60 KB with a feed health block) and
+  `excludePublished`, `limit`, `cursor`; pages under 25 KB with a feed health block) and
   `get_news_feed_entry` (`id`, the whole summary), both under scope `news:publish`, and their HTTP
   counterparts `GET /api/news/feed` and `GET /api/news/feed/entries/{id}`.
 - **Added the news watchdog.** Daily at `News:WatchdogTime` (06:00) in `News:WatchdogTimeZone` (UTC)

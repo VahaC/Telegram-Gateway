@@ -82,7 +82,7 @@ Host and Origin checks remain enabled.
 | `submit_news_issue` | `news:publish` | Submit the whole issue | `issue` (contract v1) |
 | `replace_news_issue` | `news:publish` | Replace an accepted issue | `date`, `issue` |
 | `get_news_issue_status` | `news:publish` | Publication state per item | `date` |
-| `get_news_feed` | `news:publish` | Entries from the publishers' feeds, newest first, under 60 KB per page | optional `sinceHours` (1–168, default 168), `category`, `query` (≤ 20 terms separated by `\|`), `excludePublished` (default true), `limit` (1–100, default 50), `cursor` |
+| `get_news_feed` | `news:publish` | Entries from the publishers' feeds, newest first, under 25 KB per page | optional `sinceHours` (1–168, default 168), `category`, `query` (≤ 20 terms separated by `\|`), `excludePublished` (default true), `limit` (1–50, default 30), `cursor` |
 | `get_news_feed_entry` | `news:publish` | One feed entry with its whole summary | `id` |
 
 A token only sees and can call the tools of its scopes; a call outside them returns a tool error

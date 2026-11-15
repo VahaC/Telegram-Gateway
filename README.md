@@ -114,7 +114,7 @@ It is on whenever the news module is on; `News:FeedsEnabled=false` switches it o
   ≤ 60), `name`, `url` (https only), `categories` (1–3 of the six), `kind` (`vendor`, `release`,
   `news`, `blog`, `advisory`, `community`, `aggregator`), `language` (ISO 639-1). At startup the
   catalog is synced into the database: new feeds are added, changed ones updated, removed ones
-  disabled (their entries stay). A broken feed is skipped with a warning naming the field; an
+  disabled: their entries stay in the database but leave `get_news_feed` at once. A broken feed is skipped with a warning naming the field; an
   unreadable file leaves the table as it was.
 - **Polling**: shortly after start, then every `News:FeedPollMinutes` (60). Up to
   `News:FeedParallelism` (4) hosts at a time, one request per host, with the gateway's own
@@ -129,7 +129,7 @@ It is on whenever the news module is on; `News:FeedsEnabled=false` switches it o
   168), `category`, `query` (up to 20 alternatives separated by `|`, case-insensitive for Latin
   letters, in title or summary), `excludePublished` (default true: drops entries the news registry
   already knows), `limit` (1–100, default 50) and `cursor` (the `nextCursor` of the previous page).
-  Newest first; each page stays under 60 KB and carries `total`, `nextCursor` and `health`
+  Newest first; each page stays under 25 KB and carries `total`, `nextCursor` and `health`
   (enabled feeds, failing feeds, last successful poll). `get_news_feed_entry` /
   `GET /api/news/feed/entries/{id}` returns one entry with its whole summary.
 

@@ -184,7 +184,7 @@ public sealed class NewsFeedHttpTests
     }
 
     [Fact]
-    public async Task Sync_adds_updates_and_disables_feeds_and_keeps_the_entries_of_a_removed_feed()
+    public async Task Sync_adds_updates_and_disables_feeds_and_a_removed_feed_leaves_the_list_but_keeps_its_entries()
     {
         //Arrange
         var time = new MutableTimeProvider(Now);
@@ -207,7 +207,7 @@ public sealed class NewsFeedHttpTests
         Assert.Equal(["https://alpha.example/new-feed", "https://gamma.example/feed"],
             factory.FeedHttp.Requests.Skip(before).Select(request => request.Url).Order().ToList());
         Assert.Null(factory.FeedHttp.Requests.Skip(before).First(request => request.Url.Contains("alpha", StringComparison.Ordinal)).IfNoneMatch);
-        Assert.Equal(["Alpha story", "Beta story"], feed.Entries.Select(entry => entry.Title).Order().ToList());
+        Assert.Equal(["Alpha story"], feed.Entries.Select(entry => entry.Title).ToList());
         Assert.Equal(2, feed.Health.FeedsEnabled);
         await factory.WithDbAsync(async database =>
         {
@@ -339,7 +339,7 @@ public sealed class NewsFeedHttpTests
     }
 
     [Fact]
-    public async Task Feed_page_stays_under_60_KB_even_with_long_entries()
+    public async Task Feed_page_stays_under_the_byte_cap_even_with_long_entries()
     {
         //Arrange
         var time = new MutableTimeProvider(Now);
@@ -351,13 +351,13 @@ public sealed class NewsFeedHttpTests
         await factory.SyncFeedCatalogAsync();
         await factory.PollFeedsOnceAsync();
         //Act
-        var response = await factory.SendAsync(HttpMethod.Get, FeedPath + "?limit=100");
+        var response = await factory.SendAsync(HttpMethod.Get, FeedPath + "?limit=50");
         var bytes = (await response.Content.ReadAsByteArrayAsync(TestContext.Current.CancellationToken)).Length;
         var page = await ReadAsync<NewsFeedResponse>(response);
         //Assert
         Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         Assert.True(bytes < NewsFeedService.MaxPageBytes, $"{bytes} bytes");
-        Assert.InRange(page.Entries.Count, 10, 99);
+        Assert.InRange(page.Entries.Count, 3, 49);
         Assert.Equal(100, page.Total);
         Assert.NotNull(page.NextCursor);
     }
@@ -366,7 +366,7 @@ public sealed class NewsFeedHttpTests
     [InlineData("sinceHours=0", "sinceHours")]
     [InlineData("sinceHours=169", "sinceHours")]
     [InlineData("limit=0", "limit")]
-    [InlineData("limit=101", "limit")]
+    [InlineData("limit=51", "limit")]
     [InlineData("category=gaming", "gaming")]
     [InlineData("query=a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u", "21 terms")]
     public async Task Feed_out_of_range_parameter_is_400_naming_it(string parameters, string named)

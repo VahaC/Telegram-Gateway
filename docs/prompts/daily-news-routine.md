@@ -57,8 +57,8 @@ that and stop.
    these stories are already published and must not be offered again, not even from another site.
 2. If `get_news_feed` is available, collect leads per category with a few targeted calls. The gateway
    holds thousands of entries a week, so never page through everything:
-   - the freshest: `category: <key>, sinceHours: 48, limit: 100`;
-   - the reader's stack: `category: <key>, sinceHours: 168, limit: 100, query: "<terms from the
+   - the freshest: `category: <key>, sinceHours: 48, limit: 30`;
+   - the reader's stack: `category: <key>, sinceHours: 168, limit: 30, query: "<terms from the
      category's scope column, separated by |>"`, e.g. `Proxmox|ZFS|Docker|WireGuard|OpenWrt|Cloudflare`.
    Follow `nextCursor` at most twice per call and keep `excludePublished: true`. Hand each subagent the
    entries of its category (title, url, date, feed name, id) as leads; extra passes may use other terms.
