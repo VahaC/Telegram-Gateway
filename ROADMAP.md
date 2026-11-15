@@ -7,6 +7,8 @@ clients) is implemented and tested against a fake of the theme. Further integrat
 - Run `scripts/check-news.sh` against the real vahac.com theme and the real Telegram chat, then
   connect the Claude cloud routine through the claude.ai connector (OAuth client 1).
 - Rename the GitHub repository, local folder and Portainer stack to AgentGateway (INSTALL.md §9).
+- After the first days of feed polling (ADR 0004), prune or replace the catalog feeds whose
+  `LastError` stays `http_403`/`http_402`/`not_a_feed`, and point the routine at `get_news_feed`.
 - Remove the deprecated `/api/digests` and `send_technology_digest` once nothing uses them.
 
 - Verify additional OAuth clients against the implemented discovery, consent and token flow.

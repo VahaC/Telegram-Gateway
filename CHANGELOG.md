@@ -1,5 +1,40 @@
 # Changelog
 
+## Development — 2026-11-15
+
+- **The editorial gate accepts 5–40 news items and no longer requires every category.** Defaults
+  changed from `News:MinItems` 35, `News:MaxItems` 80, `News:MinPerCategory` 1 to 5, 40 and 0;
+  `News:MaxAiShare` stays 0.30. On 2026-11-15 the routine had verified fewer than 35 stories and the
+  all-or-nothing gate left the day without an issue. The contract still allows 1..80 items, so an
+  owner can raise the gate again through the options.
+- **Added the news feed collector (ADR 0004).** The catalog
+  `src/AgentGateway.Api/NewsFeeds/news-feeds.json` ships with the build and the image and is synced
+  into the new `NewsFeeds` table at startup (added, updated, removed feeds disabled with their
+  entries kept). `NewsFeedWorker` polls the RSS 2.0, RSS 1.0/RDF and Atom feeds shortly after start
+  and every `News:FeedPollMinutes` (60) as a plain feed reader: own User-Agent
+  (`News:FeedUserAgent`), conditional GET, 20 s timeout, 16 MiB cap, `News:FeedParallelism` (4) hosts
+  at a time but one request per host, nothing after a host's 429 until the next run, no retry of any
+  refusal, XML without DTDs (undeclared common prefixes such as `media:`, a blank line before the XML
+  declaration and stray control characters are tolerated). Entries keep the feed's title, link,
+  date, plain-text summary (≤ 4000 characters) and an https picture named by the feed; they are unique by canonical URL and deleted
+  14 days after first seen. One summary log line per run. Additive migration `AddNewsFeeds`
+  (`NewsFeeds`, `NewsFeedEntries`, indexed by publication-or-first-seen time).
+- Added MCP tools `get_news_feed` (`sinceHours`, `category`, `query` with up to 20 `|` alternatives,
+  `excludePublished`, `limit`, `cursor`; pages under 60 KB with a feed health block) and
+  `get_news_feed_entry` (`id`, the whole summary), both under scope `news:publish`, and their HTTP
+  counterparts `GET /api/news/feed` and `GET /api/news/feed/entries/{id}`.
+- **Added the news watchdog.** Daily at `News:WatchdogTime` (06:00) in `News:WatchdogTimeZone` (UTC)
+  it checks that an issue exists for that day's issue date (Europe/Kyiv); if not, it queues one
+  Telegram alert through the message outbox (idempotency key `news-watchdog-{date}`), naming the
+  date, the check time and the newest issue. A start after the check time catches up; a restart or
+  repeat never alerts twice.
+- New options `News:FeedsEnabled`, `News:FeedCatalogPath`, `News:FeedPollMinutes`,
+  `News:FeedUserAgent`, `News:FeedParallelism`, `News:WatchdogEnabled`, `News:WatchdogTime`,
+  `News:WatchdogTimeZone`, validated at startup (a browser User-Agent, an unknown zone or a time
+  that is not HH:mm stop the start with a sentence naming the setting).
+- The Docker smoke checks that the catalog is inside the image and switches the watchdog off so its
+  own Telegram assertions stay deterministic.
+
 ## Development — 2026-11-13
 
 - Fixed the OAuth data-protection key ring being unreadable after every restart. Keys were

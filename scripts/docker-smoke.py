@@ -129,6 +129,14 @@ def main():
         else:
             raise AssertionError("The isolated news publication did not reach a recorded WordPress failure.")
         assert news["errorCode"] in {"wp_network", "wp_timeout"}, news["errorCode"]
+        # The feed catalog ships inside the image (/app/NewsFeeds); the collector applies it right after startup.
+        for _ in range(30):
+            feed_status, feed = request("/api/news/feed?limit=1")
+            if feed_status == 200 and feed["health"]["feedsEnabled"] > 0:
+                break
+            time.sleep(1)
+        else:
+            raise AssertionError("The feed catalog shipped in the image was not applied.")
         # Recreate the process/container on the same volume. No outbound sends are possible.
         run(compose + ["restart", "gateway"])
         for _ in range(30):
@@ -146,7 +154,8 @@ def main():
         assert status == 200 and persisted_news["itemCount"] == 36 and persisted_news["status"] == "Failed"
         assert request("/api/messages", {**payload, "text": "Changed payload"})[0] == 409
         print("Docker smoke passed: non-root/read-only service, pinned volume name, old-prefix setting, OAuth consent/PKCE/token/MCP, "
-              "real HTTP handler transport failure, news issue accepted/deduplicated/failed safely, persistent ledger, registry and bearer access after restart.")
+              "real HTTP handler transport failure, news issue accepted/deduplicated/failed safely, feed catalog shipped and applied, "
+              "persistent ledger, registry and bearer access after restart.")
         print("Telegram and WordPress were blocked by the isolated network; no real send or publication was performed.")
     finally:
         run(compose + ["down", "--volumes", "--remove-orphans"])

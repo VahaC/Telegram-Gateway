@@ -22,10 +22,11 @@ external callers and publishes a daily tech-news issue to the owner's WordPress 
 
 ## News module
 
-- Accept one finished daily issue (35–80 news items, releases, security alerts) from a Claude
+- Accept one finished daily issue (5–40 news items by default, releases, security alerts) from a Claude
   cloud routine in one call, over HTTP or MCP, in the shared format "news issue v1".
-- Refuse issues that break the editorial rules (item count, every category present, at most 30%
-  AI, exactly five TOP items numbered 1..5, contiguous numbering) with the exact violations.
+- Refuse issues that break the editorial rules (item count, optionally a minimum per category, at
+  most 30% AI, exactly five TOP items numbered 1..5, contiguous numbering) with the exact violations.
+  A thin news week must still produce an issue rather than none (2026-11-15).
 - Keep every accepted item as the duplicate registry. Refuse an item whose source (in canonical
   form, ignoring tracking parameters) or event key appeared in any earlier issue, and name the
   earlier issue and item, so the routine can replace exactly those items.
@@ -34,6 +35,12 @@ external callers and publishes a daily tech-news issue to the owner's WordPress 
   at a time, resuming after failures and restarts; an image that cannot be fetched never blocks
   publication.
 - Send only one Telegram line per published issue with the link to the day page; never the texts.
+- Give the routine dated leads from the publishers' own RSS/Atom feeds, collected by the gateway at
+  home as a polite personal feed reader (own User-Agent, conditional GET, one request per host, no
+  retries or workarounds after a refusal), filterable by window, category, keywords and the
+  registry, in pages small enough for a cloud agent (ADR 0004).
+- Tell the owner once on Telegram when no issue arrived by the daily check time, without repeating
+  the alert after restarts.
 - Keep ChatGPT's Telegram access (hostname, `/mcp`, OAuth client, API key) unchanged; give the news
   routine its own OAuth client limited to the news tools.
 - Rename the product without losing data or reconfiguring the running installation.

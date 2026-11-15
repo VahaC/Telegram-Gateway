@@ -7,7 +7,9 @@ A single-user .NET 10 gateway between AI agents and two outputs:
 - **WordPress news**: a Claude cloud routine submits one finished daily tech-news issue; the
   gateway keeps every accepted item as the duplicate registry and publishes the issue to the
   vahac.com theme (one private post per item, with the source's picture, plus a day page), then
-  sends one Telegram line with the day page link.
+  sends one Telegram line with the day page link. To feed that routine, the gateway reads the
+  publishers' own RSS/Atom feeds like a personal feed reader, and a watchdog tells the owner on
+  Telegram when no issue arrived.
 
 Content generation belongs to the caller. AgentGateway was called TelegramGateway; existing
 installations keep working unchanged (see [Renaming](INSTALL.md#9-renaming-to-agentgateway)).
@@ -29,6 +31,12 @@ Claude cloud routine (daily news)
   -> SQLite: issue, items, sources, releases, alerts = the registry and the outbox
   -> news worker, one call at a time -> WordPress /wp-json/vahac/v1/news (day, items, verify)
   -> one Telegram line through DeliveryService: "📰 <title> — 38 новин: <day page>"
+
+Feed collector (homelab, hourly)                Watchdog (daily, 06:00 UTC)
+  catalog NewsFeeds/news-feeds.json               no issue for today's Kyiv date?
+  -> RSS/Atom GET per feed (one per host)         -> one Telegram alert per date
+  -> SQLite NewsFeedEntries (14 days)                through DeliveryService
+  -> MCP get_news_feed / get_news_feed_entry -> Claude routine
 ```
 
 Adapters isolate Telegram HTTP, WordPress HTTP and formatting; Queue/Worker uses SQLite as the
@@ -77,7 +85,9 @@ WordPress theme implements the other side. The workflow for AI callers is in
 
 - **Validation**: structure (400 with `errors`), then the editorial gate (422 with `violations`,
   each starting with a code: `min_items`, `max_items`, `category_min`, `ai_share`, `top_count`,
-  `top_numbering`, `numbering`), then duplicates (409 with `duplicates`).
+  `top_numbering`, `numbering`), then duplicates (409 with `duplicates`). By default an issue has
+  5–40 items, no category is mandatory (`category_min` only applies when
+  `News:MinPerCategory` > 0) and at most 30% are `ai`.
 - **Registry**: every accepted item stays stored. A source URL is compared in canonical form
   (lower-case host, no `www.`, no default port, no fragment, no `utm_*`/`fbclid`/`gclid`/`mc_cid`/
   `mc_eid`/`ref`/`source` parameters, sorted query, no trailing slash, http = https). An item is
@@ -92,6 +102,56 @@ WordPress theme implements the other side. The workflow for AI callers is in
 - **Notice**: one Telegram line per revision with the day URL WordPress returned, e.g.
   `📰 Техдайджест 14.11.2026 — 38 новин: https://vahac.com/news/2026-11-14/`
   (or `37 з 38 новин` when partially published). The news texts never go to Telegram.
+
+## News feeds
+
+Several key publishers block the cloud agent's requests, so the gateway, running at home, reads
+their own RSS/Atom feeds and hands the entries to the routine ([ADR 0004](docs/adr/0004-the-gateway-collects-rss-instead-of-the-agent-fetching-sites.md)).
+It is on whenever the news module is on; `News:FeedsEnabled=false` switches it off.
+
+- **Catalog**: `src/AgentGateway.Api/NewsFeeds/news-feeds.json` ships with the build and the image
+  (`/app/NewsFeeds/`); `News:FeedCatalogPath` points elsewhere. Each feed: `id` (unique kebab-case,
+  ≤ 60), `name`, `url` (https only), `categories` (1–3 of the six), `kind` (`vendor`, `release`,
+  `news`, `blog`, `advisory`, `community`, `aggregator`), `language` (ISO 639-1). At startup the
+  catalog is synced into the database: new feeds are added, changed ones updated, removed ones
+  disabled (their entries stay). A broken feed is skipped with a warning naming the field; an
+  unreadable file leaves the table as it was.
+- **Polling**: shortly after start, then every `News:FeedPollMinutes` (60). Up to
+  `News:FeedParallelism` (4) hosts at a time, one request per host, with the gateway's own
+  User-Agent `AgentGateway-NewsFeed/1.0 (personal feed reader)` and a conditional GET (ETag /
+  Last-Modified), 20 s timeout and a 16 MiB cap. 402/403/429 and every other failure are recorded
+  on the feed and never retried or worked around; after a 429 the rest of that host's feeds wait
+  for the next run. One log line per run: feeds ok/failed (with the failing ids), new entries.
+- **Entries**: title, link, the feed's own date (null when it has none), plain-text summary of at
+  most 4000 characters and an https picture named by the feed itself; article pages are never
+  fetched. Unique by canonical URL; deleted 14 days after the gateway first saw them.
+- **Reading them**: MCP `get_news_feed` / `GET /api/news/feed` with `sinceHours` (1–168, default
+  168), `category`, `query` (up to 20 alternatives separated by `|`, case-insensitive for Latin
+  letters, in title or summary), `excludePublished` (default true: drops entries the news registry
+  already knows), `limit` (1–100, default 50) and `cursor` (the `nextCursor` of the previous page).
+  Newest first; each page stays under 60 KB and carries `total`, `nextCursor` and `health`
+  (enabled feeds, failing feeds, last successful poll). `get_news_feed_entry` /
+  `GET /api/news/feed/entries/{id}` returns one entry with its whole summary.
+
+## News watchdog
+
+Every day at `News:WatchdogTime` (`06:00`) in `News:WatchdogTimeZone` (`UTC`, because the
+routine's cron runs in UTC) the gateway checks whether an issue exists, in any status, for that
+day's issue date (Europe/Kyiv). If not, it queues one Telegram message through the ordinary
+outbox, for example:
+
+```text
+⚠️ Техдайджест за 16.11.2026 не надійшов: о 06:00 UTC випуску в шлюзі немає. Останній випуск: 15.11.2026. Перевір запуск routine «Daily tech news digest» у claude.ai → Code → Routines. Докладніше: README → News watchdog.
+```
+
+"Останній випуск" is the newest earlier issue date in the registry (`ще не було` when there is
+none). The delivery's idempotency key is `news-watchdog-{date}`, so a repeat or a restart never
+sends a second alert; a start after the check time catches up on the latest check. The time is a
+wall-clock time in an IANA zone and follows DST.
+
+When the alert arrives: open claude.ai → Code → Routines → *Daily tech news digest*, read the last
+run (a failure report names the cause), fix it or run it again. A late issue is accepted as usual.
+Switch the watchdog off with `News:WatchdogEnabled=false`.
 
 ## Docker quick start
 
@@ -139,14 +199,22 @@ user-secrets, never committed appsettings.
 | `AGENTGATEWAY_News__WordPressBaseUrl` | `https://vahac.com` (https origin) |
 | `AGENTGATEWAY_News__WordPressUser` | WordPress user with role `vahac_news_publisher` |
 | `WORDPRESS_APP_PASSWORD` | Its Application Password; alias for `AGENTGATEWAY_News__WordPressAppPassword`; env only, never logged |
-| `AGENTGATEWAY_News__MinItems` / `MaxItems` | `35` / `80` news items per issue |
-| `AGENTGATEWAY_News__MinPerCategory` | `1` item in each of the 6 categories |
+| `AGENTGATEWAY_News__MinItems` / `MaxItems` | `5` / `40` news items per issue (allowed 1–80) |
+| `AGENTGATEWAY_News__MinPerCategory` | `0`: no category is mandatory; `1` requires each of the 6 |
 | `AGENTGATEWAY_News__MaxAiShare` | `0.30` share of `ai` items |
 | `AGENTGATEWAY_News__CallIntervalMilliseconds` | `500` between WordPress calls |
 | `AGENTGATEWAY_News__MaxAttempts` | `6` per WordPress call |
 | `AGENTGATEWAY_News__RetryBaseMilliseconds` | `2000`; backoff 2s, 4s, 8s … |
 | `AGENTGATEWAY_News__ItemTimeoutSeconds` | `60` for item calls (WordPress downloads the image) |
 | `AGENTGATEWAY_News__NotifyTelegramOnPublish` | `true`; one Telegram line per published revision |
+| `AGENTGATEWAY_News__FeedsEnabled` | `true`; the feed collector and its tools (with `News:Enabled`) |
+| `AGENTGATEWAY_News__FeedCatalogPath` | `NewsFeeds/news-feeds.json`, relative to the application folder |
+| `AGENTGATEWAY_News__FeedPollMinutes` | `60`, allowed 5–1440 |
+| `AGENTGATEWAY_News__FeedUserAgent` | `AgentGateway-NewsFeed/1.0 (personal feed reader)`; a browser token is refused |
+| `AGENTGATEWAY_News__FeedParallelism` | `4` hosts at a time (one request per host), allowed 1–16 |
+| `AGENTGATEWAY_News__WatchdogEnabled` | `true`; the missing-issue alert (with `News:Enabled`) |
+| `AGENTGATEWAY_News__WatchdogTime` | `06:00`, 24-hour `HH:mm` |
+| `AGENTGATEWAY_News__WatchdogTimeZone` | `UTC`; any IANA zone, e.g. `Europe/Kyiv` |
 | `AGENTGATEWAY_McpOAuth__*` | OAuth; see [OAuth for MCP](docs/integrations.md#oauth-for-mcp) |
 
 Compose maps `GATEWAY_HOST`, `TRUSTED_PROXY_IP`, `GATEWAY_NETWORK`, `GATEWAY_VOLUME_NAME`,
@@ -173,6 +241,8 @@ Use `X-Api-Key` on HTTP API routes except `/api/health` and `/api/ready`. Unknow
 | DELETE | `/api/news/issues/{date}` | Remove the **test fixture only** (`scripts/check-news.sh --cleanup`); any real issue gets 409 |
 | GET | `/api/news/history?days=30` | Registry of the last 1–180 days, newest first: items and releases/alerts with canonical URLs |
 | POST | `/api/news/check` | `{ "urls": [...], "eventKeys": [...] }` (≤ 200 each) → `{ "known": [...] }` |
+| GET | `/api/news/feed` | Feed entries, newest first: `sinceHours`, `category`, `query`, `excludePublished`, `limit`, `cursor` (see News feeds); 404 with an error while `News:FeedsEnabled` is false |
+| GET | `/api/news/feed/entries/{id}` | One feed entry with its whole summary; bare 404 for an unknown id |
 | GET | `/api/health` | Anonymous liveness |
 | GET | `/api/ready` | Anonymous local table/storage readiness; no Telegram call |
 | GET | `/openapi/v1.json` | Authenticated OpenAPI document with API-key security scheme |
@@ -202,8 +272,8 @@ character limits.
 
 MCP clients use `send_telegram_message`, `get_delivery_status`, `send_technology_digest`
 (deprecated) and `get_digest_delivery_status` for Telegram, and `get_news_history`,
-`check_news_candidates`, `submit_news_issue`, `replace_news_issue` and `get_news_issue_status`
-for news. Telegram tools need scope `telegram:send`, news tools `news:publish`; the API key
+`check_news_candidates`, `submit_news_issue`, `replace_news_issue`, `get_news_issue_status`,
+`get_news_feed` and `get_news_feed_entry` for news. Telegram tools need scope `telegram:send`, news tools `news:publish`; the API key
 grants both. OAuth supports several confidential clients (ChatGPT stays client 0; a claude.ai
 connector can be client 1). See [docs/integrations.md](docs/integrations.md).
 
@@ -246,8 +316,9 @@ python3 scripts/docker-smoke.py
 
 The user-secrets ID is unchanged by the rename, so existing development secrets still apply.
 Use Git Bash on Windows, or the equivalent `dotnet test -c Release --no-build --no-restore`.
-HTTP tests use WebApplicationFactory, real SQLite/migrations/auth, and recording fake Telegram and
-WordPress HTTP handlers (the WordPress fake follows the contract's upsert/revision rules).
+HTTP tests use WebApplicationFactory, real SQLite/migrations/auth, and recording fake Telegram,
+WordPress and feed HTTP handlers (the WordPress fake follows the contract's upsert/revision rules;
+the feed tests use their own small catalogs, one test checks the real catalog).
 Background work is driven deterministically. Docker smoke uses fake credentials and an internal
 network that blocks outbound Telegram and WordPress, then cleans up only its unique stack.
 `scripts/check-news.sh` is the live check against the real site (it asks for the URL and key).
@@ -258,10 +329,11 @@ network that blocks outbound Telegram and WordPress, then cleans up only its uni
 `Infrastructure` contains SQLite, Telegram, WordPress and formatting; `Api` contains endpoints,
 validation, services, MCP and migrations. There is one test project per source layer and shared
 `TestInfrastructure`. `scripts`, `examples`, and `docs` hold operations and integration material;
-`examples/news-sample-issue.json` is the fixture shared with the WordPress theme.
+`examples/news-sample-issue.json` is the fixture shared with the WordPress theme;
+`src/AgentGateway.Api/NewsFeeds/news-feeds.json` is the feed catalog.
 
 Migrations live in the API project and apply on startup; the news tables come from the additive
-`AddNewsRegistry` migration. The SQLite files keep their names (`gateway.db`, `oauth.db`).
+`AddNewsRegistry` migration, the feed tables from the additive `AddNewsFeeds` migration. The SQLite files keep their names (`gateway.db`, `oauth.db`).
 
 ```bash
 dotnet ef migrations add Name --project src/AgentGateway.Api \
@@ -290,6 +362,11 @@ dotnet ef migrations add Name --project src/AgentGateway.Api \
 | `wp_5xx` / `wp_timeout` / `wp_network` | WordPress or the network was down for all retries; fix it, then republish |
 | `verify_mismatch` / `wp_missing` | WordPress reported different counts or missing posts; check the theme, then republish |
 | `image: failed` on an item | WordPress could not download the source picture; the post is published without it |
+| Feed `LastError` `http_403` / `http_402` / `http_429` | The publisher refuses feed readers or asked for less; nothing is retried. Remove or replace the feed in the catalog if it stays failing |
+| Feed `LastError` `skipped_host_429` | Another feed on the same host answered 429 in this run; it is polled again next run |
+| Feed `LastError` `not_a_feed (root <html>)` / `xml_invalid` / `too_large` / `timeout` / `network (…)` | The URL returns a web page, broken XML, more than 16 MiB, nothing within 20 s, or cannot be reached; fix the URL in the catalog |
+| Startup warning "News feed catalog entry skipped" | That feed breaks a catalog rule; the message names the index, id and field |
+| Watchdog alert in Telegram | No issue for the date at the check time; see News watchdog |
 | Gateway 429 | Wait; configure the exact trusted proxy if distinct client IPs are needed |
 | Client cannot connect | Verify HTTPS, interface and authentication; OAuth requires the configured client ID/secret and exact callback |
 | OAuth tool missing from a client | Its token lacks the scope (`telegram:send` / `news:publish`); check `McpOAuth:Clients:{n}:Scopes` |

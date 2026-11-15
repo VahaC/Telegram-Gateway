@@ -74,7 +74,27 @@ public static class NewsEndpointExtensions
             })
             .WithName("CheckNewsCandidates").WithDescription("Which candidate URLs or eventKeys are already in the registry.")
             .Produces<NewsCheckResponse>().Produces<ApiErrorResponse>(400);
+        news.MapGet("/feed", async (NewsFeedService service, CancellationToken cancellationToken, int sinceHours = NewsFeedService.MaxSinceHours,
+                string? category = null, string? query = null, bool excludePublished = true, int limit = 50, string? cursor = null) =>
+                MapFeedResult(await service.GetFeedAsync(sinceHours, category, query, excludePublished, limit, cursor, cancellationToken)))
+            .WithName("NewsFeed")
+            .WithDescription("Entries collected from the publishers' RSS/Atom feeds, newest first (same parameters as MCP get_news_feed). "
+                + "404 with an error while News:FeedsEnabled is false.")
+            .Produces<NewsFeedResponse>().Produces<ApiErrorResponse>(400).Produces<ApiErrorResponse>(404);
+        news.MapGet("/feed/entries/{id:guid}", async (Guid id, NewsFeedService service, CancellationToken cancellationToken) =>
+                MapFeedResult(await service.GetEntryAsync(id, cancellationToken)))
+            .WithName("NewsFeedEntry").WithDescription("One feed entry with its whole summary; a bare 404 when the id is unknown.")
+            .Produces<NewsFeedEntryResponse>().Produces<ApiErrorResponse>(404);
     }
+
+    private static IResult MapFeedResult<T>(NewsFeedQueryResult<T> result) where T : class => result.Status switch
+    {
+        NewsFeedQueryStatus.Ok => Results.Ok(result.Value),
+        NewsFeedQueryStatus.Invalid => ApiErrors.BadRequest(result.Error!),
+        // The collector being off is a missing resource on this gateway, and the sentence says which setting turns it on.
+        NewsFeedQueryStatus.Disabled => ApiErrors.Error(404, result.Error!),
+        _ => Results.NotFound()
+    };
 
     private static async Task<(NewsIssueRequest? Issue, IResult? Error)> ReadIssueAsync(HttpRequest request, JsonSerializerOptions options,
         CancellationToken cancellationToken)

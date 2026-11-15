@@ -14,6 +14,8 @@ public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> 
     public DbSet<NewsReleaseEntity> NewsReleases => Set<NewsReleaseEntity>();
     public DbSet<NewsSecurityAlertEntity> NewsSecurityAlerts => Set<NewsSecurityAlertEntity>();
     public DbSet<NewsRemovalEntity> NewsRemovals => Set<NewsRemovalEntity>();
+    public DbSet<NewsFeedEntity> NewsFeeds => Set<NewsFeedEntity>();
+    public DbSet<NewsFeedEntryEntity> NewsFeedEntries => Set<NewsFeedEntryEntity>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -124,6 +126,37 @@ public sealed class ApplicationDbContext(DbContextOptions<ApplicationDbContext> 
             entity.Property(row => row.EventKey).HasMaxLength(100);
             entity.Property(row => row.Status).HasConversion<string>().HasMaxLength(24);
             entity.Property(row => row.ErrorCode).HasMaxLength(64);
+        });
+        builder.Entity<NewsFeedEntity>(entity =>
+        {
+            entity.HasKey(row => row.Id);
+            entity.HasIndex(row => row.CatalogId).IsUnique(); // The catalog id is how a catalog sync finds the row again.
+            entity.Property(row => row.CatalogId).HasMaxLength(60);
+            entity.Property(row => row.Name).HasMaxLength(100);
+            entity.Property(row => row.Url).HasMaxLength(2000);
+            entity.Property(row => row.Kind).HasMaxLength(16);
+            entity.Property(row => row.Language).HasMaxLength(8);
+            entity.Property(row => row.ETag).HasMaxLength(200);
+            entity.Property(row => row.LastModified).HasMaxLength(64);
+            entity.Property(row => row.LastError).HasMaxLength(200);
+            // Feeds are disabled, never deleted, so the cascade only matters for a manual cleanup of the table.
+            entity.HasMany<NewsFeedEntryEntity>().WithOne().HasForeignKey(row => row.FeedId).OnDelete(DeleteBehavior.Cascade);
+        });
+        builder.Entity<NewsFeedEntryEntity>(entity =>
+        {
+            entity.HasKey(row => row.Id);
+            // One article is one lead, whichever feeds carry it; the database refuses the second copy.
+            entity.HasIndex(row => row.CanonicalUrl).IsUnique();
+            // ~7,000 entries a week: the feed window and its newest-first order (SortUtc, then Id) come straight from this
+            // index without a sort. FirstSeenUtc stays unindexed on purpose: the page snapshot (FirstSeenUtc <= asOf) matches
+            // nearly every row, and an index on it lured SQLite's planner away from this one (a 15,000-row probe ran slower);
+            // the hourly 14-day cleanup scans a few thousand rows either way. FeedId gets its index from the foreign key.
+            entity.HasIndex(row => new { row.SortUtc, row.Id });
+            entity.Property(row => row.CanonicalUrl).HasMaxLength(2000);
+            entity.Property(row => row.Url).HasMaxLength(2000);
+            entity.Property(row => row.Title).HasMaxLength(500);
+            entity.Property(row => row.Summary).HasMaxLength(4000);
+            entity.Property(row => row.ImageUrl).HasMaxLength(2000);
         });
     }
 }

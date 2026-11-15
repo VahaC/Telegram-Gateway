@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net;
 using System.Text.RegularExpressions;
 using System.Threading.RateLimiting;
@@ -55,6 +56,21 @@ public static class GatewayServiceCollectionExtensions
                 && options.MinPerCategory is >= 0 and <= 80 && options.MaxAiShare is >= 0 and <= 1, "Invalid news editorial settings.")
             .Validate(options => options.CallIntervalMilliseconds is >= 0 and <= 60000 && options.MaxAttempts is >= 1 and <= 10
                 && options.RetryBaseMilliseconds is >= 0 and <= 60000 && options.ItemTimeoutSeconds is >= 1 and <= 600, "Invalid news publication settings.")
+            .Validate(options => options.FeedPollMinutes is >= 5 and <= 1440 && options.FeedParallelism is >= 1 and <= 16
+                && !string.IsNullOrWhiteSpace(options.FeedCatalogPath),
+                "News:FeedPollMinutes must be 5-1440, News:FeedParallelism 1-16 and News:FeedCatalogPath set (default NewsFeeds/news-feeds.json).")
+            // ADR 0004: the collector introduces itself as a feed reader; a browser token would disguise it as a person.
+            .Validate(options => options.FeedUserAgent.Length is >= 1 and <= 200
+                && !options.FeedUserAgent.Contains("Mozilla", StringComparison.OrdinalIgnoreCase)
+                && new HttpRequestMessage().Headers.UserAgent.TryParseAdd(options.FeedUserAgent),
+                "News:FeedUserAgent must be a valid User-Agent of at most 200 characters naming the gateway, not a browser, "
+                + "e.g. AgentGateway-NewsFeed/1.0 (personal feed reader).")
+            .Validate(options => !options.Enabled || !options.WatchdogEnabled
+                || TimeOnly.TryParseExact(options.WatchdogTime, "HH:mm", CultureInfo.InvariantCulture, DateTimeStyles.None, out _),
+                "News:WatchdogTime must be a 24-hour HH:mm time such as 06:00.")
+            .Validate(options => !options.Enabled || !options.WatchdogEnabled
+                || TimeZoneInfo.TryFindSystemTimeZoneById(options.WatchdogTimeZone ?? "", out _),
+                "News:WatchdogTimeZone must be an IANA time zone such as UTC or Europe/Kyiv.")
             .ValidateOnStart();
         services.TryAddSingleton(TimeProvider.System);
         services.AddMcpOAuth(configuration);
@@ -74,6 +90,13 @@ public static class GatewayServiceCollectionExtensions
         services.AddScoped<NewsPublicationProcessor>();
         services.AddScoped<NewsPublicationReconciler>();
         services.AddHostedService<NewsPublicationWorker>();
+        // ADR 0004: the feed collector and the watchdog are separate loops, so a slow poll can never delay the morning check.
+        services.AddScoped<NewsFeedCatalogSync>();
+        services.AddScoped<NewsFeedPoller>();
+        services.AddScoped<NewsFeedService>();
+        services.AddHostedService<NewsFeedWorker>();
+        services.AddScoped<NewsWatchdog>();
+        services.AddHostedService<NewsWatchdogWorker>();
         services.AddOpenApi(options => options.AddDocumentTransformer<AgentGateway.Api.OpenApi.ApiKeyDocumentTransformer>());
         services.AddMcpServer().WithHttpTransport().WithTools<GatewayTools>().WithTools<NewsTools>()
             .WithRequestFilters(filters =>

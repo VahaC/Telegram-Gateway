@@ -120,12 +120,14 @@ public sealed class NewsSubmissionHttpTests
     {
         //Arrange
         await using var factory = new GatewayApiFactory();
+        // The per-category minimum is off by default since 2026-11-15; the rule itself still works when configured.
+        if (code == "category_min") factory.Settings["News:MinPerCategory"] = "1";
         var issue = code switch
         {
-            "min_items" => NewsIssueDataFactory.Issue(Date, count: 34),
+            "min_items" => NewsIssueDataFactory.Issue(Date, count: 4),
             "category_min" => NewsIssueDataFactory.Issue(Date).WithItems(item => item.Category == "smarthome" ? item with { Category = "dotnet" } : item),
-            // 42 items, 13 of them AI: 31%.
-            "ai_share" => NewsIssueDataFactory.Issue(Date, count: 42).WithItems(item => item.Number is 7 or 8 or 9 or 10 or 11 or 13 ? item with { Category = "ai" } : item),
+            // 40 items, 13 of them AI: 32.5%.
+            "ai_share" => NewsIssueDataFactory.Issue(Date, count: 40).WithItems(item => item.Number is 7 or 8 or 9 or 10 or 11 or 13 or 14 ? item with { Category = "ai" } : item),
             "top_count" => NewsIssueDataFactory.Issue(Date).WithItems(item => item.Number == 5 ? item with { IsTop = false } : item),
             "top_numbering" => NewsIssueDataFactory.Issue(Date).WithItems(item => item with { IsTop = item.Number is >= 3 and <= 7 }),
             _ => NewsIssueDataFactory.Issue(Date).WithItems(item => item.Number == 20 ? item with { Number = 40 } : item)
@@ -137,9 +139,39 @@ public sealed class NewsSubmissionHttpTests
         Assert.Equal((HttpStatusCode)422, response.StatusCode);
         var violation = Assert.Single(rejection.Violations!);
         Assert.StartsWith(code + ":", violation);
-        if (code == "ai_share") Assert.Contains("13 of 42 items (31%)", violation);
-        if (code == "min_items") Assert.Contains("34", violation);
+        if (code == "ai_share") Assert.Contains("13 of 40 items (32.5%)", violation);
+        if (code == "min_items") Assert.Contains("has 4 news items; at least 5 are required", violation);
         await factory.WithDbAsync(async database => Assert.Empty(await database.NewsItems.ToListAsync(TestContext.Current.CancellationToken)));
+    }
+
+    [Fact]
+    public async Task Post_41_items_is_422_max_items_with_the_default_gate()
+    {
+        //Arrange
+        await using var factory = new GatewayApiFactory();
+        //Act
+        var response = await factory.SendAsync(HttpMethod.Post, Issues, NewsIssueDataFactory.Issue(Date, count: 41));
+        var rejection = await ReadAsync<NewsRejectionResponse>(response);
+        //Assert
+        Assert.Equal((HttpStatusCode)422, response.StatusCode);
+        Assert.Equal("max_items: The issue has 41 news items; at most 40 are allowed.", Assert.Single(rejection.Violations!));
+        await factory.WithDbAsync(async database => Assert.Empty(await database.NewsIssues.ToListAsync(TestContext.Current.CancellationToken)));
+    }
+
+    [Fact]
+    public async Task Post_5_items_with_an_empty_category_is_accepted_by_the_default_gate()
+    {
+        //Arrange
+        await using var factory = new GatewayApiFactory();
+        var issue = NewsIssueDataFactory.Issue(Date, count: 5);
+        //Act
+        var response = await factory.SendAsync(HttpMethod.Post, Issues, issue);
+        var status = await ReadAsync<NewsIssueStatusResponse>(response);
+        //Assert
+        Assert.Equal(HttpStatusCode.Accepted, response.StatusCode);
+        Assert.DoesNotContain(issue.Items, item => item.Category == "ai");
+        Assert.Equal(5, status.ItemCount);
+        await factory.WithDbAsync(async database => Assert.Equal(5, await database.NewsItems.CountAsync(TestContext.Current.CancellationToken)));
     }
 
     [Fact]
@@ -312,7 +344,7 @@ public sealed class NewsSubmissionHttpTests
         //Arrange
         await using var factory = new GatewayApiFactory();
         var paragraph = string.Concat(Enumerable.Repeat("Довгий український текст новини. ", 70))[..1990];
-        var large = NewsIssueDataFactory.Issue(Date, count: 45).WithItems(item => item with { Summary = paragraph });
+        var large = NewsIssueDataFactory.Issue(Date, count: 40).WithItems(item => item with { Summary = paragraph });
         using var huge = new HttpRequestMessage(HttpMethod.Post, Issues);
         huge.Headers.Add("X-Api-Key", GatewayApiFactory.ApiKey);
         huge.Content = new StringContent(new string('x', 1024 * 1024 + 1), Encoding.UTF8, "application/json");

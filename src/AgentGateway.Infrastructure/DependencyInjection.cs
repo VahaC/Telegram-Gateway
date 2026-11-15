@@ -1,8 +1,10 @@
+using System.Net;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using AgentGateway.Core.Abstractions;
 using AgentGateway.Core.Options;
+using AgentGateway.Infrastructure.Feeds;
 using AgentGateway.Infrastructure.Formatting;
 using AgentGateway.Infrastructure.Persistence;
 using AgentGateway.Infrastructure.Telegram;
@@ -45,6 +47,19 @@ public static class DependencyInjection
             client.DefaultRequestHeaders.UserAgent.ParseAdd("AgentGateway/0.0.0-dev");
         }).ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler { AllowAutoRedirect = false })
           .RemoveAllLoggers(); // Every request carries the Application Password in its Authorization header.
+        services.AddSingleton<INewsFeedClient, NewsFeedClient>();
+        services.AddHttpClient(NewsFeedClient.HttpClientName, (provider, client) =>
+        {
+            client.Timeout = Timeout.InfiniteTimeSpan; // Each fetch sets its own timeout that also covers reading the body.
+            // ADR 0004: the gateway names itself as a feed reader; a browser User-Agent would pretend to be a person.
+            client.DefaultRequestHeaders.UserAgent.ParseAdd(provider.GetRequiredService<IOptions<NewsOptions>>().Value.FeedUserAgent);
+            client.DefaultRequestHeaders.Accept.ParseAdd(
+                "application/rss+xml, application/atom+xml, application/rdf+xml;q=0.9, application/xml;q=0.8, text/xml;q=0.8, */*;q=0.5");
+        }).ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
+        {
+            // Feeds move (http to https, a new path); .NET never follows an https-to-http downgrade, which stays a failure.
+            AllowAutoRedirect = true, MaxAutomaticRedirections = 5, AutomaticDecompression = DecompressionMethods.All
+        }).RemoveAllLoggers(); // Hundreds of feeds an hour would drown the log; the poller writes one summary line per run.
         return services;
     }
 }

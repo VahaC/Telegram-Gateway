@@ -399,6 +399,8 @@ public sealed class McpOAuthHttpTests
         Assert.Contains(chatGptTools, tool => tool.Name == "send_telegram_message");
         Assert.DoesNotContain(chatGptTools, tool => tool.Name == "submit_news_issue");
         Assert.Contains(claudeTools, tool => tool.Name == "submit_news_issue");
+        Assert.Contains(claudeTools, tool => tool.Name == "get_news_feed"); // The feed tools ride on news:publish too.
+        Assert.DoesNotContain(chatGptTools, tool => tool.Name == "get_news_feed");
         Assert.DoesNotContain(claudeTools, tool => tool.Name == "send_telegram_message");
         Assert.True(refusedNews.IsError);
         Assert.Contains("news:publish", Assert.IsType<TextContentBlock>(Assert.Single(refusedNews.Content)).Text);

@@ -8,6 +8,8 @@ services:
       AGENTGATEWAY_Gateway__KnownProxies__1: "::1"
       AGENTGATEWAY_News__MaxAttempts: 1
       AGENTGATEWAY_News__CallIntervalMilliseconds: 0
+      # The watchdog would queue its own Telegram alert at startup (no issue for today) ahead of the smoke's message.
+      AGENTGATEWAY_News__WatchdogEnabled: "false"
 networks:
   gateway:
     internal: true

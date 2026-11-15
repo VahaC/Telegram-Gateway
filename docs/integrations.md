@@ -23,10 +23,16 @@ key and the original payload. A different payload under the same key is rejected
 
 The issue format is the shared contract "news issue v1"
 ([docs/prompts/news-module.md](prompts/news-module.md#shared-contract-news-issue-v1)): date
-(Europe/Kyiv day), title, language, intro, 35–80 items (number, category, isTop, importance,
+(Europe/Kyiv day), title, language, intro, 5–40 items by default (number, category, isTop, importance,
 title, plain-text summary and whyItMatters, publishedOn, eventOn, releaseStatus, version,
 eventKey, source, extraSources, image, tags), releases, securityAlerts and research stats.
 
+0. **Leads from the feeds (optional).** `get_news_feed` (or `GET /api/news/feed`) lists entries the
+   gateway collected from the publishers' own RSS/Atom feeds in the last 1–168 hours, newest first,
+   without the ones the registry already knows. Narrow it with `category` and `query`
+   (`Proxmox|ZFS|WireGuard`: any term), follow `nextCursor`, and read one entry in full with
+   `get_news_feed_entry`. The publication date is the publisher's own; facts beyond the entry text
+   need the source page or another source. See README, "News feeds".
 1. **Read the registry first.** `get_news_history(days=30)` (or `GET /api/news/history?days=30`)
    lists every item already published: date, number, category, title, eventKey, canonical URL,
    plus releases and alerts. Skip events that are already there before researching them in depth.
@@ -38,8 +44,8 @@ eventKey, source, extraSources, image, tags), releases, securityAlerts and resea
    - `Accepted` (202): queued for publication.
    - `Existing` (200): this exact issue was already accepted; nothing changes.
    - `Invalid` (400): fix the structural `errors` (paths such as `items[3].summary`).
-   - `Rejected` (422): fix exactly the listed `violations`: `min_items`, `max_items`,
-     `category_min` (each of dotnet, homelab, smarthome, hardware, security, ai needs an item),
+   - `Rejected` (422): fix exactly the listed `violations`: `min_items` / `max_items` (5–40 by
+     default), `category_min` (only when the owner set `News:MinPerCategory`; off by default),
      `ai_share` (at most 30% `ai`), `top_count` (exactly 5 TOP), `top_numbering` (TOP are 1..5),
      `numbering` (1..N without gaps).
    - `Duplicate` (409): replace exactly the items in `duplicates`. Each entry names the path in your
@@ -76,6 +82,8 @@ Host and Origin checks remain enabled.
 | `submit_news_issue` | `news:publish` | Submit the whole issue | `issue` (contract v1) |
 | `replace_news_issue` | `news:publish` | Replace an accepted issue | `date`, `issue` |
 | `get_news_issue_status` | `news:publish` | Publication state per item | `date` |
+| `get_news_feed` | `news:publish` | Entries from the publishers' feeds, newest first, under 60 KB per page | optional `sinceHours` (1–168, default 168), `category`, `query` (≤ 20 terms separated by `\|`), `excludePublished` (default true), `limit` (1–100, default 50), `cursor` |
+| `get_news_feed_entry` | `news:publish` | One feed entry with its whole summary | `id` |
 
 A token only sees and can call the tools of its scopes; a call outside them returns a tool error
 naming the missing scope. The API key grants both scopes. When `News:Enabled` is false the news
@@ -153,7 +161,7 @@ The Claude cloud routine reaches the gateway as a claude.ai custom connector wit
 4. Connect: the browser opens the gateway's consent page, which says the client will be able to
    submit news issues and read the registry. Enter the gateway API key there (only there) and allow.
 5. Enable the connector for the routine and give it the workflow above. Check that the routine
-   sees the five news tools and no Telegram tools.
+   sees the seven news tools and no Telegram tools.
 
 ## Optional Python client
 

@@ -14,7 +14,7 @@ site — where the theme shows it in a private `/news/` section.
 
 ## What Vasyl will see when this works
 
-- Every morning a Claude routine sends one issue (≈35–45 news + releases + CVE) to the gateway.
+- Every morning a Claude routine sends one issue (5–40 news, about 35 on a normal day, + releases + CVE) to the gateway.
   About a minute later Telegram shows one line, `📰 Техдайджест 14.11.2026 — 38 новин:
   https://vahac.com/news/2026-11-14/`. That page — visible only to him while logged in — lists
   the day; each news opens as its own post (`/news/2026-11-14/proxmox-ve-9-1-release/`) with
@@ -133,8 +133,8 @@ the root path. `http` and `https` versions of the same URL are the same canonica
 
 ### Editorial gate (checked by the gateway, configurable)
 
-- at least `MinItems` items (default **35**), at most 80;
-- every one of the 6 categories has at least `MinPerCategory` items (default 1);
+- at least `MinItems` items (default **5**), at most `MaxItems` (default **40**; the contract allows 1..80);
+- every one of the 6 categories has at least `MinPerCategory` items (default **0**: no category is mandatory);
 - `ai` items <= `MaxAiShare` of all items (default 0.30);
 - exactly 5 TOP items, numbered 1..5;
 - no `source.url` canonical URL and no `eventKey` that already exists in **any earlier issue**,
@@ -275,6 +275,11 @@ services, with descriptions that tell an AI caller the workflow: read history fi
 candidates, submit once, on 409/422 fix exactly the listed items and resubmit, then poll status
 until `Published`.
 
+> Added 2026-11-15 (ADR 0004): `get_news_feed(sinceHours, category, query, excludePublished, limit,
+> cursor)` and `get_news_feed_entry(id)` give the routine entries the gateway collected from the
+> publishers' own RSS/Atom feeds, and a watchdog alerts on Telegram when no issue arrived. See
+> README, "News feeds" and "News watchdog".
+
 OAuth: add scope `news:publish`. Telegram tools need `telegram:send`, news tools need
 `news:publish`; the API key grants both. ChatGPT's existing tokens keep working for Telegram.
 
@@ -290,8 +295,9 @@ OAuth callback URL and put it in the docs and `.env.example` as the example for 
   message/digest tests still pass unchanged.
 - Canonical URL normalisation: a table of inputs → outputs, including the `utm_`/`www`/port/
   trailing slash/fragment/sorted-query cases from the contract.
-- Gate: each violation separately (34 items, missing category, AI share 31%, 4 TOP items, TOP
-  numbered 3..7, gaps in numbering) → 422 with the right `violations`.
+- Gate: each violation separately (4 items, 41 items, a missing category with `MinPerCategory` 1,
+  AI share 32.5%, 4 TOP items, TOP numbered 3..7, gaps in numbering) → 422 with the right
+  `violations`; 5 items with an empty category pass the default gate.
 - Dedup: same URL with tracking params on an earlier day → 409 naming that day and item; same
   eventKey with a different URL → 409; duplicates inside one issue → 409; PUT of the same issue
   does not clash with itself; history and check endpoints return what was stored.

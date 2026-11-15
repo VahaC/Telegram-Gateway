@@ -68,3 +68,8 @@ Publication heals itself after timeouts, restarts and short outages, and an oper
 The correctness of the retries depends on the theme honouring the revision rule of the contract.
 `NewsPublicationHttpTests` pins the call order, bodies, retries, restart resume, verification,
 replacement and the single notice per revision against a recording fake of the theme.
+
+## Amendment (2026-11-15)
+
+The editorial gate defaults changed to 5–40 news items and no per-category minimum
+(`News:MinItems`, `News:MaxItems`, `News:MinPerCategory`). The publication rules above are unchanged.

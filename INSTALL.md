@@ -191,6 +191,12 @@ Publication runs automatically after every accepted issue. If an issue ends `Par
 or `Failed`, fix the cause from the error code (README, Troubleshooting), then
 `POST /api/news/issues/<date>/republish` re-sends only the unfinished calls.
 
+With `NEWS_ENABLED=true` the feed collector and the watchdog run too, with no further setting
+(README, "News feeds" and "News watchdog"). About a minute after the start,
+`curl -fsS "$GATEWAY_URL/api/news/feed?limit=1" -H "X-Api-Key: $API_KEY"` shows in `health` how
+many feeds are enabled and failing; the container log has one `News feeds polled:` line per run.
+Because the check-news fixture sits a year ahead, it never satisfies the watchdog.
+
 ## 9. Renaming to AgentGateway
 
 The rename changes the solution, image (`agent-gateway:local`) and documentation. Everything the

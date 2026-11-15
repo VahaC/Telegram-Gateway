@@ -1,0 +1,7216 @@
+{
+  "version": 1,
+  "feeds": [
+    {
+      "id": "addyosmani",
+      "name": "Addy Osmani",
+      "url": "https://addyo.substack.com/feed",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ahead-of-ai",
+      "name": "Ahead of AI",
+      "url": "https://magazine.sebastianraschka.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ai-snake-oil",
+      "name": "AI Snake Oil / Normal Tech",
+      "url": "https://www.normaltech.ai/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ai-weirdness",
+      "name": "AI Weirdness",
+      "url": "https://www.aiweirdness.com/rss/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "anthropic-eng-community",
+      "name": "Anthropic Engineering (community feed)",
+      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_engineering.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "anthropic-news-community",
+      "name": "Anthropic News (community feed)",
+      "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica-ai",
+      "name": "Ars Technica AI",
+      "url": "https://arstechnica.com/ai/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "aws-ml-blog",
+      "name": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "bair-blog",
+      "name": "Berkeley AI Research Blog",
+      "url": "https://bair.berkeley.edu/blog/feed.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "cloudflare-ai-blog",
+      "name": "Cloudflare AI Blog",
+      "url": "https://blog.cloudflare.com/tag/ai/rss/",
+      "categories": [
+        "ai",
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "cursor-changelog",
+      "name": "Cursor Changelog",
+      "url": "https://cursor.com/changelog/rss.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "devto-ai",
+      "name": "DEV ai",
+      "url": "https://dev.to/feed/tag/ai",
+      "categories": [
+        "ai"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-mcp",
+      "name": "DEV mcp",
+      "url": "https://dev.to/feed/tag/mcp",
+      "categories": [
+        "ai"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "dou-ai",
+      "name": "DOU AI",
+      "url": "https://dou.ua/lenta/tags/ai/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "dwarkesh",
+      "name": "Dwarkesh Podcast",
+      "url": "https://www.dwarkesh.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ethanmollick",
+      "name": "Ethan Mollick",
+      "url": "https://www.oneusefulthing.org/feed.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "exponential-view",
+      "name": "Exponential View",
+      "url": "https://www.exponentialview.co/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "garymarcus",
+      "name": "Gary Marcus",
+      "url": "https://garymarcus.substack.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "gh-anthropics-anthropic-sdk-python",
+      "name": "anthropics/anthropic-sdk-python releases",
+      "url": "https://github.com/anthropics/anthropic-sdk-python/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-anthropics-anthropic-sdk-typescript",
+      "name": "anthropics/anthropic-sdk-typescript releases",
+      "url": "https://github.com/anthropics/anthropic-sdk-typescript/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-anthropics-claude-agent-sdk-python",
+      "name": "anthropics/claude-agent-sdk-python releases",
+      "url": "https://github.com/anthropics/claude-agent-sdk-python/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-anthropics-claude-code",
+      "name": "anthropics/claude-code releases",
+      "url": "https://github.com/anthropics/claude-code/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-anthropics-claude-code-action",
+      "name": "anthropics/claude-code-action releases",
+      "url": "https://github.com/anthropics/claude-code-action/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-berriai-litellm",
+      "name": "BerriAI/litellm releases",
+      "url": "https://github.com/BerriAI/litellm/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-block-goose",
+      "name": "block/goose releases",
+      "url": "https://github.com/aaif-goose/goose/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cline-cline",
+      "name": "cline/cline releases",
+      "url": "https://github.com/cline/cline/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-comfyanonymous-comfyui",
+      "name": "comfyanonymous/ComfyUI releases",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-continuedev-continue",
+      "name": "continuedev/continue releases",
+      "url": "https://github.com/continuedev/continue/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ggml-org-ggml",
+      "name": "ggml-org/ggml releases",
+      "url": "https://github.com/ggml-org/ggml/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ggml-org-llama-cpp",
+      "name": "ggml-org/llama.cpp releases",
+      "url": "https://github.com/ggml-org/llama.cpp/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ggml-org-whisper-cpp",
+      "name": "ggml-org/whisper.cpp releases",
+      "url": "https://github.com/ggml-org/whisper.cpp/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-github-copilot-cli",
+      "name": "github/copilot-cli releases",
+      "url": "https://github.com/github/copilot-cli/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-github-github-mcp-server",
+      "name": "github/github-mcp-server releases",
+      "url": "https://github.com/github/github-mcp-server/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-google-gemini-gemini-cli",
+      "name": "google-gemini/gemini-cli releases",
+      "url": "https://github.com/google-gemini/gemini-cli/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-huggingface-transformers",
+      "name": "huggingface/transformers releases",
+      "url": "https://github.com/huggingface/transformers/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-langchain-ai-langchain",
+      "name": "langchain-ai/langchain releases",
+      "url": "https://github.com/langchain-ai/langchain/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-langgenius-dify",
+      "name": "langgenius/dify releases",
+      "url": "https://github.com/langgenius/dify/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-foundry-local",
+      "name": "microsoft/Foundry-Local releases",
+      "url": "https://github.com/microsoft/Foundry-Local/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-markitdown",
+      "name": "microsoft/markitdown releases",
+      "url": "https://github.com/microsoft/markitdown/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-mcp",
+      "name": "microsoft/mcp releases",
+      "url": "https://github.com/microsoft/mcp/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-semantic-kernel",
+      "name": "microsoft/semantic-kernel releases",
+      "url": "https://github.com/microsoft/semantic-kernel/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-modelcontextprotocol-csharp-sdk",
+      "name": "modelcontextprotocol/csharp-sdk releases",
+      "url": "https://github.com/modelcontextprotocol/csharp-sdk/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-modelcontextprotocol-python-sdk",
+      "name": "modelcontextprotocol/python-sdk releases",
+      "url": "https://github.com/modelcontextprotocol/python-sdk/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-modelcontextprotocol-servers",
+      "name": "modelcontextprotocol/servers releases",
+      "url": "https://github.com/modelcontextprotocol/servers/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-modelcontextprotocol-specification",
+      "name": "modelcontextprotocol/specification releases",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-modelcontextprotocol-typescript-sdk",
+      "name": "modelcontextprotocol/typescript-sdk releases",
+      "url": "https://github.com/modelcontextprotocol/typescript-sdk/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-mudler-localai",
+      "name": "mudler/LocalAI releases",
+      "url": "https://github.com/mudler/LocalAI/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-n8n-io-n8n",
+      "name": "n8n-io/n8n releases",
+      "url": "https://github.com/n8n-io/n8n/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ollama-ollama",
+      "name": "ollama/ollama releases",
+      "url": "https://github.com/ollama/ollama/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-open-webui-open-webui",
+      "name": "open-webui/open-webui releases",
+      "url": "https://github.com/open-webui/open-webui/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openai-codex",
+      "name": "openai/codex releases",
+      "url": "https://github.com/openai/codex/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openai-openai-agents-python",
+      "name": "openai/openai-agents-python releases",
+      "url": "https://github.com/openai/openai-agents-python/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openai-openai-dotnet",
+      "name": "openai/openai-dotnet releases",
+      "url": "https://github.com/openai/openai-dotnet/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openai-openai-node",
+      "name": "openai/openai-node releases",
+      "url": "https://github.com/openai/openai-node/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openai-openai-python",
+      "name": "openai/openai-python releases",
+      "url": "https://github.com/openai/openai-python/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-sgl-project-sglang",
+      "name": "sgl-project/sglang releases",
+      "url": "https://github.com/sgl-project/sglang/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-unslothai-unsloth",
+      "name": "unslothai/unsloth releases",
+      "url": "https://github.com/unslothai/unsloth/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-vllm-project-vllm",
+      "name": "vllm-project/vllm releases",
+      "url": "https://github.com/vllm-project/vllm/releases.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "github-blog-ai",
+      "name": "GitHub Blog AI and ML",
+      "url": "https://github.blog/ai-and-ml/feed/",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "github-changelog-copilot",
+      "name": "GitHub Changelog Copilot",
+      "url": "https://github.blog/changelog/label/copilot/feed/",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "google-ai-blog",
+      "name": "Google AI Blog",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/rss/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "google-ai-legacy",
+      "name": "Google AI Blog legacy",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/rss/",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "google-gemini-blog",
+      "name": "Google Gemini Blog",
+      "url": "https://blog.google/products-and-platforms/products/gemini/rss/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "google-research-blog",
+      "name": "Google Research Blog",
+      "url": "https://research.google/blog/rss/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "hamel-husain",
+      "name": "Hamel Husain",
+      "url": "https://hamel.dev/index.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "huggingface-blog",
+      "name": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/feed.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "import-ai",
+      "name": "Import AI",
+      "url": "https://importai.substack.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "infoq-ai",
+      "name": "InfoQ AI and ML",
+      "url": "https://feed.infoq.com/ai-ml-data-eng/",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "interconnects",
+      "name": "Interconnects",
+      "url": "https://www.interconnects.ai/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "jetbrains-ai-blog",
+      "name": "JetBrains AI Blog",
+      "url": "https://blog.jetbrains.com/ai/feed/",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "karpathy-blog",
+      "name": "Andrej Karpathy",
+      "url": "https://karpathy.bearblog.dev/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "last-week-in-ai",
+      "name": "Last Week in AI",
+      "url": "https://lastweekin.ai/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "latent-space",
+      "name": "Latent Space",
+      "url": "https://latent.space/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-ai",
+      "name": "Lobsters AI",
+      "url": "https://lobste.rs/t/ai.rss",
+      "categories": [
+        "ai"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-ml",
+      "name": "Lobsters ML",
+      "url": "https://lobste.rs/t/ml.rss",
+      "categories": [
+        "ai"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "marktechpost",
+      "name": "MarkTechPost",
+      "url": "https://www.marktechpost.com/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "microsoft-research",
+      "name": "Microsoft Research Blog",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "mistral-news",
+      "name": "Mistral AI News",
+      "url": "https://mistral.ai/news/rss",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "mit-tr-ai",
+      "name": "MIT Technology Review AI",
+      "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ml-mastery",
+      "name": "Machine Learning Mastery",
+      "url": "https://machinelearningmastery.com/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "nvidia-blog",
+      "name": "NVIDIA Blog",
+      "url": "https://blogs.nvidia.com/feed/",
+      "categories": [
+        "ai",
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "nvidia-dev-blog",
+      "name": "NVIDIA Technical Blog",
+      "url": "https://developer.nvidia.com/blog/feed",
+      "categories": [
+        "ai",
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ollama-blog",
+      "name": "Ollama Blog",
+      "url": "https://ollama.com/blog/rss.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "one-useful-thing",
+      "name": "One Useful Thing",
+      "url": "https://www.oneusefulthing.org/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "openai-news",
+      "name": "OpenAI News",
+      "url": "https://openai.com/news/rss.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "platformer",
+      "name": "Platformer",
+      "url": "https://www.platformer.news/rss/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "replicate-blog",
+      "name": "Replicate Blog",
+      "url": "https://replicate.com/blog/rss",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "semianalysis",
+      "name": "SemiAnalysis",
+      "url": "https://newsletter.semianalysis.com/feed",
+      "categories": [
+        "ai",
+        "hardware"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "simon-llm",
+      "name": "llm.datasette.io",
+      "url": "https://simonwillison.net/tags/llm.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "simonwillison",
+      "name": "Simon Willison",
+      "url": "https://simonwillison.net/atom/everything/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "simonwillison-ai",
+      "name": "Simon Willison AI",
+      "url": "https://simonwillison.net/tags/ai.atom",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "stratechery-free",
+      "name": "Stratechery",
+      "url": "https://stratechery.com/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "techcrunch-ai",
+      "name": "TechCrunch AI",
+      "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "the-decoder",
+      "name": "The Decoder",
+      "url": "https://the-decoder.com/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "the-decoder-de",
+      "name": "The Decoder DE",
+      "url": "https://the-decoder.de/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "the-register-ai",
+      "name": "The Register AI and ML",
+      "url": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss&query=(tag:software+AND+tag:%22ai+and+ml%22)",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thesequence",
+      "name": "The Sequence",
+      "url": "https://thesequence.substack.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thezvi",
+      "name": "Don't Worry About the Vase",
+      "url": "https://thezvi.substack.com/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "together-blog",
+      "name": "Together AI Blog",
+      "url": "https://www.together.ai/blog/rss.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "towards-data-science",
+      "name": "Towards Data Science",
+      "url": "https://towardsdatascience.com/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "understanding-ai",
+      "name": "Understanding AI",
+      "url": "https://www.understandingai.org/feed",
+      "categories": [
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "unite-ai",
+      "name": "Unite.AI",
+      "url": "https://www.unite.ai/feed/",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "vercel-blog",
+      "name": "Vercel Blog",
+      "url": "https://vercel.com/atom",
+      "categories": [
+        "ai",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "verge-ai",
+      "name": "The Verge AI",
+      "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+      "categories": [
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ain-ua",
+      "name": "AIN.UA",
+      "url": "https://ain.ua/feed/",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "andrewlock",
+      "name": "Andrew Lock",
+      "url": "https://andrewlock.net/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "aws-devops-blog",
+      "name": "AWS DevOps Blog",
+      "url": "https://aws.amazon.com/blogs/devops/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "aws-dotnet-blog",
+      "name": "AWS Developer Tools Blog",
+      "url": "https://aws.amazon.com/blogs/developer/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "aws-news-blog",
+      "name": "AWS News Blog",
+      "url": "https://aws.amazon.com/blogs/aws/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "aws-whats-new",
+      "name": "AWS What's New",
+      "url": "https://aws.amazon.com/about-aws/whats-new/recent/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "brentozar",
+      "name": "Brent Ozar",
+      "url": "https://www.brentozar.com/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "cloud-watch",
+      "name": "Cloud Watch",
+      "url": "https://cloud.watch.impress.co.jp/data/rss/1.0/clw/feed.rdf",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
+      "id": "computerworld",
+      "name": "Computerworld",
+      "url": "https://www.computerworld.com/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cybertec-postgresql",
+      "name": "CYBERTEC PostgreSQL",
+      "url": "https://www.cybertec-postgresql.com/en/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "depesz",
+      "name": "depesz",
+      "url": "https://www.depesz.com/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "devclass",
+      "name": "DevClass",
+      "url": "https://www.devclass.com/?lab_viewport=rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "devto-aspnet",
+      "name": "DEV aspnet",
+      "url": "https://dev.to/feed/tag/aspnet",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-azure",
+      "name": "DEV azure",
+      "url": "https://dev.to/feed/tag/azure",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-csharp",
+      "name": "DEV csharp",
+      "url": "https://dev.to/feed/tag/csharp",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-dotnet",
+      "name": "DEV dotnet",
+      "url": "https://dev.to/feed/tag/dotnet",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-postgres",
+      "name": "DEV postgres",
+      "url": "https://dev.to/feed/tag/postgres",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "digi-no",
+      "name": "Digi.no",
+      "url": "https://www.digi.no/?lab_viewport=rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "no"
+    },
+    {
+      "id": "dou-feed",
+      "name": "DOU",
+      "url": "https://dou.ua/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "dou-forums",
+      "name": "DOU Forums",
+      "url": "https://dou.ua/forums/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "uk"
+    },
+    {
+      "id": "epravda",
+      "name": "Ekonomichna Pravda",
+      "url": "https://epravda.com.ua/rss/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "erikdarling",
+      "name": "Erik Darling",
+      "url": "https://erikdarling.com/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "genbeta",
+      "name": "Genbeta",
+      "url": "https://www.genbeta.com/feedburner.xml",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "es"
+    },
+    {
+      "id": "gh-actions-runner",
+      "name": "actions/runner releases",
+      "url": "https://github.com/actions/runner/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-app-vnext-polly",
+      "name": "App-vNext/Polly releases",
+      "url": "https://github.com/App-vNext/Polly/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-azure-azure-cli",
+      "name": "Azure/azure-cli releases",
+      "url": "https://github.com/Azure/azure-cli/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-azure-azure-sdk-for-net",
+      "name": "Azure/azure-sdk-for-net releases",
+      "url": "https://github.com/Azure/azure-sdk-for-net/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-azure-bicep",
+      "name": "Azure/bicep releases",
+      "url": "https://github.com/Azure/bicep/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cli-cli",
+      "name": "cli/cli releases",
+      "url": "https://github.com/cli/cli/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dbeaver-dbeaver",
+      "name": "dbeaver/dbeaver releases",
+      "url": "https://github.com/dbeaver/dbeaver/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-aspire",
+      "name": "dotnet/aspire releases",
+      "url": "https://github.com/microsoft/aspire/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-aspnetcore",
+      "name": "dotnet/aspnetcore releases",
+      "url": "https://github.com/dotnet/aspnetcore/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-benchmarkdotnet",
+      "name": "dotnet/BenchmarkDotNet releases",
+      "url": "https://github.com/dotnet/BenchmarkDotNet/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-core",
+      "name": "dotnet/core releases",
+      "url": "https://github.com/dotnet/core/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-efcore",
+      "name": "dotnet/efcore releases",
+      "url": "https://github.com/dotnet/efcore/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-extensions",
+      "name": "dotnet/extensions releases",
+      "url": "https://github.com/dotnet/extensions/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-installer",
+      "name": "dotnet/installer releases",
+      "url": "https://github.com/dotnet/installer/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-machinelearning",
+      "name": "dotnet/machinelearning releases",
+      "url": "https://github.com/dotnet/machinelearning/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-maui",
+      "name": "dotnet/maui releases",
+      "url": "https://github.com/dotnet/maui/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-orleans",
+      "name": "dotnet/orleans releases",
+      "url": "https://github.com/dotnet/orleans/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-roslyn",
+      "name": "dotnet/roslyn releases",
+      "url": "https://github.com/dotnet/roslyn/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-runtime",
+      "name": "dotnet/runtime releases",
+      "url": "https://github.com/dotnet/runtime/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-sdk",
+      "name": "dotnet/sdk releases",
+      "url": "https://github.com/dotnet/sdk/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-sqlclient",
+      "name": "dotnet/SqlClient releases",
+      "url": "https://github.com/dotnet/SqlClient/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-templating",
+      "name": "dotnet/templating releases",
+      "url": "https://github.com/dotnet/templating/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dotnet-vscode-csharp",
+      "name": "dotnet/vscode-csharp releases",
+      "url": "https://github.com/dotnet/vscode-csharp/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-erikej-efcorepowertools",
+      "name": "ErikEJ/EFCorePowerTools releases",
+      "url": "https://github.com/ErikEJ/EFCorePowerTools/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-gitlabhq-gitlabhq",
+      "name": "gitlabhq/gitlabhq releases",
+      "url": "https://github.com/gitlabhq/gitlabhq/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-jasperfx-marten",
+      "name": "JasperFx/marten releases",
+      "url": "https://github.com/JasperFx/marten/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-masstransit-masstransit",
+      "name": "MassTransit/MassTransit releases",
+      "url": "https://github.com/MassTransit/MassTransit/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-powertoys",
+      "name": "microsoft/PowerToys releases",
+      "url": "https://github.com/microsoft/PowerToys/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-terminal",
+      "name": "microsoft/terminal releases",
+      "url": "https://github.com/microsoft/terminal/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-vscode",
+      "name": "microsoft/vscode releases",
+      "url": "https://github.com/microsoft/vscode/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-winget-cli",
+      "name": "microsoft/winget-cli releases",
+      "url": "https://github.com/microsoft/winget-cli/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-wsl",
+      "name": "microsoft/WSL releases",
+      "url": "https://github.com/microsoft/WSL/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-npgsql-efcore-pg",
+      "name": "npgsql/efcore.pg releases",
+      "url": "https://github.com/npgsql/efcore.pg/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-npgsql-npgsql",
+      "name": "npgsql/npgsql releases",
+      "url": "https://github.com/npgsql/npgsql/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nuget-nuget-client",
+      "name": "NuGet/NuGet.Client releases",
+      "url": "https://github.com/NuGet/NuGet.Client/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nunit-nunit",
+      "name": "nunit/nunit releases",
+      "url": "https://github.com/nunit/nunit/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-pgadmin-org-pgadmin4",
+      "name": "pgadmin-org/pgadmin4 releases",
+      "url": "https://github.com/pgadmin-org/pgadmin4/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-pgvector-pgvector",
+      "name": "pgvector/pgvector releases",
+      "url": "https://github.com/pgvector/pgvector/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-postgres-postgres",
+      "name": "postgres/postgres releases",
+      "url": "https://github.com/postgres/postgres/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-powershell-powershell",
+      "name": "PowerShell/PowerShell releases",
+      "url": "https://github.com/PowerShell/PowerShell/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-rabbitmq-rabbitmq-server",
+      "name": "rabbitmq/rabbitmq-server releases",
+      "url": "https://github.com/rabbitmq/rabbitmq-server/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-redis-redis",
+      "name": "redis/redis releases",
+      "url": "https://github.com/redis/redis/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-serilog-serilog",
+      "name": "serilog/serilog releases",
+      "url": "https://github.com/serilog/serilog/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-supabase-supabase",
+      "name": "supabase/supabase releases",
+      "url": "https://github.com/supabase/supabase/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-testcontainers-testcontainers-dotnet",
+      "name": "testcontainers/testcontainers-dotnet releases",
+      "url": "https://github.com/testcontainers/testcontainers-dotnet/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-timescale-timescaledb",
+      "name": "timescale/timescaledb releases",
+      "url": "https://github.com/timescale/timescaledb/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-valkey-io-valkey",
+      "name": "valkey-io/valkey releases",
+      "url": "https://github.com/valkey-io/valkey/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-xunit-xunit",
+      "name": "xunit/xunit releases",
+      "url": "https://github.com/xunit/xunit/releases.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "github-blog",
+      "name": "GitHub Blog",
+      "url": "https://github.blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "github-blog-open-source",
+      "name": "GitHub Blog Open Source",
+      "url": "https://github.blog/open-source/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "github-changelog",
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "gitlab-blog",
+      "name": "GitLab Blog",
+      "url": "https://about.gitlab.com/atom.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "gitlab-releases",
+      "name": "GitLab Releases",
+      "url": "https://docs.gitlab.com/releases/all-releases.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "go-blog",
+      "name": "The Go Blog",
+      "url": "https://go.dev/blog/feed.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "google-cloud-blog",
+      "name": "Google Cloud Blog",
+      "url": "https://cloudblog.withgoogle.com/rss/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "heise-developer",
+      "name": "heise Developer",
+      "url": "https://www.heise.de/developer/feed.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "hn-best",
+      "name": "Hacker News Best retry",
+      "url": "https://hnrss.org/best",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "hn-frontpage",
+      "name": "Hacker News Front Page",
+      "url": "https://hnrss.org/frontpage",
+      "categories": [
+        "dotnet",
+        "homelab",
+        "ai"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "hn-show",
+      "name": "Hacker News Show HN",
+      "url": "https://hnrss.org/show?points=50",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "infoq",
+      "name": "InfoQ",
+      "url": "https://feed.infoq.com/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "infoq-cloud",
+      "name": "InfoQ Cloud",
+      "url": "https://feed.infoq.com/cloud-computing/",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "infoq-dotnet",
+      "name": "InfoQ .NET",
+      "url": "https://feed.infoq.com/dotnet/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "itbusiness-hu",
+      "name": "IT Business",
+      "url": "https://itbusiness.hu/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "hu"
+    },
+    {
+      "id": "itpro",
+      "name": "ITPro",
+      "url": "https://www.itpro.com/feeds.xml",
+      "categories": [
+        "dotnet",
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "itukraine",
+      "name": "IT Ukraine Association",
+      "url": "https://itukraine.org.ua/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "jetbrains-blog",
+      "name": "JetBrains Blog",
+      "url": "https://blog.jetbrains.com/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "jetbrains-dotnet-blog",
+      "name": "JetBrains .NET Tools Blog",
+      "url": "https://blog.jetbrains.com/dotnet/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "jimmybogard",
+      "name": "Jimmy Bogard",
+      "url": "https://www.jimmybogard.com/rss/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "josef-codes",
+      "name": "Josef Ottosson",
+      "url": "https://josef.codes/rss/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "khalidabuhakmeh",
+      "name": "Khalid Abuhakmeh",
+      "url": "https://khalidabuhakmeh.com/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "lemondeinformatique",
+      "name": "LeMondeInformatique",
+      "url": "https://www.lemondeinformatique.fr/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "fr"
+    },
+    {
+      "id": "lobsters",
+      "name": "Lobsters",
+      "url": "https://lobste.rs/rss",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-databases",
+      "name": "Lobsters databases",
+      "url": "https://lobste.rs/t/databases.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-practices",
+      "name": "Lobsters practices",
+      "url": "https://lobste.rs/t/practices.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-web",
+      "name": "Lobsters web",
+      "url": "https://lobste.rs/t/web.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "martinfowler",
+      "name": "Martin Fowler",
+      "url": "https://martinfowler.com/feed.atom",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ms-agent-framework-blog",
+      "name": "Microsoft Agent Framework Blog",
+      "url": "https://devblogs.microsoft.com/agent-framework/feed/",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-azure-blog",
+      "name": "Microsoft Azure Blog",
+      "url": "https://azure.microsoft.com/en-us/blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-azure-sdk-blog",
+      "name": "Azure SDK Blog",
+      "url": "https://devblogs.microsoft.com/azure-sdk/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-azure-sql-blog",
+      "name": "Azure SQL Dev Blog",
+      "url": "https://devblogs.microsoft.com/azure-sql/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-azure-updates",
+      "name": "Azure Updates",
+      "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-commandline-blog",
+      "name": "Windows Command Line Blog",
+      "url": "https://devblogs.microsoft.com/commandline/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-cosmosdb-blog",
+      "name": "Azure Cosmos DB Blog",
+      "url": "https://devblogs.microsoft.com/cosmosdb/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-devops-blog",
+      "name": "Azure DevOps Blog",
+      "url": "https://devblogs.microsoft.com/devops/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-dotnet-blog",
+      "name": ".NET Blog",
+      "url": "https://devblogs.microsoft.com/dotnet/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-foundry-blog",
+      "name": "Microsoft Foundry Blog",
+      "url": "https://devblogs.microsoft.com/foundry/feed/",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-java-blog",
+      "name": "Microsoft for Java Developers",
+      "url": "https://devblogs.microsoft.com/java/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-oldnewthing",
+      "name": "The Old New Thing",
+      "url": "https://devblogs.microsoft.com/oldnewthing/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ms-powershell-blog",
+      "name": "PowerShell Team Blog",
+      "url": "https://devblogs.microsoft.com/powershell/feed/",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-python-blog",
+      "name": "Python at Microsoft",
+      "url": "https://devblogs.microsoft.com/python/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-sql-server-blog",
+      "name": "SQL Server Blog",
+      "url": "https://www.microsoft.com/en-us/sql-server/blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-typescript-blog",
+      "name": "TypeScript Blog",
+      "url": "https://devblogs.microsoft.com/typescript/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-visualstudio-blog",
+      "name": "Visual Studio Blog",
+      "url": "https://devblogs.microsoft.com/visualstudio/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-vscode-updates",
+      "name": "Visual Studio Code Updates",
+      "url": "https://code.visualstudio.com/feed.xml",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-windows-blog",
+      "name": "Windows Developer Blog",
+      "url": "https://blogs.windows.com/windowsdeveloper/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "neon-blog",
+      "name": "Neon Blog",
+      "url": "https://neon.com/blog/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "neowin",
+      "name": "Neowin",
+      "url": "https://www.neowin.net/news/rss/",
+      "categories": [
+        "dotnet",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "nodejs-blog",
+      "name": "Node.js Blog",
+      "url": "https://nodejs.org/en/feed/blog.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "percona-blog",
+      "name": "Percona Blog",
+      "url": "https://www.percona.com/blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ploeh",
+      "name": "ploeh blog",
+      "url": "https://blog.ploeh.dk/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "postgresql-news",
+      "name": "PostgreSQL News",
+      "url": "https://www.postgresql.org/news.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "postgresql-planet",
+      "name": "Planet PostgreSQL",
+      "url": "https://planet.postgresql.org/rss20.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "pragmatic-newsletter",
+      "name": "The Pragmatic Engineer Newsletter",
+      "url": "https://newsletter.pragmaticengineer.com/feed",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "pragmaticengineer",
+      "name": "The Pragmatic Engineer",
+      "url": "https://blog.pragmaticengineer.com/rss/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "programistamag",
+      "name": "Programista",
+      "url": "https://programistamag.pl/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "python-blog",
+      "name": "Python Insider",
+      "url": "https://blog.python.org/feeds/posts/default",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "reddit-dotnet",
+      "name": "r/dotnet",
+      "url": "https://www.reddit.com/r/dotnet/.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "redis-blog",
+      "name": "Redis Blog",
+      "url": "https://redis.io/blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "rust-blog",
+      "name": "Rust Blog",
+      "url": "https://blog.rust-lang.org/feed.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "slashdot",
+      "name": "Slashdot",
+      "url": "https://rss.slashdot.org/Slashdot/slashdotMain",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "slashdot-it",
+      "name": "Slashdot IT",
+      "url": "https://rss.slashdot.org/Slashdot/slashdotIT",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "sqlite-news",
+      "name": "SQLite Timeline",
+      "url": "https://sqlite.org/src/timeline.rss",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "sqlskills-paul",
+      "name": "Paul Randal SQLskills",
+      "url": "https://www.sqlskills.com/blogs/paul/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "stackoverflow-blog",
+      "name": "Stack Overflow Blog",
+      "url": "https://stackoverflow.blog/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "supabase-blog",
+      "name": "Supabase Blog",
+      "url": "https://supabase.com/rss.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "techcrunch",
+      "name": "TechCrunch",
+      "url": "https://techcrunch.com/feed/",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "techmeme",
+      "name": "Techmeme",
+      "url": "https://www.techmeme.com/feed.xml",
+      "categories": [
+        "dotnet",
+        "ai"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "techrepublic",
+      "name": "TechRepublic",
+      "url": "https://www.techrepublic.com/rssfeeds/articles/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "the-register",
+      "name": "The Register",
+      "url": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss&content=node",
+      "categories": [
+        "dotnet",
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "the-register-software",
+      "name": "The Register Software",
+      "url": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss&query=tag:software",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thenewstack",
+      "name": "The New Stack",
+      "url": "https://thenewstack.io/feed/",
+      "categories": [
+        "dotnet",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tivi-fi",
+      "name": "Tivi",
+      "url": "https://www.tivi.fi/api/feed/v2/rss/tv",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "fi"
+    },
+    {
+      "id": "windows-central",
+      "name": "Windows Central",
+      "url": "https://www.windowscentral.com/feeds.xml",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "zdnet",
+      "name": "ZDNET",
+      "url": "https://www.zdnet.com/rss/news/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "zdrojak",
+      "name": "Zdrojak",
+      "url": "https://zdrojak.cz/feed/",
+      "categories": [
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "cs"
+    },
+    {
+      "id": "3dprintingindustry",
+      "name": "3D Printing Industry",
+      "url": "https://3dprintingindustry.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "adafruit-blog",
+      "name": "Adafruit Blog",
+      "url": "https://blog.adafruit.com/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "akiba-pc",
+      "name": "AKIBA PC Hotline",
+      "url": "https://akiba-pc.watch.impress.co.jp/data/rss/1.0/ah/feed.rdf",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
+      "id": "android-com-pl",
+      "name": "Android.com.pl",
+      "url": "https://android.com.pl/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "antyweb",
+      "name": "Antyweb",
+      "url": "https://antyweb.pl/feed",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "arduino-blog",
+      "name": "Arduino Blog",
+      "url": "https://blog.arduino.cc/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "armbian-blog",
+      "name": "Armbian Blog",
+      "url": "https://blog.armbian.com/rss/",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica-gadgets",
+      "name": "Ars Technica Gadgets",
+      "url": "https://arstechnica.com/gadgets/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "bambu-blog",
+      "name": "Bambu Lab Blog",
+      "url": "https://blog.bambulab.com/rss/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "benchmark-pl",
+      "name": "Benchmark.pl",
+      "url": "https://www.benchmark.pl/rss/aktualnosci-pliki.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "blocksandfiles",
+      "name": "Blocks and Files",
+      "url": "https://api.blocksandfiles.com/api/v1/article?orderBy=published&site_id=4&remapper=rss&content=node",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "caschys-blog",
+      "name": "Caschys Blog",
+      "url": "https://stadt-bremerhaven.de/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "chip-pl",
+      "name": "CHIP.pl",
+      "url": "https://www.chip.pl/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "chipsandcheese",
+      "name": "Chips and Cheese",
+      "url": "https://chipsandcheese.com/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cnet-news",
+      "name": "CNET News",
+      "url": "https://www.cnet.com/rss/news/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cnews-cz",
+      "name": "Cnews.cz",
+      "url": "https://www.cnews.cz/rss/clanky/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "cs"
+    },
+    {
+      "id": "cnx-software",
+      "name": "CNX Software",
+      "url": "https://www.cnx-software.com/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "computerbase",
+      "name": "ComputerBase",
+      "url": "https://www.computerbase.de/rss/news.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "devto-raspberrypi",
+      "name": "DEV raspberrypi",
+      "url": "https://dev.to/feed/tag/raspberrypi",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "dsogaming",
+      "name": "DSOGaming",
+      "url": "https://www.dsogaming.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "eetimes",
+      "name": "EE Times",
+      "url": "https://www.eetimes.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "eevblog",
+      "name": "EEVblog",
+      "url": "https://www.eevblog.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "electronics-lab",
+      "name": "Electronics-Lab",
+      "url": "https://www.electronics-lab.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "electronicsweekly",
+      "name": "Electronics Weekly",
+      "url": "https://www.electronicsweekly.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "embedded-com",
+      "name": "Embedded.com",
+      "url": "https://www.embedded.com/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "engadget",
+      "name": "Engadget",
+      "url": "https://www.engadget.com/rss.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "eteknix",
+      "name": "eTeknix",
+      "url": "https://www.eteknix.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "extremetech",
+      "name": "ExtremeTech",
+      "url": "https://www.extremetech.com/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "gh-adafruit-circuitpython",
+      "name": "adafruit/circuitpython releases",
+      "url": "https://github.com/adafruit/circuitpython/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-arduino-arduino-cli",
+      "name": "arduino/arduino-cli releases",
+      "url": "https://github.com/arduino/arduino-cli/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-arduino-arduinocore-avr",
+      "name": "arduino/ArduinoCore-avr releases",
+      "url": "https://github.com/arduino/ArduinoCore-avr/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-armbian-build",
+      "name": "armbian/build releases",
+      "url": "https://github.com/armbian/build/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-bambulab-bambustudio",
+      "name": "bambulab/BambuStudio releases",
+      "url": "https://github.com/bambulab/BambuStudio/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-coreboot-coreboot",
+      "name": "coreboot/coreboot releases",
+      "url": "https://github.com/coreboot/coreboot/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-esp-rs-esp-hal",
+      "name": "esp-rs/esp-hal releases",
+      "url": "https://github.com/esp-rs/esp-hal/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-freecad-freecad",
+      "name": "FreeCAD/FreeCAD releases",
+      "url": "https://github.com/FreeCAD/FreeCAD/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-fwupd-fwupd",
+      "name": "fwupd/fwupd releases",
+      "url": "https://github.com/fwupd/fwupd/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-kicad-kicad-source-mirror",
+      "name": "KiCad/kicad-source-mirror releases",
+      "url": "https://github.com/KiCad/kicad-source-mirror/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-libreelec-libreelec-tv",
+      "name": "LibreELEC/LibreELEC.tv releases",
+      "url": "https://github.com/LibreELEC/LibreELEC.tv/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-mainsail-crew-mainsail",
+      "name": "Mainsail-Crew/mainsail releases",
+      "url": "https://github.com/Mainsail-Crew/mainsail/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-marlinfirmware-marlin",
+      "name": "MarlinFirmware/Marlin releases",
+      "url": "https://github.com/MarlinFirmware/Marlin/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-micropython-micropython",
+      "name": "micropython/micropython releases",
+      "url": "https://github.com/micropython/micropython/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-octoprint-octoprint",
+      "name": "OctoPrint/OctoPrint releases",
+      "url": "https://github.com/OctoPrint/OctoPrint/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-platformio-platform-espressif32",
+      "name": "platformio/platform-espressif32 releases",
+      "url": "https://github.com/platformio/platform-espressif32/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-prusa3d-prusaslicer",
+      "name": "prusa3d/PrusaSlicer releases",
+      "url": "https://github.com/prusa3d/PrusaSlicer/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-raspberrypi-firmware",
+      "name": "raspberrypi/firmware releases",
+      "url": "https://github.com/raspberrypi/firmware/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-raspberrypi-pico-sdk",
+      "name": "raspberrypi/pico-sdk releases",
+      "url": "https://github.com/raspberrypi/pico-sdk/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-raspberrypi-rpi-imager",
+      "name": "raspberrypi/rpi-imager releases",
+      "url": "https://github.com/raspberrypi/rpi-imager/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-rockchip-linux-mpp",
+      "name": "rockchip-linux/mpp releases",
+      "url": "https://github.com/rockchip-linux/mpp/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-softfever-orcaslicer",
+      "name": "SoftFever/OrcaSlicer releases",
+      "url": "https://github.com/OrcaSlicer/OrcaSlicer/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-tinygo-org-tinygo",
+      "name": "tinygo-org/tinygo releases",
+      "url": "https://github.com/tinygo-org/tinygo/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ultimaker-cura",
+      "name": "ultimaker/Cura releases",
+      "url": "https://github.com/ultimaker/Cura/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zephyrproject-rtos-zephyr",
+      "name": "zephyrproject-rtos/zephyr releases",
+      "url": "https://github.com/zephyrproject-rtos/zephyr/releases.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gigazine",
+      "name": "GIGAZINE",
+      "url": "https://gigazine.net/news/rss_2.0/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
+      "id": "golem",
+      "name": "Golem.de",
+      "url": "https://rss.golem.de/rss.php?feed=RSS2.0",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "hackaday",
+      "name": "Hackaday",
+      "url": "https://hackaday.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-3dprinting",
+      "name": "Hackaday 3D Printer Hacks",
+      "url": "https://hackaday.com/category/3d-printer-hacks/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-hardware",
+      "name": "Hackaday Hardware",
+      "url": "https://hackaday.com/category/hardware/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-microcontrollers",
+      "name": "Hackaday Microcontrollers",
+      "url": "https://hackaday.com/category/microcontrollers/feed/",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hothardware",
+      "name": "HotHardware",
+      "url": "https://hothardware.com/rss/news",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hpcwire",
+      "name": "HPCwire",
+      "url": "https://www.hpcwire.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ifanr",
+      "name": "ifanr",
+      "url": "https://www.ifanr.com/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "zh"
+    },
+    {
+      "id": "igorslab",
+      "name": "igor'sLAB",
+      "url": "https://www.igorslab.de/en/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "igorslab-de",
+      "name": "igor'sLAB DE",
+      "url": "https://www.igorslab.de/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "itc-ua",
+      "name": "ITC.ua",
+      "url": "https://feeds.feedburner.com/itcua",
+      "categories": [
+        "hardware",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "itc-ua-news",
+      "name": "ITC.ua news",
+      "url": "https://itc.ua/news/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "ithome",
+      "name": "IT Home",
+      "url": "https://www.ithome.com/rss/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "zh"
+    },
+    {
+      "id": "itmedia-news",
+      "name": "ITmedia NEWS",
+      "url": "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
+      "id": "kitguru",
+      "name": "KitGuru",
+      "url": "https://www.kitguru.net/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "liliputing",
+      "name": "Liliputing",
+      "url": "https://liliputing.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-embedded",
+      "name": "Lobsters embedded",
+      "url": "https://lobste.rs/t/hardware.rss?embedded",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-hardware",
+      "name": "Lobsters hardware",
+      "url": "https://lobste.rs/t/hardware.rss",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "makezine",
+      "name": "Make:",
+      "url": "https://makezine.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "mezha",
+      "name": "Mezha.ua",
+      "url": "https://mezha.ua/feed/",
+      "categories": [
+        "hardware",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "ms-directx-blog",
+      "name": "DirectX Developer Blog",
+      "url": "https://devblogs.microsoft.com/directx/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "nextink",
+      "name": "Next",
+      "url": "https://next.ink/feed/",
+      "categories": [
+        "hardware",
+        "security"
+      ],
+      "kind": "news",
+      "language": "fr"
+    },
+    {
+      "id": "nextplatform",
+      "name": "The Next Platform",
+      "url": "https://www.nextplatform.com/?lab_viewport=rss",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "notebookcheck",
+      "name": "Notebookcheck",
+      "url": "https://www.notebookcheck.net/News.152.100.html?rss",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "numerama",
+      "name": "Numerama",
+      "url": "https://www.numerama.com/feed/",
+      "categories": [
+        "hardware",
+        "security"
+      ],
+      "kind": "news",
+      "language": "fr"
+    },
+    {
+      "id": "overclock3d",
+      "name": "Overclock3D",
+      "url": "https://overclock3d.net/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pcgamer-hardware",
+      "name": "PC Gamer Hardware",
+      "url": "https://www.pcgamer.com/rss/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pcwatch",
+      "name": "PC Watch",
+      "url": "https://pc.watch.impress.co.jp/data/rss/1.0/pcw/feed.rdf",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "ja"
+    },
+    {
+      "id": "pcworld",
+      "name": "PCWorld",
+      "url": "https://www.pcworld.com/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "phoronix-hw",
+      "name": "Phoronix Hardware",
+      "url": "https://www.phoronix.com/rss.php?cat=hardware",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pimylifeup",
+      "name": "Pi My Life Up",
+      "url": "https://pimylifeup.com/feed/",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "planet3dnow",
+      "name": "Planet 3DNow",
+      "url": "https://www.planet3dnow.de/cms/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "prohardver",
+      "name": "PROHARDVER!",
+      "url": "https://prohardver.hu/hirfolyam/anyagok/rss.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "hu"
+    },
+    {
+      "id": "prusa-blog",
+      "name": "Prusa Blog",
+      "url": "https://blog.prusa3d.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "purepc",
+      "name": "PurePC",
+      "url": "https://www.purepc.pl/rss_all.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "purepc-hw",
+      "name": "PurePC Hardware",
+      "url": "https://www.purepc.pl/rss.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "raspberrypi-news",
+      "name": "Raspberry Pi News",
+      "url": "https://www.raspberrypi.com/news/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "riscv-news",
+      "name": "RISC-V International",
+      "url": "https://riscv.org/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "semiaccurate",
+      "name": "SemiAccurate",
+      "url": "https://www.semiaccurate.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "semiengineering",
+      "name": "Semiconductor Engineering",
+      "url": "https://semiengineering.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "semiwiki",
+      "name": "SemiWiki",
+      "url": "https://semiwiki.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "slashdot-hardware",
+      "name": "Slashdot Hardware",
+      "url": "https://rss.slashdot.org/Slashdot/slashdotHardware",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "spectrum-ieee",
+      "name": "IEEE Spectrum",
+      "url": "https://spectrum.ieee.org/feeds/feed.rss",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "spidersweb",
+      "name": "Spider's Web",
+      "url": "https://spidersweb.pl/api/post/feed/feed-gn",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "sspai",
+      "name": "sspai",
+      "url": "https://sspai.com/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "zh"
+    },
+    {
+      "id": "storagereview",
+      "name": "StorageReview",
+      "url": "https://www.storagereview.com/feed",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "swedroid",
+      "name": "Swedroid",
+      "url": "https://swedroid.se/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "sv"
+    },
+    {
+      "id": "tabletowo",
+      "name": "Tabletowo",
+      "url": "https://www.tabletowo.pl/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "techpowerup",
+      "name": "TechPowerUp",
+      "url": "https://www.techpowerup.com/rss/news",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "techpowerup-reviews",
+      "name": "TechPowerUp Reviews",
+      "url": "https://www.techpowerup.com/rss/reviews",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "techradar",
+      "name": "TechRadar",
+      "url": "https://www.techradar.com/feeds.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "techspot",
+      "name": "TechSpot",
+      "url": "https://www.techspot.com/backend.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "telepolis",
+      "name": "Telepolis.pl",
+      "url": "https://www.telepolis.pl/rss",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "tftcentral",
+      "name": "TFTCentral",
+      "url": "https://tftcentral.co.uk/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thepihut",
+      "name": "The Pi Hut Tutorials",
+      "url": "https://thepihut.com/blogs/raspberry-pi-tutorials.atom",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "thessdreview",
+      "name": "The SSD Review",
+      "url": "https://www.thessdreview.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "theverge",
+      "name": "The Verge",
+      "url": "https://www.theverge.com/rss/index.xml",
+      "categories": [
+        "hardware",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomsguide-wifi",
+      "name": "Tom's Guide",
+      "url": "https://www.tomsguide.com/feeds.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomshardware",
+      "name": "Tom's Hardware",
+      "url": "https://www.tomshardware.com/feeds.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomshardware-3d",
+      "name": "Tom's Hardware 3D Printing",
+      "url": "https://www.tomshardware.com/feeds/tag/3d-printing",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomshardware-raspberry-pi",
+      "name": "Tom's Hardware Raspberry Pi",
+      "url": "https://www.tomshardware.com/feeds/tag/raspberry-pi",
+      "categories": [
+        "hardware",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomshardware-ssd",
+      "name": "Tom's Hardware SSD",
+      "url": "https://www.tomshardware.com/feeds/tag/ssds",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "tomshardware-storage",
+      "name": "Tom's Hardware Storage",
+      "url": "https://www.tomshardware.com/feeds/tag/storage",
+      "categories": [
+        "hardware",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ua-tech-today",
+      "name": "Tech Today UA",
+      "url": "https://techtoday.in.ua/feed",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "ua-ukrinform-tech",
+      "name": "Ukrinform Technologies",
+      "url": "https://www.ukrinform.ua/rss/rubric-technology",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "ultrabookreview",
+      "name": "Ultrabookreview",
+      "url": "https://www.ultrabookreview.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "wccftech",
+      "name": "Wccftech",
+      "url": "https://wccftech.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "wi-fi-now",
+      "name": "Wi-Fi NOW",
+      "url": "https://wifinowglobal.com/feed/",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "winfuture",
+      "name": "WinFuture",
+      "url": "https://static.winfuture.de/feeds/WinFuture-News-rss2.0.xml",
+      "categories": [
+        "hardware",
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "xataka",
+      "name": "Xataka",
+      "url": "https://www.xataka.com/feedburner.xml",
+      "categories": [
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "es"
+    },
+    {
+      "id": "9to5linux",
+      "name": "9to5Linux",
+      "url": "https://9to5linux.com/feed",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "abclinuxu",
+      "name": "AbcLinuxu",
+      "url": "https://www.abclinuxu.cz/auto/abc.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "cs"
+    },
+    {
+      "id": "almalinux-blog",
+      "name": "AlmaLinux Blog",
+      "url": "https://almalinux.org/blog/index.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "alpine-news",
+      "name": "Alpine Linux News",
+      "url": "https://alpinelinux.org/atom.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "archlinux-news",
+      "name": "Arch Linux News",
+      "url": "https://archlinux.org/feeds/news/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "archlinux-packages",
+      "name": "Arch Linux Package Updates",
+      "url": "https://archlinux.org/feeds/packages/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica",
+      "name": "Ars Technica",
+      "url": "https://feeds.arstechnica.com/arstechnica/index",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica-it",
+      "name": "Ars Technica IT",
+      "url": "https://arstechnica.com/information-technology/feed/",
+      "categories": [
+        "homelab",
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica-open-source",
+      "name": "Ars Technica Open Source",
+      "url": "https://arstechnica.com/tag/open-source/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cloudflare-blog",
+      "name": "Cloudflare Blog",
+      "url": "https://blog.cloudflare.com/rss/",
+      "categories": [
+        "homelab",
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "cloudflare-changelog",
+      "name": "Cloudflare Changelog",
+      "url": "https://developers.cloudflare.com/changelog/rss/index.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "cncf-blog",
+      "name": "CNCF Blog",
+      "url": "https://www.cncf.io/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "debian-micronews",
+      "name": "Debian Micronews",
+      "url": "https://micronews.debian.org/feeds/feed.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "debian-planet",
+      "name": "Planet Debian",
+      "url": "https://planet.debian.org/rss20.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "devto-docker",
+      "name": "DEV docker",
+      "url": "https://dev.to/feed/tag/docker",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-homelab",
+      "name": "DEV homelab",
+      "url": "https://dev.to/feed/tag/homelab",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-linux",
+      "name": "DEV linux",
+      "url": "https://dev.to/feed/tag/linux",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "devto-selfhosted",
+      "name": "DEV selfhosted",
+      "url": "https://dev.to/feed/tag/selfhosted",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "docker-blog",
+      "name": "Docker Blog",
+      "url": "https://www.docker.com/feed/",
+      "categories": [
+        "homelab",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "fedora-community-blog",
+      "name": "Fedora Community Blog",
+      "url": "https://communityblog.fedoraproject.org/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "fedora-magazine",
+      "name": "Fedora Magazine",
+      "url": "https://fedoramagazine.org/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "framablog",
+      "name": "Framablog",
+      "url": "https://framablog.org/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "fr"
+    },
+    {
+      "id": "gh-adguardteam-adguardhome",
+      "name": "AdguardTeam/AdGuardHome releases",
+      "url": "https://github.com/AdguardTeam/AdGuardHome/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-analogj-scrutiny",
+      "name": "AnalogJ/scrutiny releases",
+      "url": "https://github.com/AnalogJ/scrutiny/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ansible-ansible",
+      "name": "ansible/ansible releases",
+      "url": "https://github.com/ansible/ansible/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-argoproj-argo-cd",
+      "name": "argoproj/argo-cd releases",
+      "url": "https://github.com/argoproj/argo-cd/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-authelia-authelia",
+      "name": "authelia/authelia releases",
+      "url": "https://github.com/authelia/authelia/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-borgbackup-borg",
+      "name": "borgbackup/borg releases",
+      "url": "https://github.com/borgbackup/borg/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-caddyserver-caddy",
+      "name": "caddyserver/caddy releases",
+      "url": "https://github.com/caddyserver/caddy/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ceph-ceph",
+      "name": "ceph/ceph releases",
+      "url": "https://github.com/ceph/ceph/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cilium-cilium",
+      "name": "cilium/cilium releases",
+      "url": "https://github.com/cilium/cilium/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cloudflare-cloudflared",
+      "name": "cloudflare/cloudflared releases",
+      "url": "https://github.com/cloudflare/cloudflared/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-community-scripts-proxmoxve",
+      "name": "community-scripts/ProxmoxVE releases",
+      "url": "https://github.com/community-scripts/ProxmoxVE/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-coredns-coredns",
+      "name": "coredns/coredns releases",
+      "url": "https://github.com/coredns/coredns/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-dani-garcia-vaultwarden",
+      "name": "dani-garcia/vaultwarden releases",
+      "url": "https://github.com/dani-garcia/vaultwarden/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-derailed-k9s",
+      "name": "derailed/k9s releases",
+      "url": "https://github.com/derailed/k9s/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-docker-buildx",
+      "name": "docker/buildx releases",
+      "url": "https://github.com/docker/buildx/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-docker-cli",
+      "name": "docker/cli releases",
+      "url": "https://github.com/docker/cli/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-docker-compose",
+      "name": "docker/compose releases",
+      "url": "https://github.com/docker/compose/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-fluxcd-flux2",
+      "name": "fluxcd/flux2 releases",
+      "url": "https://github.com/fluxcd/flux2/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-gethomepage-homepage",
+      "name": "gethomepage/homepage releases",
+      "url": "https://github.com/gethomepage/homepage/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-glanceapp-glance",
+      "name": "glanceapp/glance releases",
+      "url": "https://github.com/glanceapp/glance/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-go-gitea-gitea",
+      "name": "go-gitea/gitea releases",
+      "url": "https://github.com/go-gitea/gitea/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-goauthentik-authentik",
+      "name": "goauthentik/authentik releases",
+      "url": "https://github.com/goauthentik/authentik/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-grafana-grafana",
+      "name": "grafana/grafana releases",
+      "url": "https://github.com/grafana/grafana/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-grafana-loki",
+      "name": "grafana/loki releases",
+      "url": "https://github.com/grafana/loki/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-graylog2-graylog2-server",
+      "name": "Graylog2/graylog2-server releases",
+      "url": "https://github.com/Graylog2/graylog2-server/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-hashicorp-terraform",
+      "name": "hashicorp/terraform releases",
+      "url": "https://github.com/hashicorp/terraform/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-helm-helm",
+      "name": "helm/helm releases",
+      "url": "https://github.com/helm/helm/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-immich-app-immich",
+      "name": "immich-app/immich releases",
+      "url": "https://github.com/immich-app/immich/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-influxdata-influxdb",
+      "name": "influxdata/influxdb releases",
+      "url": "https://github.com/influxdata/influxdb/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-jackett-jackett",
+      "name": "Jackett/Jackett releases",
+      "url": "https://github.com/Jackett/Jackett/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-jellyfin-jellyfin",
+      "name": "jellyfin/jellyfin releases",
+      "url": "https://github.com/jellyfin/jellyfin/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-jenkinsci-jenkins",
+      "name": "jenkinsci/jenkins releases",
+      "url": "https://github.com/jenkinsci/jenkins/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-k3s-io-k3s",
+      "name": "k3s-io/k3s releases",
+      "url": "https://github.com/k3s-io/k3s/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-kubernetes-kubernetes",
+      "name": "kubernetes/kubernetes releases",
+      "url": "https://github.com/kubernetes/kubernetes/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-kubernetes-sigs-kind",
+      "name": "kubernetes-sigs/kind releases",
+      "url": "https://github.com/kubernetes-sigs/kind/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-longhorn-longhorn",
+      "name": "longhorn/longhorn releases",
+      "url": "https://github.com/longhorn/longhorn/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-louislam-uptime-kuma",
+      "name": "louislam/uptime-kuma releases",
+      "url": "https://github.com/louislam/uptime-kuma/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-lxc-incus",
+      "name": "lxc/incus releases",
+      "url": "https://github.com/lxc/incus/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-mealie-recipes-mealie",
+      "name": "mealie-recipes/mealie releases",
+      "url": "https://github.com/mealie-recipes/mealie/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-michaing-dietpi",
+      "name": "MichaIng/DietPi releases",
+      "url": "https://github.com/MichaIng/DietPi/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-moby-moby",
+      "name": "moby/moby releases",
+      "url": "https://github.com/moby/moby/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-navidrome-navidrome",
+      "name": "navidrome/navidrome releases",
+      "url": "https://github.com/navidrome/navidrome/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-netbirdio-netbird",
+      "name": "netbirdio/netbird releases",
+      "url": "https://github.com/netbirdio/netbird/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-netdata-netdata",
+      "name": "netdata/netdata releases",
+      "url": "https://github.com/netdata/netdata/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nextcloud-server",
+      "name": "nextcloud/server releases",
+      "url": "https://github.com/nextcloud/server/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nginx-nginx",
+      "name": "nginx/nginx releases",
+      "url": "https://github.com/nginx/nginx/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nginxproxymanager-nginx-proxy-manager",
+      "name": "NginxProxyManager/nginx-proxy-manager releases",
+      "url": "https://github.com/NginxProxyManager/nginx-proxy-manager/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nicolargo-glances",
+      "name": "nicolargo/glances releases",
+      "url": "https://github.com/nicolargo/glances/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-opentofu-opentofu",
+      "name": "opentofu/opentofu releases",
+      "url": "https://github.com/opentofu/opentofu/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openwrt-openwrt",
+      "name": "openwrt/openwrt releases",
+      "url": "https://github.com/openwrt/openwrt/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openzfs-zfs",
+      "name": "openzfs/zfs releases",
+      "url": "https://github.com/openzfs/zfs/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-paperless-ngx-paperless-ngx",
+      "name": "paperless-ngx/paperless-ngx releases",
+      "url": "https://github.com/paperless-ngx/paperless-ngx/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-pi-hole-docker-pi-hole",
+      "name": "pi-hole/docker-pi-hole releases",
+      "url": "https://github.com/pi-hole/docker-pi-hole/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-pi-hole-ftl",
+      "name": "pi-hole/FTL releases",
+      "url": "https://github.com/pi-hole/FTL/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-pi-hole-pi-hole",
+      "name": "pi-hole/pi-hole releases",
+      "url": "https://github.com/pi-hole/pi-hole/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-portainer-portainer",
+      "name": "portainer/portainer releases",
+      "url": "https://github.com/portainer/portainer/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-prometheus-node-exporter",
+      "name": "prometheus/node_exporter releases",
+      "url": "https://github.com/prometheus/node_exporter/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-prometheus-prometheus",
+      "name": "prometheus/prometheus releases",
+      "url": "https://github.com/prometheus/prometheus/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-prowlarr-prowlarr",
+      "name": "Prowlarr/Prowlarr releases",
+      "url": "https://github.com/Prowlarr/Prowlarr/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-qbittorrent-qbittorrent",
+      "name": "qbittorrent/qBittorrent releases",
+      "url": "https://github.com/qbittorrent/qBittorrent/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-radarr-radarr",
+      "name": "Radarr/Radarr releases",
+      "url": "https://github.com/Radarr/Radarr/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-rclone-rclone",
+      "name": "rclone/rclone releases",
+      "url": "https://github.com/rclone/rclone/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-restic-restic",
+      "name": "restic/restic releases",
+      "url": "https://github.com/restic/restic/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-siderolabs-talos",
+      "name": "siderolabs/talos releases",
+      "url": "https://github.com/siderolabs/talos/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-sonarr-sonarr",
+      "name": "Sonarr/Sonarr releases",
+      "url": "https://github.com/Sonarr/Sonarr/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-stalwartlabs-stalwart",
+      "name": "stalwartlabs/stalwart releases",
+      "url": "https://github.com/stalwartlabs/stalwart/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-stirling-tools-stirling-pdf",
+      "name": "Stirling-Tools/Stirling-PDF releases",
+      "url": "https://github.com/Stirling-Tools/Stirling-PDF/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-syncthing-syncthing",
+      "name": "syncthing/syncthing releases",
+      "url": "https://github.com/syncthing/syncthing/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-tailscale-tailscale",
+      "name": "tailscale/tailscale releases",
+      "url": "https://github.com/tailscale/tailscale/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-traefik-traefik",
+      "name": "traefik/traefik releases",
+      "url": "https://github.com/traefik/traefik/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-traefik-whoami",
+      "name": "traefik/whoami releases",
+      "url": "https://github.com/traefik/whoami/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ventoy-ventoy",
+      "name": "ventoy/Ventoy releases",
+      "url": "https://github.com/ventoy/Ventoy/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-victoriametrics-victoriametrics",
+      "name": "VictoriaMetrics/VictoriaMetrics releases",
+      "url": "https://github.com/VictoriaMetrics/VictoriaMetrics/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wg-easy-wg-easy",
+      "name": "wg-easy/wg-easy releases",
+      "url": "https://github.com/wg-easy/wg-easy/releases.atom",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "grafana-blog",
+      "name": "Grafana Labs Blog",
+      "url": "https://grafana.com/blog/index.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-linux-hacks",
+      "name": "Hackaday Linux Hacks",
+      "url": "https://hackaday.com/category/linux-hacks/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hashicorp-blog",
+      "name": "HashiCorp Blog",
+      "url": "https://www.hashicorp.com/blog/feed.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "heise-online",
+      "name": "heise online",
+      "url": "https://www.heise.de/rss/heise-atom.xml",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "howtogeek",
+      "name": "How-To Geek",
+      "url": "https://www.howtogeek.com/feed/",
+      "categories": [
+        "homelab",
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "itsfoss",
+      "name": "It's FOSS",
+      "url": "https://feed.itsfoss.com/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "itsfoss-news",
+      "name": "It's FOSS News",
+      "url": "https://itsfoss.com/news/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "jeffgeerling",
+      "name": "Jeff Geerling",
+      "url": "https://www.jeffgeerling.com/blog.xml",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "jvns",
+      "name": "Julia Evans",
+      "url": "https://jvns.ca/atom.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "kernel-releases",
+      "name": "Linux Kernel Releases",
+      "url": "https://www.kernel.org/feeds/kdist.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "korben",
+      "name": "Korben",
+      "url": "https://korben.info/feed",
+      "categories": [
+        "homelab",
+        "security"
+      ],
+      "kind": "blog",
+      "language": "fr"
+    },
+    {
+      "id": "kubernetes-blog",
+      "name": "Kubernetes Blog",
+      "url": "https://kubernetes.io/feed.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "lawrencesystems-forum",
+      "name": "Lawrence Systems Forum",
+      "url": "https://forums.lawrencesystems.com/latest.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "letsencrypt-blog",
+      "name": "Let's Encrypt",
+      "url": "https://letsencrypt.org/feed.xml",
+      "categories": [
+        "homelab",
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "level1techs-forum",
+      "name": "Level1Techs Forum",
+      "url": "https://forum.level1techs.com/latest.rss",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "linux-magazine",
+      "name": "Linux Magazine",
+      "url": "https://www.linux-magazine.com/rss/feed/lmi_news",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "linux-today",
+      "name": "Linux Today",
+      "url": "https://www.linuxtoday.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "linuxfoundation-blog",
+      "name": "Linux Foundation Blog",
+      "url": "https://www.linuxfoundation.org/blog/rss.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "linuxhandbook",
+      "name": "Linux Handbook",
+      "url": "https://linuxhandbook.com/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "linuxiac",
+      "name": "Linuxiac",
+      "url": "https://linuxiac.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "linuxlinks",
+      "name": "LinuxLinks",
+      "url": "https://www.linuxlinks.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-devops",
+      "name": "Lobsters devops",
+      "url": "https://lobste.rs/t/devops.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-linux",
+      "name": "Lobsters linux",
+      "url": "https://lobste.rs/t/linux.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-networking",
+      "name": "Lobsters networking",
+      "url": "https://lobste.rs/t/networking.rss",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-virtualization",
+      "name": "Lobsters virtualization",
+      "url": "https://lobste.rs/t/virtualization.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lowendtalk",
+      "name": "LowEndTalk",
+      "url": "https://lowendtalk.com/discussions/feed.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "lwn",
+      "name": "LWN.net",
+      "url": "https://lwn.net/headlines/rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "networkworld",
+      "name": "Network World",
+      "url": "https://www.networkworld.com/feed/",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "nginx-blog",
+      "name": "NGINX Community Blog",
+      "url": "https://blog.nginx.org/feed",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "noted-lol",
+      "name": "Noted",
+      "url": "https://noted.lol/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "npm-se",
+      "name": "Stack Overflow nginx",
+      "url": "https://stackoverflow.com/feeds/tag/nginx",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "omgubuntu",
+      "name": "OMG! Ubuntu",
+      "url": "https://www.omgubuntu.co.uk/feed",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "opensuse-news",
+      "name": "openSUSE News",
+      "url": "https://news.opensuse.org/feed.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "openwrt-forum-announce",
+      "name": "OpenWrt Forum Announcements",
+      "url": "https://forum.openwrt.org/c/announcements/14.rss",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "openwrt-news",
+      "name": "OpenWrt News",
+      "url": "https://openwrt.org/feed.php?mode=list&ns=releases",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ostechnix",
+      "name": "OSTechNix",
+      "url": "https://ostechnix.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "packetpushers",
+      "name": "Packet Pushers",
+      "url": "https://feeds.packetpushers.net/packetpushersfullfeed/",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pfsense-blog",
+      "name": "Netgate Blog",
+      "url": "https://www.netgate.com/blog/rss.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "phoronix",
+      "name": "Phoronix",
+      "url": "https://www.phoronix.com/rss.php",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "redhat-blog",
+      "name": "Red Hat Blog",
+      "url": "https://www.redhat.com/en/rss/blog",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "rocky-news",
+      "name": "Rocky Linux News",
+      "url": "https://rockylinux.org/rss.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "root-cz",
+      "name": "Root.cz",
+      "url": "https://www.root.cz/rss/clanky/",
+      "categories": [
+        "homelab",
+        "dotnet"
+      ],
+      "kind": "news",
+      "language": "cs"
+    },
+    {
+      "id": "root-cz-zpravicky",
+      "name": "Root.cz Zpravicky",
+      "url": "https://www.root.cz/rss/zpravicky/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "cs"
+    },
+    {
+      "id": "selfhst",
+      "name": "selfh.st",
+      "url": "https://selfh.st/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "selfhst-weekly",
+      "name": "selfh.st weekly",
+      "url": "https://selfh.st/weekly/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "serverfault-proxmox",
+      "name": "Server Fault proxmox",
+      "url": "https://serverfault.com/feeds/tag/proxmox",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "serverfault-zfs",
+      "name": "Server Fault zfs",
+      "url": "https://serverfault.com/feeds/tag/zfs",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "servethehome",
+      "name": "ServeTheHome",
+      "url": "https://www.servethehome.com/feed/",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "servethehome-forums",
+      "name": "ServeTheHome Forums",
+      "url": "https://forums.servethehome.com/index.php?forums/-/index.rss",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "slashdot-linux",
+      "name": "Slashdot Linux",
+      "url": "https://rss.slashdot.org/Slashdot/slashdotLinux",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "superuser-wireguard",
+      "name": "Super User wireguard",
+      "url": "https://superuser.com/feeds/tag/wireguard",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "tailscale-blog",
+      "name": "Tailscale Blog",
+      "url": "https://tailscale.com/blog/index.xml",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "tecmint",
+      "name": "Tecmint",
+      "url": "https://www.tecmint.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "the-register-onprem",
+      "name": "The Register On-Prem",
+      "url": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss&query=(tag:on-prem+OR+tag:on_prem)",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ubuntu-blog",
+      "name": "Ubuntu Blog",
+      "url": "https://ubuntu.com/blog/feed",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "unix-se-docker",
+      "name": "Stack Overflow docker",
+      "url": "https://stackoverflow.com/feeds/tag/docker",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "virtualizationhowto",
+      "name": "Virtualization Howto",
+      "url": "https://www.virtualizationhowto.com/feed/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "xcpng-blog",
+      "name": "XCP-ng Blog",
+      "url": "https://xcp-ng.org/blog/rss/",
+      "categories": [
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "xda-developers",
+      "name": "XDA Developers",
+      "url": "https://www.xda-developers.com/feed/",
+      "categories": [
+        "homelab",
+        "hardware"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "android-security-blog",
+      "name": "Android Developers Blog",
+      "url": "https://developer.android.com/static/blog/atom.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "arstechnica-security",
+      "name": "Ars Technica Security",
+      "url": "https://arstechnica.com/security/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "aws-security-blog",
+      "name": "AWS Security Blog",
+      "url": "https://aws.amazon.com/blogs/security/feed/",
+      "categories": [
+        "security",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "bellingcat-sec",
+      "name": "DataBreaches.net",
+      "url": "https://databreaches.net/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "bleepingcomputer",
+      "name": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "borns-it",
+      "name": "Borns IT- und Windows-Blog",
+      "url": "https://borncity.com/blog/feed/",
+      "categories": [
+        "security",
+        "dotnet"
+      ],
+      "kind": "blog",
+      "language": "de"
+    },
+    {
+      "id": "canonical-security-usn",
+      "name": "Ubuntu Security Notices",
+      "url": "https://ubuntu.com/security/notices/rss.xml",
+      "categories": [
+        "security",
+        "homelab"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cert-eu",
+      "name": "CERT-EU Advisories",
+      "url": "https://cert.europa.eu/publications/security-advisories-rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cert-eu-threat",
+      "name": "CERT-EU Threat Intelligence",
+      "url": "https://cert.europa.eu/publications/threat-intelligence-rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cert-fr",
+      "name": "CERT-FR",
+      "url": "https://cert.cyber.gouv.fr/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "fr"
+    },
+    {
+      "id": "cert-pl",
+      "name": "CERT Polska",
+      "url": "https://cert.pl/rss.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "pl"
+    },
+    {
+      "id": "cert-ua",
+      "name": "CERT-UA",
+      "url": "https://cert.gov.ua/api/articles/rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "uk"
+    },
+    {
+      "id": "cisa-advisories",
+      "name": "CISA Cybersecurity Advisories",
+      "url": "https://www.cisa.gov/cybersecurity-advisories/all.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cisa-alerts",
+      "name": "CISA Alerts",
+      "url": "https://www.cisa.gov/cybersecurity-advisories/cybersecurity-advisories.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cisa-news",
+      "name": "CISA News",
+      "url": "https://www.cisa.gov/news.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cloudflare-security",
+      "name": "Cloudflare Security Blog",
+      "url": "https://blog.cloudflare.com/tag/security/rss/",
+      "categories": [
+        "security",
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "crowdstrike-blog",
+      "name": "CrowdStrike Blog",
+      "url": "https://www.crowdstrike.com/en-us/blog/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "csoonline",
+      "name": "CSO Online",
+      "url": "https://www.csoonline.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cvefeed",
+      "name": "CVEfeed.io",
+      "url": "https://cvefeed.io/rssfeed/latest.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cvefeed-critical",
+      "name": "CVEfeed.io Critical",
+      "url": "https://cvefeed.io/rssfeed/severity/high.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "cyberdefence24",
+      "name": "CyberDefence24",
+      "url": "https://cyberdefence24.pl/_rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "cyberscoop",
+      "name": "CyberScoop",
+      "url": "https://cyberscoop.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "cybersecuritynews",
+      "name": "Cyber Security News",
+      "url": "https://cybersecuritynews.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "debian-security-dsa",
+      "name": "Debian Security Advisories",
+      "url": "https://www.debian.org/security/dsa",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "debian-security-long",
+      "name": "Debian Security Advisories Long",
+      "url": "https://www.debian.org/security/dsa-long",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "devto-security",
+      "name": "DEV security",
+      "url": "https://dev.to/feed/tag/security",
+      "categories": [
+        "security"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "docker-security",
+      "name": "Docker Security Blog",
+      "url": "https://www.docker.com/blog/category/security/feed/",
+      "categories": [
+        "security",
+        "homelab"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "exploit-db",
+      "name": "Exploit-DB",
+      "url": "https://www.exploit-db.com/rss.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "fedora-updates",
+      "name": "Fedora Security",
+      "url": "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "fulldisclosure",
+      "name": "Full Disclosure",
+      "url": "https://seclists.org/rss/fulldisclosure.rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "gbhackers",
+      "name": "GBHackers",
+      "url": "https://gbhackers.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "gh-anchore-grype",
+      "name": "anchore/grype releases",
+      "url": "https://github.com/anchore/grype/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-aquasecurity-trivy",
+      "name": "aquasecurity/trivy releases",
+      "url": "https://github.com/aquasecurity/trivy/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-bitwarden-server",
+      "name": "bitwarden/server releases",
+      "url": "https://github.com/bitwarden/server/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cisco-talos-clamav",
+      "name": "Cisco-Talos/clamav releases",
+      "url": "https://github.com/Cisco-Talos/clamav/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-cisofy-lynis",
+      "name": "CISOfy/lynis releases",
+      "url": "https://github.com/CISOfy/lynis/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-crowdsecurity-crowdsec",
+      "name": "crowdsecurity/crowdsec releases",
+      "url": "https://github.com/crowdsecurity/crowdsec/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-fail2ban-fail2ban",
+      "name": "fail2ban/fail2ban releases",
+      "url": "https://github.com/fail2ban/fail2ban/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-falcosecurity-falco",
+      "name": "falcosecurity/falco releases",
+      "url": "https://github.com/falcosecurity/falco/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-filosottile-age",
+      "name": "FiloSottile/age releases",
+      "url": "https://github.com/FiloSottile/age/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-github-codeql-cli-binaries",
+      "name": "github/codeql-cli-binaries releases",
+      "url": "https://github.com/github/codeql-cli-binaries/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-microsoft-sbom-tool",
+      "name": "microsoft/sbom-tool releases",
+      "url": "https://github.com/microsoft/sbom-tool/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-mozilla-sops",
+      "name": "mozilla/sops releases",
+      "url": "https://github.com/getsops/sops/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-nmap-nmap",
+      "name": "nmap/nmap releases",
+      "url": "https://github.com/nmap/nmap/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openssl-openssl",
+      "name": "openssl/openssl releases",
+      "url": "https://github.com/openssl/openssl/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-projectdiscovery-nuclei",
+      "name": "projectdiscovery/nuclei releases",
+      "url": "https://github.com/projectdiscovery/nuclei/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-rapid7-metasploit-framework",
+      "name": "rapid7/metasploit-framework releases",
+      "url": "https://github.com/rapid7/metasploit-framework/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-returntocorp-semgrep",
+      "name": "returntocorp/semgrep releases",
+      "url": "https://github.com/semgrep/semgrep/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-sigstore-cosign",
+      "name": "sigstore/cosign releases",
+      "url": "https://github.com/sigstore/cosign/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wazuh-wazuh",
+      "name": "wazuh/wazuh releases",
+      "url": "https://github.com/wazuh/wazuh/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wordpress-gutenberg",
+      "name": "WordPress/gutenberg releases",
+      "url": "https://github.com/WordPress/gutenberg/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wordpress-wordpress",
+      "name": "WordPress/WordPress releases",
+      "url": "https://github.com/WordPress/WordPress/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wp-cli-wp-cli",
+      "name": "wp-cli/wp-cli releases",
+      "url": "https://github.com/wp-cli/wp-cli/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zaproxy-zaproxy",
+      "name": "zaproxy/zaproxy releases",
+      "url": "https://github.com/zaproxy/zaproxy/releases.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "github-blog-security",
+      "name": "GitHub Blog Security",
+      "url": "https://github.blog/security/feed/",
+      "categories": [
+        "security",
+        "dotnet"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "githubsec-lab",
+      "name": "GitHub Security Lab",
+      "url": "https://github.blog/tag/github-security-lab/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "gitlab-security-releases",
+      "name": "GitLab Security Releases",
+      "url": "https://docs.gitlab.com/releases/patch-releases.xml",
+      "categories": [
+        "security",
+        "dotnet"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "golem-security",
+      "name": "Golem Security",
+      "url": "https://rss.golem.de/rss.php?ms=security&feed=RSS2.0",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "grahamcluley",
+      "name": "Graham Cluley",
+      "url": "https://grahamcluley.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-security",
+      "name": "Hackaday Security Hacks",
+      "url": "https://hackaday.com/category/security-hacks/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "hackernoon-security",
+      "name": "HackerNoon security",
+      "url": "https://hackernoon.com/tagged/security/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "hackread",
+      "name": "Hackread",
+      "url": "https://hackread.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "heise-security",
+      "name": "heise Security",
+      "url": "https://www.heise.de/security/feed.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "helpnetsecurity",
+      "name": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "inside-secnews",
+      "name": "Infosecurity Magazine",
+      "url": "https://www.infosecurity-magazine.com/rss/news/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "krebsonsecurity",
+      "name": "Krebs on Security",
+      "url": "https://krebsonsecurity.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-privacy",
+      "name": "Lobsters privacy",
+      "url": "https://lobste.rs/t/privacy.rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lobsters-security",
+      "name": "Lobsters security",
+      "url": "https://lobste.rs/t/security.rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "aggregator",
+      "language": "en"
+    },
+    {
+      "id": "lwn-security",
+      "name": "LWN Security Advisories",
+      "url": "https://lwn.net/headlines/newrss",
+      "categories": [
+        "security",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "malwarebytes-blog",
+      "name": "Malwarebytes Blog",
+      "url": "https://www.malwarebytes.com/blog/feed/index.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "mozilla-security-blog",
+      "name": "Mozilla Security Blog",
+      "url": "https://blog.mozilla.org/security/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ms-security-blog",
+      "name": "Microsoft Security Blog",
+      "url": "https://www.microsoft.com/en-us/security/blog/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "ncsc-uk",
+      "name": "NCSC UK",
+      "url": "https://www.ncsc.gov.uk/api/1/services/v1/all-rss-feed.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "netzpolitik",
+      "name": "netzpolitik.org",
+      "url": "https://netzpolitik.org/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "nodejs-vuln",
+      "name": "Node.js Vulnerability Feed",
+      "url": "https://nodejs.org/en/feed/vulnerability.xml",
+      "categories": [
+        "security",
+        "dotnet"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "openssl-news",
+      "name": "OpenSSL Blog",
+      "url": "https://openssl-library.org/post/index.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "patchstack",
+      "name": "Patchstack Blog",
+      "url": "https://patchstack.com/feed/1.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "portswigger-research",
+      "name": "PortSwigger Research",
+      "url": "https://portswigger.net/research/rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "project-zero",
+      "name": "Google Project Zero",
+      "url": "https://projectzero.google/feed.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "pypi-blog",
+      "name": "PyPI Blog",
+      "url": "https://blog.pypi.org/feed_rss_created.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "rapid7-blog",
+      "name": "Rapid7 Blog",
+      "url": "https://www.rapid7.com/rss.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "risky-biz",
+      "name": "Risky Business News",
+      "url": "https://risky.biz/feeds/risky-business-news/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "sans-isc",
+      "name": "SANS ISC Diary",
+      "url": "https://isc.sans.edu/rssfeed.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "schneier",
+      "name": "Schneier on Security",
+      "url": "https://www.schneier.com/feed/atom/",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "securityaffairs",
+      "name": "Security Affairs",
+      "url": "https://securityaffairs.com/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "securityweek",
+      "name": "SecurityWeek",
+      "url": "https://www.securityweek.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "securityweek-cve",
+      "name": "SecurityWeek Vulnerabilities",
+      "url": "https://www.securityweek.com/category/vulnerabilities/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "sekurak",
+      "name": "Sekurak",
+      "url": "https://sekurak.pl/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "pl"
+    },
+    {
+      "id": "snyk-blog",
+      "name": "Snyk Blog",
+      "url": "https://snyk.io/blog/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "socket-blog",
+      "name": "Socket Blog",
+      "url": "https://socket.dev/api/blog/feed.atom",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "sucuri-blog",
+      "name": "Sucuri Blog",
+      "url": "https://blog.sucuri.net/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "tailscale-security",
+      "name": "Tailscale Security Bulletins",
+      "url": "https://tailscale.com/security-bulletins/index.xml",
+      "categories": [
+        "security",
+        "homelab"
+      ],
+      "kind": "advisory",
+      "language": "en"
+    },
+    {
+      "id": "talos-blog",
+      "name": "Cisco Talos Blog",
+      "url": "https://blog.talosintelligence.com/rss/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "tarnkappe",
+      "name": "Tarnkappe",
+      "url": "https://tarnkappe.info/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "tenable-blog",
+      "name": "Tenable Blog",
+      "url": "https://www.tenable.com/blog/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "the-register-security",
+      "name": "The Register Security",
+      "url": "https://api.theregister.com/api/v1/article?orderBy=published&site_id=2&remapper=rss&query=tag:security",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thecyberexpress",
+      "name": "The Cyber Express",
+      "url": "https://thecyberexpress.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "thehackernews",
+      "name": "The Hacker News",
+      "url": "https://feeds.feedburner.com/TheHackersNews",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "therecord",
+      "name": "The Record",
+      "url": "https://therecord.media/feed",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "troyhunt",
+      "name": "Troy Hunt",
+      "url": "https://www.troyhunt.com/rss/",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "ua-detector",
+      "name": "Detector Media",
+      "url": "https://detector.media/rss/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "unit42",
+      "name": "Unit 42",
+      "url": "https://unit42.paloaltonetworks.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "watchtowr",
+      "name": "watchTowr Labs",
+      "url": "https://labs.watchtowr.com/rss/",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "welivesecurity",
+      "name": "WeLiveSecurity",
+      "url": "https://www.welivesecurity.com/en/rss/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "wired",
+      "name": "WIRED",
+      "url": "https://www.wired.com/feed/rss",
+      "categories": [
+        "security",
+        "ai"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "wiz-blog",
+      "name": "Wiz Blog",
+      "url": "https://www.wiz.io/feed/rss.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "wordfence",
+      "name": "Wordfence",
+      "url": "https://www.wordfence.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "wordfence-intel",
+      "name": "Wordfence Intelligence Blog",
+      "url": "https://www.wordfence.com/blog/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "wordpress-news",
+      "name": "WordPress News",
+      "url": "https://wordpress.org/news/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "wptavern",
+      "name": "WP Tavern",
+      "url": "https://wptavern.com/feed/",
+      "categories": [
+        "security"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "zdi-blog",
+      "name": "Zero Day Initiative",
+      "url": "https://www.zerodayinitiative.com/blog?format=rss",
+      "categories": [
+        "security"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "zeroday-pl",
+      "name": "Zaufana Trzecia Strona",
+      "url": "https://zaufanatrzeciastrona.pl/feed.xml",
+      "categories": [
+        "security"
+      ],
+      "kind": "blog",
+      "language": "pl"
+    },
+    {
+      "id": "automatedhome",
+      "name": "Automated Home",
+      "url": "https://automatedhome.co.uk/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "cleantechnica",
+      "name": "CleanTechnica",
+      "url": "https://cleantechnica.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "csa-iot",
+      "name": "Connectivity Standards Alliance",
+      "url": "https://csa-iot.org/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "devto-esp32",
+      "name": "DEV esp32",
+      "url": "https://dev.to/feed/tag/esp32",
+      "categories": [
+        "smarthome",
+        "hardware"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "electrek",
+      "name": "Electrek",
+      "url": "https://electrek.co/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "electrive",
+      "name": "electrive",
+      "url": "https://www.electrive.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "energy-central",
+      "name": "Utility Dive",
+      "url": "https://www.utilitydive.com/feeds/news/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "energy-storage-news",
+      "name": "Energy-Storage.news",
+      "url": "https://www.energy-storage.news/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "esp-se",
+      "name": "Stack Overflow esp32",
+      "url": "https://stackoverflow.com/feeds/tag/esp32",
+      "categories": [
+        "smarthome",
+        "hardware"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "esphome-blog2",
+      "name": "ESPHome Blog",
+      "url": "https://esphome.io/blog/rss.xml",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "espressif-blog",
+      "name": "Espressif Blog",
+      "url": "https://www.espressif.com/en/rss.xml",
+      "categories": [
+        "smarthome",
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "espressif-developer",
+      "name": "Espressif Developer Portal",
+      "url": "https://developer.espressif.com/blog/index.xml",
+      "categories": [
+        "smarthome",
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "gh-alexxit-go2rtc",
+      "name": "AlexxIT/go2rtc releases",
+      "url": "https://github.com/AlexxIT/go2rtc/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-arendst-tasmota",
+      "name": "arendst/Tasmota releases",
+      "url": "https://github.com/arendst/Tasmota/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-basnijholt-adaptive-lighting",
+      "name": "basnijholt/adaptive-lighting releases",
+      "url": "https://github.com/basnijholt/adaptive-lighting/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-blakeblackshear-frigate",
+      "name": "blakeblackshear/frigate releases",
+      "url": "https://github.com/blakeblackshear/frigate/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-custom-components-pyscript",
+      "name": "custom-components/pyscript releases",
+      "url": "https://github.com/custom-components/pyscript/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-esphome-esphome",
+      "name": "esphome/esphome releases",
+      "url": "https://github.com/esphome/esphome/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-esphome-esphome-docs",
+      "name": "esphome/esphome-docs releases",
+      "url": "https://github.com/esphome/esphome.io/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-esphome-home-assistant-voice-pe",
+      "name": "esphome/home-assistant-voice-pe releases",
+      "url": "https://github.com/esphome/home-assistant-voice-pe/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-espresense-espresense",
+      "name": "ESPresense/ESPresense releases",
+      "url": "https://github.com/ESPresense/ESPresense/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-espressif-arduino-esp32",
+      "name": "espressif/arduino-esp32 releases",
+      "url": "https://github.com/espressif/arduino-esp32/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-espressif-esp-idf",
+      "name": "espressif/esp-idf releases",
+      "url": "https://github.com/espressif/esp-idf/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-evcc-io-evcc",
+      "name": "evcc-io/evcc releases",
+      "url": "https://github.com/evcc-io/evcc/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-frenck-spook",
+      "name": "frenck/spook releases",
+      "url": "https://github.com/frenck/spook/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-hassio-addons-addon-node-red",
+      "name": "hassio-addons/addon-node-red releases",
+      "url": "https://github.com/hassio-addons/app-node-red/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-android",
+      "name": "home-assistant/android releases",
+      "url": "https://github.com/home-assistant/android/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-core",
+      "name": "home-assistant/core releases",
+      "url": "https://github.com/home-assistant/core/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-frontend",
+      "name": "home-assistant/frontend releases",
+      "url": "https://github.com/home-assistant/frontend/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-ios",
+      "name": "home-assistant/ios releases",
+      "url": "https://github.com/home-assistant/ios/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-operating-system",
+      "name": "home-assistant/operating-system releases",
+      "url": "https://github.com/home-assistant/operating-system/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-home-assistant-supervisor",
+      "name": "home-assistant/supervisor releases",
+      "url": "https://github.com/home-assistant/supervisor/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-koenkk-zigbee-herdsman",
+      "name": "Koenkk/zigbee-herdsman releases",
+      "url": "https://github.com/Koenkk/zigbee-herdsman/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-koenkk-zigbee-herdsman-converters",
+      "name": "Koenkk/zigbee-herdsman-converters releases",
+      "url": "https://github.com/Koenkk/zigbee-herdsman-converters/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-koenkk-zigbee2mqtt",
+      "name": "Koenkk/zigbee2mqtt releases",
+      "url": "https://github.com/Koenkk/zigbee2mqtt/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-lvgl-lvgl",
+      "name": "lvgl/lvgl releases",
+      "url": "https://github.com/lvgl/lvgl/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-music-assistant-server",
+      "name": "music-assistant/server releases",
+      "url": "https://github.com/music-assistant/server/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-node-red-node-red",
+      "name": "node-red/node-red releases",
+      "url": "https://github.com/node-red/node-red/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-ohf-voice-piper1-gpl",
+      "name": "OHF-Voice/piper1-gpl releases",
+      "url": "https://github.com/OHF-Voice/piper1-gpl/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openhab-openhab-core",
+      "name": "openhab/openhab-core releases",
+      "url": "https://github.com/openhab/openhab-core/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-openthread-openthread",
+      "name": "openthread/openthread releases",
+      "url": "https://github.com/openthread/openthread/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-platformio-platformio-core",
+      "name": "platformio/platformio-core releases",
+      "url": "https://github.com/platformio/platformio-core/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-project-chip-connectedhomeip",
+      "name": "project-chip/connectedhomeip releases",
+      "url": "https://github.com/project-chip/connectedhomeip/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-rhasspy-wyoming",
+      "name": "rhasspy/wyoming releases",
+      "url": "https://github.com/OHF-Voice/wyoming/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-wled-wled",
+      "name": "wled/WLED releases",
+      "url": "https://github.com/wled/WLED/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zigbee2mqtt-hassio-zigbee2mqtt",
+      "name": "zigbee2mqtt/hassio-zigbee2mqtt releases",
+      "url": "https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zigpy-bellows",
+      "name": "zigpy/bellows releases",
+      "url": "https://github.com/zigpy/bellows/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zigpy-zigpy",
+      "name": "zigpy/zigpy releases",
+      "url": "https://github.com/zigpy/zigpy/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zwave-js-node-zwave-js",
+      "name": "zwave-js/node-zwave-js releases",
+      "url": "https://github.com/zwave-js/zwave-js/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "gh-zwave-js-zwave-js-ui",
+      "name": "zwave-js/zwave-js-ui releases",
+      "url": "https://github.com/zwave-js/zwave-js-ui/releases.atom",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "release",
+      "language": "en"
+    },
+    {
+      "id": "hackaday-home-hacks",
+      "name": "Hackaday Home Hacks",
+      "url": "https://hackaday.com/category/home-hacks/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "home-assistant-blog",
+      "name": "Home Assistant Blog",
+      "url": "https://www.home-assistant.io/atom.xml",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "home-assistant-community-latest",
+      "name": "Home Assistant Community Latest",
+      "url": "https://community.home-assistant.io/latest.rss",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "community",
+      "language": "en"
+    },
+    {
+      "id": "home-assistant-dev-blog",
+      "name": "Home Assistant Developer Blog",
+      "url": "https://contributors.home-assistant.io/blog/rss.xml",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "homekit-news",
+      "name": "HomeKit News",
+      "url": "https://homekitnews.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "iot-analytics",
+      "name": "IoT Analytics",
+      "url": "https://iot-analytics.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "makeuseof",
+      "name": "MakeUseOf",
+      "url": "https://www.makeuseof.com/feed/",
+      "categories": [
+        "smarthome",
+        "homelab"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pv-magazine",
+      "name": "pv magazine",
+      "url": "https://www.pv-magazine.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "pv-magazine-de",
+      "name": "pv magazine Deutschland",
+      "url": "https://www.pv-magazine.de/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "de"
+    },
+    {
+      "id": "renew-economy",
+      "name": "RenewEconomy",
+      "url": "https://reneweconomy.com.au/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "rubryka",
+      "name": "Rubryka",
+      "url": "https://rubryka.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "seeed-blog",
+      "name": "Seeed Studio Blog",
+      "url": "https://www.seeedstudio.com/blog/feed/",
+      "categories": [
+        "smarthome",
+        "hardware"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    },
+    {
+      "id": "smarthomeassistent",
+      "name": "Smarthome Assistent",
+      "url": "https://www.smarthomeassistent.de/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "blog",
+      "language": "de"
+    },
+    {
+      "id": "smarthomescene",
+      "name": "SmartHomeScene",
+      "url": "https://smarthomescene.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "solar-quotes",
+      "name": "SolarQuotes Blog",
+      "url": "https://www.solarquotes.com.au/blog/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "blog",
+      "language": "en"
+    },
+    {
+      "id": "solarpowerworld",
+      "name": "Solar Power World",
+      "url": "https://www.solarpowerworldonline.com/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "theverge-smart-home",
+      "name": "The Verge Smart Home",
+      "url": "https://www.theverge.com/rss/smart-home/index.xml",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "en"
+    },
+    {
+      "id": "ua-energy-ecoaction",
+      "name": "Ecoaction",
+      "url": "https://ecoaction.org.ua/feed",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "news",
+      "language": "uk"
+    },
+    {
+      "id": "victron-blog",
+      "name": "Victron Energy Blog",
+      "url": "https://www.victronenergy.com/blog/feed/",
+      "categories": [
+        "smarthome"
+      ],
+      "kind": "vendor",
+      "language": "en"
+    }
+  ]
+}

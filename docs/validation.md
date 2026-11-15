@@ -1,5 +1,22 @@
 # Validation evidence
 
+## News feeds, editorial gate defaults and watchdog (2026-11-15)
+
+Validated in the local Windows workspace (.NET SDK 10.0.400, Docker Desktop Linux engine) with fake
+credentials and fake feed servers only.
+
+| Check | Result |
+|---|---|
+| `dotnet build -c Release` | Passed, 0 warnings and 0 errors |
+| `bash run-tests.sh` | Passed: 249 tests (Core 41, Infrastructure 50, Api 158), 0 failures; 165 before the change |
+| `dotnet ef migrations has-pending-model-changes` | No pending changes; `AddNewsFeeds` only creates two tables and their indexes |
+| Real catalog | `NewsFeedCatalogTests` loads `src/AgentGateway.Api/NewsFeeds/news-feeds.json` with no validation error and finds it in the build output |
+| Query plan with 732 feeds and 15,000 entries (one-off probe, not committed) | The window uses `IX_NewsFeedEntries_SortUtc_Id`; a 7-day page took about 50 ms, a category plus four-term query about 180 ms |
+| `docker build` + `python scripts/docker-smoke.py` | Passed, including `/app/NewsFeeds/news-feeds.json` in the image and the catalog applied at startup (`health.feedsEnabled` > 0) |
+
+Not verified here: real polling of the publishers' feeds (no outbound requests were made), the
+watchdog alert in the real Telegram chat, and the routine using the new tools.
+
 ## AgentGateway rename and news module (2026-11-13)
 
 Validated in the local Windows workspace (.NET SDK 10.0.400, Docker Desktop Linux engine,

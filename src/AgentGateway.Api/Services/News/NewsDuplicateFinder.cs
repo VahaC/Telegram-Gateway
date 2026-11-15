@@ -59,6 +59,15 @@ public sealed class NewsDuplicateFinder(ApplicationDbContext database)
         return duplicates;
     }
 
+    /// <summary>
+    /// Every canonical URL the registry knows: items' primary and extra sources, releases and alerts, the same set
+    /// check_news_candidates reports as known. A query, so a caller can filter by it inside one SQL statement.
+    /// </summary>
+    public IQueryable<string> KnownUrls() => database.NewsItems.Select(item => item.CanonicalUrl)
+        .Concat(database.NewsSources.Select(source => source.CanonicalUrl))
+        .Concat(database.NewsReleases.Select(release => release.CanonicalUrl))
+        .Concat(database.NewsSecurityAlerts.Select(alert => alert.CanonicalUrl));
+
     private async Task<IEnumerable<NewsDuplicateResponse>> FindReleasesAsync(NewsIssueRequest issue, Guid own, CancellationToken cancellationToken)
     {
         var releases = issue.Releases ?? [];

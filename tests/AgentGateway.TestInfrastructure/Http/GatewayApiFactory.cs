@@ -24,6 +24,7 @@ public sealed class GatewayApiFactory : WebApplicationFactory<Program>
     public FakeTelegramHandler TelegramHttp { get; } = new();
     /// <summary>Settable so a restarted factory can talk to the same fake site.</summary>
     public FakeWordPressHandler WordPressHttp { get; set; } = new();
+    public FakeFeedHandler FeedHttp { get; } = new();
     public Dictionary<string, string?> Settings { get; } = [];
     public TimeProvider? Time { get; set; }
     /// <summary>Receives the application's log entries in addition to its own console logger.</summary>
@@ -71,8 +72,14 @@ public sealed class GatewayApiFactory : WebApplicationFactory<Program>
             services.Remove(worker); // Background delivery is driven deterministically by ProcessOnceAsync.
             services.Remove(services.Single(service => service.ServiceType == typeof(IHostedService)
                 && service.ImplementationType == typeof(NewsPublicationWorker))); // Publication is driven by ProcessNewsOnceAsync.
+            services.Remove(services.Single(service => service.ServiceType == typeof(IHostedService)
+                && service.ImplementationType == typeof(NewsFeedWorker))); // Feeds are driven by SyncFeedCatalogAsync and PollFeedsOnceAsync.
+            services.Remove(services.Single(service => service.ServiceType == typeof(IHostedService)
+                && service.ImplementationType == typeof(NewsWatchdogWorker))); // The watchdog is driven by CheckWatchdogOnceAsync.
             services.Configure<HttpClientFactoryOptions>("WordPress", options => options.HttpMessageHandlerBuilderActions
                 .Add(handler => handler.PrimaryHandler = WordPressHttp));
+            services.Configure<HttpClientFactoryOptions>("NewsFeed", options => options.HttpMessageHandlerBuilderActions
+                .Add(handler => handler.PrimaryHandler = FeedHttp));
             services.Configure<HttpClientFactoryOptions>("Telegram", options => options.HttpMessageHandlerBuilderActions
                 .Add(handler => handler.PrimaryHandler = TelegramHttp));
         });
@@ -101,6 +108,24 @@ public sealed class GatewayApiFactory : WebApplicationFactory<Program>
     {
         using var scope = Services.CreateScope();
         return await scope.ServiceProvider.GetRequiredService<NewsPublicationProcessor>().ProcessOnceAsync(cancellationToken);
+    }
+
+    public async Task<bool> SyncFeedCatalogAsync()
+    {
+        using var scope = Services.CreateScope();
+        return await scope.ServiceProvider.GetRequiredService<NewsFeedCatalogSync>().SyncAsync(CancellationToken.None);
+    }
+
+    public async Task<NewsFeedPollSummary> PollFeedsOnceAsync()
+    {
+        using var scope = Services.CreateScope();
+        return await scope.ServiceProvider.GetRequiredService<NewsFeedPoller>().PollOnceAsync(CancellationToken.None);
+    }
+
+    public async Task<bool> CheckWatchdogOnceAsync()
+    {
+        using var scope = Services.CreateScope();
+        return await scope.ServiceProvider.GetRequiredService<NewsWatchdog>().CheckOnceAsync(CancellationToken.None);
     }
 
     public async Task WithDbAsync(Func<ApplicationDbContext, Task> action)
